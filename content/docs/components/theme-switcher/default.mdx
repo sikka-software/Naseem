@@ -1,0 +1,93 @@
+---
+title: Theme Switcher - Default
+description: A theme switcher component with light and dark mode options
+---
+
+<ComponentPreview 
+  name="theme-switcher-demo"     
+  classNameComponentContainer='min-h-[350px]' 
+/>
+
+## Usage
+
+The Theme Switcher component provides an elegant way to toggle between light and dark themes in your application. It uses `next-themes` for theme management and supports internationalization through `next-intl`.
+
+```tsx
+import { ThemeSwitcher } from "@/components/elements/theme-switcher"
+
+export default function Example() {
+  return <ThemeSwitcher />
+}
+```
+
+## Features
+
+- Automatically detects and displays current theme with dynamic icon (Sun/Moon)
+- Smooth transition between available themes
+- RTL support for Arabic language
+- Accessible dropdown menu interface
+- Internationalized theme names using next-intl
+- Dynamic theme list from next-themes configuration
+
+## Implementation
+
+The component uses:
+- `next-themes` for theme management and detection
+- `next-intl` for internationalization of theme names
+- Radix UI-based dropdown menu for theme selection
+- Dynamic icon switching based on resolved theme
+- RTL-aware dropdown positioning
+
+## Code Structure
+
+```tsx
+import { useTheme } from "next-themes";
+import { useTranslations, useLocale } from "next-intl";
+import { Moon, Sun } from "lucide-react";
+
+export function ThemeSwitcher() {
+  const { theme, setTheme, themes, resolvedTheme } = useTheme();
+  const t = useTranslations();
+  const lang = useLocale();
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger>
+        {resolvedTheme === "dark" ? <Moon /> : <Sun />}
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
+          {themes?.map((theme) => (
+            <DropdownMenuRadioItem value={theme}>
+              {t(theme)}
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+```
+
+## Props
+
+The ThemeSwitcher component is self-contained and uses context providers from `next-themes` and `next-intl`. It doesn't accept any props as it manages all state internally.
+
+## Dependencies
+
+```json
+{
+  "next-themes": "latest",
+  "next-intl": "latest",
+  "lucide-react": "latest",
+  "@radix-ui/react-dropdown-menu": "latest"
+}
+```
+
+<TypeTable type={{
+  size: {
+    type: '"default" | "heightless" | "xs" | "sm" | "lg" | "xl" | "icon" | "smallIcon"',
+    default: '"default"',
+    description: 'The size variant of the button.',
+  },
+}} />

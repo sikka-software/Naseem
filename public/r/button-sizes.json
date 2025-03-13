@@ -1,0 +1,18 @@
+{
+  "name": "button-sizes",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://ui.stackzero.co/r/image-carousel-horizontal.json"
+  ],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "import { Button } from \"@/components/naseem-ui/elements/button\";\n\nexport default function ButtonSizesDemo() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Button size=\"xs\">Extra Small</Button>\n      <Button size=\"sm\">Small</Button>\n      <Button size=\"lg\">Large</Button>\n      <Button size=\"xl\">Extra Large</Button>\n    </div>\n  );\n}\n",
+      "path": "/components/demos/button-sizes.tsx",
+      "target": "/components/ui/button-sizes.tsx"
+    }
+  ]
+}

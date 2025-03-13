@@ -1,0 +1,16 @@
+{
+  "name": "dialog-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "import {\n  Dialog,\n  DialogContent,\n  DialogHeader,\n  DialogTitle,\n  DialogDescription,\n  DialogTrigger,\n} from \"@/components/naseem-ui/elements/dialog\";\n\nconst DialogDemo = () => {\n  return (\n    <div>\n      <Dialog>\n        <DialogTrigger>LTR Dialog</DialogTrigger>\n        <DialogContent>\n          <DialogHeader>\n            <DialogTitle>Dialog Title</DialogTitle>\n            <DialogDescription>Dialog Description</DialogDescription>\n          </DialogHeader>\n        </DialogContent>\n      </Dialog>\n      <Dialog>\n        <DialogTrigger>RTL Dialog</DialogTrigger>\n        <DialogContent dir=\"rtl\">\n          <DialogHeader>\n            <DialogTitle>Dialog Title</DialogTitle>\n            <DialogDescription>Dialog Description</DialogDescription>\n          </DialogHeader>\n        </DialogContent>\n      </Dialog>\n    </div>\n  );\n};\n\nexport default DialogDemo;\n",
+      "path": "/components/demos/dialog-demo.tsx",
+      "target": "/components/ui/dialog-demo.tsx"
+    }
+  ]
+}

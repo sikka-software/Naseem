@@ -1,0 +1,16 @@
+{
+  "name": "language-switcher-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "import { LanguageSwitcher } from \"@/components/naseem-ui/elements/language-switcher\";\nimport { useTranslations } from \"next-intl\";\n\nconst LanguageSwitcherDemo = () => {\n  const t = useTranslations();\n  return (\n    <LanguageSwitcher\n      local=\"en\"\n      locales={[\n        { code: \"en\", label: t(\"en\"), isRTL: false },\n        { code: \"ar\", label: t(\"ar\"), isRTL: true },\n      ]}\n      onChange={(value) => {\n        console.log(value);\n      }}\n    />\n  );\n};\n\nexport default LanguageSwitcherDemo;\n",
+      "path": "/components/demos/language-switcher-demo.tsx",
+      "target": "/components/ui/language-switcher-demo.tsx"
+    }
+  ]
+}

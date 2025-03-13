@@ -1,0 +1,54 @@
+---
+title: Button - Sizes
+description: Different size variants available for the button component
+---
+
+<ComponentPreview 
+  name="button-sizes"     
+  classNameComponentContainer='min-h-[350px]' 
+/>
+
+## Available Sizes
+
+The Button component comes with several predefined size variants to suit different use cases:
+
+- `default`: Standard button size (h-10 with balanced padding)
+- `heightless`: Flexible height with consistent horizontal padding
+- `xs`: Extra small buttons for compact interfaces
+- `sm`: Small buttons for secondary actions
+- `lg`: Large buttons for primary actions
+- `xl`: Extra large buttons for high-emphasis actions
+- `icon`: Square buttons for icon-only content
+- `smallIcon`: Compact square buttons for small icons
+
+## Usage
+
+```tsx
+import { Button } from "@/components/elements/button"
+
+export default function ButtonSizes() {
+  return (
+    <div className="flex flex-col gap-4">
+      <Button size="xs">Extra Small</Button>
+      <Button size="sm">Small</Button>
+      <Button>Default</Button>
+      <Button size="lg">Large</Button>
+      <Button size="xl">Extra Large</Button>
+      <Button size="icon">
+        <IconComponent />
+      </Button>
+      <Button size="smallIcon">
+        <SmallIconComponent />
+      </Button>
+    </div>
+  )
+}
+```
+
+<TypeTable type={{
+  size: {
+    type: '"default" | "heightless" | "xs" | "sm" | "lg" | "xl" | "icon" | "smallIcon"',
+    default: '"default"',
+    description: 'The size variant of the button.',
+  },
+}} />

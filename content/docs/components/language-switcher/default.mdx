@@ -1,0 +1,70 @@
+---
+title: Language Switcher - Default
+description: A language switcher component with support for multiple locales
+---
+
+<ComponentPreview 
+  name="language-switcher-demo"     
+  classNameComponentContainer='min-h-[350px]' 
+/>
+
+## Usage
+
+The Language Switcher component provides an elegant way to switch between different languages in your application. It uses `next-intl` for internationalization and integrates seamlessly with Next.js routing.
+
+```tsx
+import { LanguageSwitcher } from "@/components/elements/language-switcher"
+
+export default function Example() {
+  return <LanguageSwitcher />
+}
+```
+
+## Features
+
+- Automatically detects and displays current language
+- Smooth locale switching
+- RTL support for Arabic language
+- Dropdown menu interface
+- Uses Languages icon from Lucide icons
+- Customizable size and styling
+
+## Implementation
+
+The component uses:
+- `next-intl` for internationalization
+- Next.js router for locale switching
+- Dropdown menu for language selection
+- Radix UI for accessible dropdown components
+
+## Props
+
+The LanguageSwitcher component accepts the following props:
+
+<TypeTable type={{
+  defaultSize: {
+    type: 'boolean',
+    default: 'false',
+    description: 'Whether to use the default button size instead of custom sizing.',
+  },
+  className: {
+    type: 'string',
+    default: 'undefined',
+    description: 'Additional CSS classes to apply to the button.',
+  },
+  style: {
+    type: 'React.CSSProperties',
+    default: 'undefined',
+    description: 'Additional inline styles to apply to the button.',
+  }
+}} />
+
+## Dependencies
+
+```json
+{
+  "next-intl": "latest",
+  "lucide-react": "latest",
+  "@radix-ui/react-dropdown-menu": "latest"
+}
+```

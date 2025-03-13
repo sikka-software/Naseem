@@ -1,0 +1,78 @@
+---
+title: Image Viewer - Basic
+description: A component to display images in a modal
+---
+
+
+
+<ComponentPreview 
+  name="image-viewer-basic-ex-01"     
+  classNameComponentContainer='min-h-[200px]' 
+/>
+
+<References>
+  <Reference label="@radix-ui/react-dialog" link="https://www.radix-ui.com/primitives/docs/components/dialog"/>
+  <Reference label="react-zoom-pan-pinch" link="https://github.com/BetterTyped/react-zoom-pan-pinch"/>
+</References>
+
+
+## Install
+<ComponentInstall
+  name="image-viewer-basic"     
+  classNameComponentContainer='min-h-[200px]' 
+>
+<CLIInstall  name="image-viewer-basic"   />
+
+<ManualInstall>
+
+<Steps>
+
+<Step>
+
+Install the following dependencies:
+
+<Tabs items={["pnpm", "npm", "bun"]}>
+    ```bash tab="pnpm"
+    pnpm add @radix-ui/react-dialog react-zoom-pan-pinch
+    ```
+    ```bash tab="npm"
+    npm install @radix-ui/react-dialog react-zoom-pan-pinch
+    ```
+    ```bash tab="bun"
+    bun add @radix-ui/react-dialog react-zoom-pan-pinch
+    ```
+</Tabs>
+</Step>
+
+<Step>
+
+Copy and paste the following code into your project:
+
+</Step>
+
+<ComponentSource name="image-viewer-basic"/>
+
+<Step>
+
+Update the import paths to match your project setup.
+
+</Step>
+
+</Steps>
+
+
+</ManualInstall>
+
+
+</ComponentInstall>
+
+
+
+<TypeTable  type={{
+    percentage: {
+      description:
+        'The percentage of scroll position to display the roll button',
+      type: 'number',
+      default: 0.2,
+    },
+  }}/>
