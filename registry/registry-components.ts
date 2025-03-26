@@ -35,6 +35,22 @@ export const components: Registry = [
     ),
   },
   {
+    name: "loading-bar",
+    type: "registry:component",
+    dependencies: ["lucide-react", "nprogress"],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/loading-bar.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/loading-bar").then((mod) => ({
+        default: mod.LoadingBar,
+      }))
+    ),
+  },
+  {
     name: "theme-switcher",
     type: "registry:component",
     dependencies: ["lucide-react"],
