@@ -102,6 +102,40 @@ export const components: Registry = [
       }))
     ),
   },
+  {
+    name: "sar-symbol",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/sar-symbol.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/sar-symbol").then((mod) => ({
+        default: mod.SARSymbol,
+      }))
+    ),
+  },
+  {
+    name: "currency-input",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["input", "sar-symbol"],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/currency-input.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/currency-input").then((mod) => ({
+        default: mod.CurrencyInput,
+      }))
+    ),
+  },
 
   // {
   //   name: "face-rating-basic",

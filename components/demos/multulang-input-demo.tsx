@@ -19,10 +19,11 @@ const MultiLangInputDemo = () => {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 w-full max-w-[400px]">
       <div>
         <Label>Multi Language Input</Label>
         <Input
+        className="w-full"
           onChange={handleChange}
           value={values}
           locales={[
