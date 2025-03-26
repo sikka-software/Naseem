@@ -1,34 +1,48 @@
+"use client";
+
 import { Label } from "@/components/ui/label";
-import { Input } from "@/components/naseem-ui/elements/multilang-input";
-import { useEffect } from "react";
-import { toast } from "sonner";
+import {
+  Input,
+  MultiLangValue,
+} from "@/components/naseem-ui/elements/multilang-input";
+import { useState } from "react";
 
 const MultiLangInputDemo = () => {
-  useEffect(() => {
-    console.log("MultiLangInputDemo");
-    toast.success("Hello");
-  }, []);
+  const [values, setValues] = useState<MultiLangValue>({
+    en: "",
+    ar: "",
+  });
+
+  const handleChange = (newValues: MultiLangValue) => {
+    setValues(newValues);
+    console.log("Current values:", newValues);
+  };
+
   return (
-    <div>
-      <Label>Multi Language Input</Label>
-      <Input
-        onChange={() => {}}
-        locales={[
-          {
-            code: "en",
-            label: "English",
-          },
-          {
-            code: "ar",
-            label: "Arabic",
-          },
-        ]}
-        texts={{
-          placeholder: "Search country",
-          no_country_found: "No country found",
-          search_country: "Search country",
-        }}
-      />
+    <div className="space-y-4">
+      <div>
+        <Label>Multi Language Input</Label>
+        <Input
+          onChange={handleChange}
+          value={values}
+          locales={[
+            {
+              code: "en",
+              label: "English",
+            },
+            {
+              code: "ar",
+              label: "Arabic",
+            },
+          ]}
+          placeholder="Enter text in multiple languages"
+        />
+      </div>
+
+      <div className="bg-muted rounded-lg p-4">
+        <p className="mb-2 font-medium">Current Values:</p>
+        <pre className="text-sm">{JSON.stringify(values, null, 2)}</pre>
+      </div>
     </div>
   );
 };
