@@ -11,7 +11,6 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
 } from "@/components/ui/dropdown-menu";
-import { Languages } from "lucide-react";
 
 export type MultiLangValue = {
   [key: string]: string;
@@ -73,10 +72,11 @@ const Input = ({
         <DropdownMenuTrigger asChild>
           <Button
             variant="outline"
-            size="icon"
-            className="absolute top-0 right-0"
+            className="absolute end-2 top-1/2 h-fit -translate-y-1/2 p-1 text-xs"
+            style={{ insetInlineEnd: "4px" }}
           >
-            <Languages />
+            {locales.find((locale) => locale.code === selectedLocale)?.label ||
+              "Select Language"}
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>

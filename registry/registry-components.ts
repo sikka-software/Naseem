@@ -85,6 +85,23 @@ export const components: Registry = [
       )
     ),
   },
+  {
+    name: "multilang-input",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "dropdown-menu"],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/multilang-input.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/multilang-input").then((mod) => ({
+        default: mod.Input,
+      }))
+    ),
+  },
 
   // {
   //   name: "face-rating-basic",
