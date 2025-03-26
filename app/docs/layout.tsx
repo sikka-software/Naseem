@@ -6,6 +6,7 @@ import { DocsLayout, DocsLayoutProps } from "@/components/notebook";
 
 const docsOptions: DocsLayoutProps = {
   ...baseOptions,
+  i18n: false,
   links: linkItems,
   tree: source.pageTree,
 };

@@ -1,0 +1,16 @@
+{
+  "name": "multilang-input-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { Label } from \"@/components/ui/label\";\nimport {\n  Input,\n  MultiLangValue,\n} from \"@/components/naseem-ui/elements/multilang-input\";\nimport { useState } from \"react\";\n\nconst MultiLangInputDemo = () => {\n  const [values, setValues] = useState<MultiLangValue>({\n    en: \"\",\n    ar: \"\",\n  });\n\n  const handleChange = (newValues: MultiLangValue) => {\n    setValues(newValues);\n    console.log(\"Current values:\", newValues);\n  };\n\n  return (\n    <div className=\"space-y-4\">\n      <div>\n        <Label>Multi Language Input</Label>\n        <Input\n          onChange={handleChange}\n          value={values}\n          locales={[\n            {\n              code: \"en\",\n              label: \"English\",\n            },\n            {\n              code: \"ar\",\n              label: \"Arabic\",\n            },\n          ]}\n          placeholder=\"Enter text in multiple languages\"\n        />\n      </div>\n\n      <div className=\"bg-muted rounded-lg p-4\">\n        <p className=\"mb-2 font-medium\">Current Values:</p>\n        <pre className=\"text-sm\">{JSON.stringify(values, null, 2)}</pre>\n      </div>\n    </div>\n  );\n};\n\nexport default MultiLangInputDemo;\n",
+      "path": "/components/demos/multulang-input-demo.tsx",
+      "target": "/components/ui/multulang-input-demo.tsx"
+    }
+  ]
+}

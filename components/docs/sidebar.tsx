@@ -511,7 +511,7 @@ export function SidebarPageTree(props: {
 }) {
   const { root } = useTreeContext();
 
-  console.log("root", root);
+  // console.log("root", root);
 
   return useMemo(() => {
     const { Folder, Item, Separator } = props.components ?? {};
