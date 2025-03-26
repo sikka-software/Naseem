@@ -21,8 +21,8 @@ const eslintConfig = [
     },
     rules: {
       "@typescript-eslint/no-unused-vars": "warn",
-       // Other rules
-      // "@next/next/no-img-element": "off"
+      // Other rules
+      "@next/next/no-img-element": "off",
     },
   },
 ];

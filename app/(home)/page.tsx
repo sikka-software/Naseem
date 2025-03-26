@@ -1,19 +1,19 @@
-import ComponentsShowcase from "@/components/landing/components-showcase";
+// import ComponentsShowcase from "@/components/landing/components-showcase";
 import { HeroSection } from "@/components/landing/hero";
-import { GridPattern } from "@/components/magicui/grid-pattern";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+// import { GridPattern } from "@/components/magicui/grid-pattern";
+// import { Button } from "@/components/ui/button";
+// import { cn } from "@/lib/utils";
+// import { ArrowRight } from "lucide-react";
+// import Link from "next/link";
 
 export default function HomePage() {
   return (
     <main className="container flex flex-1 flex-col justify-center p-0 text-center">
       <HeroSection />
 
-      <ComponentsShowcase />
+      {/* <ComponentsShowcase /> */}
 
-      <div className="px-4">
+      {/* <div className="px-4">
         <div className="from-background relative container flex flex-row flex-wrap items-center justify-around gap-6 rounded-lg border px-4 py-12">
           <GridPattern
             width={20}
@@ -47,7 +47,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }

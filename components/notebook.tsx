@@ -34,9 +34,7 @@ import { type PageStyles, StylesProvider } from "fumadocs-ui/provider";
 
 export interface DocsLayoutProps extends BaseLayoutProps {
   tree: PageTree.Root;
-
   sidebar?: Omit<Partial<SidebarOptions>, "component" | "enabled">;
-
   containerProps?: HTMLAttributes<HTMLDivElement>;
 }
 

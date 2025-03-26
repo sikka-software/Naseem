@@ -60,6 +60,21 @@ export const examples: Registry = [
     ],
     component: React.lazy(() => import("../components/demos/dialog-demo")),
   },
+  {
+    name: "multilang-input-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/multulang-input-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/multulang-input-demo")
+    ),
+  },
 
   // {
   //   name: "image-carousel-horizontal-ex-02",
