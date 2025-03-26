@@ -2,12 +2,12 @@
 
 import { Label } from "@/components/ui/label";
 import {
-  Input,
+  MultilangTextarea,
   MultiLangValue,
-} from "@/components/naseem-ui/elements/multilang-input";
+} from "@/components/naseem-ui/elements/multilang-textarea";
 import { useState } from "react";
 
-const MultiLangInputDemo = () => {
+const MultiLangTextareaDemo = () => {
   const [values, setValues] = useState<MultiLangValue>({
     en: "",
     ar: "",
@@ -19,21 +19,21 @@ const MultiLangInputDemo = () => {
   };
 
   return (
-    <div className="space-y-4 w-full max-w-[400px]">
+    <div className="w-full max-w-[400px] space-y-4">
       <div>
-        <Label>Multi Language Input</Label>
-        <Input
-        className="w-full"
+        <Label>Multi Language Textarea</Label>
+        <MultilangTextarea
+          className="w-full"
           onChange={handleChange}
           value={values}
           locales={[
             {
               code: "en",
-              label: "English",
+              name: "English",
             },
             {
               code: "ar",
-              label: "Arabic",
+              name: "Arabic",
             },
           ]}
           placeholder="Enter text in multiple languages"
@@ -48,4 +48,4 @@ const MultiLangInputDemo = () => {
   );
 };
 
-export default MultiLangInputDemo;
+export default MultiLangTextareaDemo;

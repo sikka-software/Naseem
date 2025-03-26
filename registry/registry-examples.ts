@@ -67,12 +67,27 @@ export const examples: Registry = [
     registryDependencies: [],
     files: [
       {
-        path: "@/components/demos/multulang-input-demo.tsx",
+        path: "@/components/demos/multilang-input-demo.tsx",
         type: "registry:example",
       },
     ],
     component: React.lazy(
-      () => import("../components/demos/multulang-input-demo")
+      () => import("../components/demos/multilang-input-demo")
+    ),
+  },
+  {
+    name: "multilang-textarea-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/multilang-textarea-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/multilang-textarea-demo")
     ),
   },
   {

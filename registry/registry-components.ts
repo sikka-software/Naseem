@@ -98,8 +98,27 @@ export const components: Registry = [
     ],
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/multilang-input").then((mod) => ({
-        default: mod.Input,
+        default: mod.MultilangInput,
       }))
+    ),
+  },
+  {
+    name: "multilang-textarea",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "dropdown-menu", "textarea"],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/multilang-textarea.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/multilang-textarea").then(
+        (mod) => ({
+          default: mod.MultilangTextarea,
+        })
+      )
     ),
   },
   {
