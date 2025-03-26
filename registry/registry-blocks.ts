@@ -8,8 +8,8 @@ export const blocks: Registry = [
     dependencies: ["lucide-react"],
     registryDependencies: [
       "button",
-      "https://ui.stackzero.co/r/image-viewer-basic.json",
-      "https://ui.stackzero.co/r/price-format-basic.json",
+      "https://ui.sikka.io/r/image-viewer-basic.json",
+      "https://ui.sikka.io/r/price-format-basic.json",
     ],
     files: [
       {
@@ -31,9 +31,9 @@ export const blocks: Registry = [
     dependencies: ["lucide-react"],
     registryDependencies: [
       "button",
-      "https://ui.stackzero.co/r/star-rating-fractions.json",
-      "https://ui.stackzero.co/r/price-format-basic.json",
-      "https://ui.stackzero.co/r/image-viewer-basic.json",
+      "https://ui.sikka.io/r/star-rating-fractions.json",
+      "https://ui.sikka.io/r/price-format-basic.json",
+      "https://ui.sikka.io/r/image-viewer-basic.json",
     ],
     files: [
       {
@@ -55,8 +55,8 @@ export const blocks: Registry = [
     dependencies: ["lucide-react"],
     registryDependencies: [
       "button",
-      "https://ui.stackzero.co/r/image-viewer-basic.json",
-      "https://ui.stackzero.co/r/price-format-sale.json",
+      "https://ui.sikka.io/r/image-viewer-basic.json",
+      "https://ui.sikka.io/r/price-format-sale.json",
     ],
     files: [
       {
@@ -79,9 +79,9 @@ export const blocks: Registry = [
     registryDependencies: [
       "button",
       "badge",
-      "https://ui.stackzero.co/r/image-viewer-basic.json",
-      "https://ui.stackzero.co/r/price-format-basic.json",
-      "https://ui.stackzero.co/r/variant-selector-basic.json",
+      "https://ui.sikka.io/r/image-viewer-basic.json",
+      "https://ui.sikka.io/r/price-format-basic.json",
+      "https://ui.sikka.io/r/variant-selector-basic.json",
     ],
     files: [
       {
@@ -101,7 +101,7 @@ export const blocks: Registry = [
     name: "review-01-block",
     type: "registry:block",
     dependencies: ["lucide-react"],
-    registryDependencies: ["https://ui.stackzero.co/r/star-rating-basic.json"],
+    registryDependencies: ["https://ui.sikka.io/r/star-rating-basic.json"],
     files: [
       {
         path: "@/components/commerce-ui/blocks/reviews/review-01.tsx",
@@ -118,7 +118,7 @@ export const blocks: Registry = [
     dependencies: ["lucide-react"],
     registryDependencies: [
       "button",
-      "https://ui.stackzero.co/r/star-rating-fractions.json",
+      "https://ui.sikka.io/r/star-rating-fractions.json",
     ],
     files: [
       {
@@ -137,8 +137,8 @@ export const blocks: Registry = [
     dependencies: ["lucide-react"],
     registryDependencies: [
       "button",
-      "https://ui.stackzero.co/r/star-rating-basic.json",
-      "https://ui.stackzero.co/r/like-rating-basic.json",
+      "https://ui.sikka.io/r/star-rating-basic.json",
+      "https://ui.sikka.io/r/like-rating-basic.json",
     ],
     files: [
       {
@@ -156,7 +156,7 @@ export const blocks: Registry = [
     type: "registry:block",
     dependencies: ["lucide-react"],
     registryDependencies: [
-      "https://ui.stackzero.co/r/star-rating-fractions.json",
+      "https://ui.sikka.io/r/star-rating-fractions.json",
     ],
     files: [
       {

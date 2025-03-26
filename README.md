@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/stackzero-labs/ui">
+  <a href="https://github.com/sikka-software/naseem">
     <img src="public/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
@@ -12,14 +12,14 @@
   <p align="center">
     Collection of components to build e-commerce sites and commerce apps. Built for React, Next.js, Tailwind CSS and shadcn/ui.
     <br />
-    <a href="https://ui.stackzero.co"><strong>Official Docs »</strong></a>
+    <a href="https://ui.sikka.io"><strong>Official Docs »</strong></a>
     <br />
     <br />
-    <a href="https://ui.stackzero.co/get-started">Get started</a>
+    <a href="https://ui.sikka.io/get-started">Get started</a>
     &middot;
-    <a href="https://github.com/stackzero-labs/ui/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/sikka-software/naseem/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     &middot;
-    <a href="https://github.com/stackzero-labs/ui/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/sikka-software/naseem/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -52,7 +52,7 @@
 ## About The Project
 
   <a href="public/cover.jpeg">
-    <img src="public/cover.jpeg" alt="stackzero/commerce-ui" width="100%" height="auto">
+    <img src="public/cover.jpeg" alt="naseem" width="100%" height="auto">
   </a>
 
 **sikka/naseem** is a collection of components to build e-commerce sites and commerce apps. It is built for React, Next.js, Tailwind CSS and shadcn/ui.
@@ -76,7 +76,7 @@ You can just copy and paste the components into your project and start building 
 
 Since this project is a collection of components, you can just copy and paste the components into your project and start building your e-commerce site right away!
 
-You can use the components in your project by copying and pasting the components from the [official documentation](https://ui.stackzero.co).
+You can use the components in your project by copying and pasting the components from the [official documentation](https://ui.sikka.io).
 
 ### Installation
 
@@ -84,7 +84,7 @@ This project uses `tailwindcss` v.4 as the utility-first CSS framework. Please f
 
 Some components also rely on `shadcn/ui` for the design system and `motion/react` for animations.
 
-Check the [installation guide](https://ui.stackzero.co/docs/installation) for more information.
+Check the [installation guide](https://ui.sikka.io/docs/installation) for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -112,7 +112,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Marcello - [@marcellonov.bsky.social](https://bsky.app/profile/marcellonov.bsky.social)
 
-Project Link: [https://github.com/stackzero-labs/ui](https://github.com/stackzero-labs/ui)
+Project Link: [https://github.com/sikka-software/naseem](https://github.com/sikka-software/naseem)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

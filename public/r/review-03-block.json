@@ -6,8 +6,8 @@
   ],
   "registryDependencies": [
     "button",
-    "https://ui.stackzero.co/r/star-rating-basic.json",
-    "https://ui.stackzero.co/r/like-rating-basic.json"
+    "https://ui.sikka.io/r/star-rating-basic.json",
+    "https://ui.sikka.io/r/like-rating-basic.json"
   ],
   "files": [
     {

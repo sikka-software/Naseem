@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "commerce-ui",
-  creator: "@stackzero-labs",
-  url: process.env.NEXT_PUBLIC_APP_URL ?? "https://ui.stackzero.co",
-  ogImage: "https://ui.stackzero.co/opengraph-image.png",
+  name: "naseem",
+  creator: "@sikka_sa",
+  url: process.env.NEXT_PUBLIC_APP_URL ?? "https://ui.sikka.io",
+  ogImage: "https://ui.sikka.io/opengraph-image.png",
   description:
-    "stackzero/commerce-ui is a set of components and hooks that can be used to build a custom storefront for your commerce site.",
+    "naseem is a set of components and hooks that can be used to build a custom storefront for your commerce site.",
   keywords: [
     "Next.js",
     "React",
@@ -17,8 +17,8 @@ export const siteConfig = {
     "shadcn/ui",
   ],
   links: {
-    portfolio: "https://stackzero.co",
-    github: "https://github.com/stackzero-labs/ui",
+    portfolio: "https://sikka.io",
+    github: "https://github.com/sikka-software/naseem",
   },
 };
 

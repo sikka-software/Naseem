@@ -7,9 +7,9 @@
   "registryDependencies": [
     "button",
     "badge",
-    "https://ui.stackzero.co/r/image-viewer-basic.json",
-    "https://ui.stackzero.co/r/price-format-basic.json",
-    "https://ui.stackzero.co/r/variant-selector-basic.json"
+    "https://ui.sikka.io/r/image-viewer-basic.json",
+    "https://ui.sikka.io/r/price-format-basic.json",
+    "https://ui.sikka.io/r/variant-selector-basic.json"
   ],
   "files": [
     {

@@ -27,7 +27,7 @@ export const linkItems: LinkItemType[] = [
   {
     active: "nested-url",
     icon: <Newspaper />,
-    label: "Stackzero Blog",
+    label: "Naseem Blog",
     text: "Blog",
     url: "/blog",
   },

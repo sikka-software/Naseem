@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "stackzero-ui",
+      "name": "@sikka/naseem",
       "dependencies": {
         "@mantine/hooks": "^7.17.2",
         "@number-flow/react": "^0.5.8",

@@ -70,6 +70,6 @@ export default async function Layout({ children, params }: LayoutProps) {
 export const metadata: Metadata = {
   description:
     "The Commerce UI is a set of components and hooks that can be used to build a custom storefront for your commerce site.",
-  metadataBase: new URL("https://ui.stackzero.co"),
+  metadataBase: new URL("https://ui.sikka.io"),
   title: "Commerce UI",
 };

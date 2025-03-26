@@ -5,8 +5,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "https://ui.stackzero.co/r/star-rating-fractions.json",
-    "https://ui.stackzero.co/r/image-carousel-horizontal.json"
+    "https://ui.sikka.io/r/star-rating-fractions.json",
+    "https://ui.sikka.io/r/image-carousel-horizontal.json"
   ],
   "files": [
     {

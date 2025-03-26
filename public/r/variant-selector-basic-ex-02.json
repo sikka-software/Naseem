@@ -6,7 +6,7 @@
     "@radix-ui/react-radio-group"
   ],
   "registryDependencies": [
-    "https://ui.stackzero.co/r/variant-selector-basic.json"
+    "https://ui.sikka.io/r/variant-selector-basic.json"
   ],
   "files": [
     {

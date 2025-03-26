@@ -7,7 +7,7 @@ export const examples: Registry = [
     type: "registry:example",
     dependencies: ["lucide-react"],
     registryDependencies: [
-      "https://ui.stackzero.co/r/image-carousel-horizontal.json",
+      "https://ui.sikka.io/r/image-carousel-horizontal.json",
     ],
     files: [
       {
@@ -81,7 +81,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/image-carousel-horizontal.json",
+  //     "https://ui.sikka.io/r/image-carousel-horizontal.json",
   //   ],
   //   files: [
   //     {
@@ -102,7 +102,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/image-carousel-horizontal.json",
+  //     "https://ui.sikka.io/r/image-carousel-horizontal.json",
   //   ],
   //   files: [
   //     {
@@ -122,7 +122,7 @@ export const examples: Registry = [
   //   name: "image-viewer-basic-ex-01",
   //   type: "registry:component",
   //   dependencies: ["lucide-react"],
-  //   registryDependencies: ["https://ui.stackzero.co/r/image-viewer-basic.json"],
+  //   registryDependencies: ["https://ui.sikka.io/r/image-viewer-basic.json"],
   //   files: [
   //     {
   //       path: "@/components/commerce-ui/image-viewer/basic/image-viewer-basic-ex-01.tsx",
@@ -142,7 +142,7 @@ export const examples: Registry = [
   //   type: "registry:component",
   //   dependencies: ["lucide-react"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/image-viewer-motion.json",
+  //     "https://ui.sikka.io/r/image-viewer-motion.json",
   //   ],
   //   files: [
   //     {
@@ -162,7 +162,7 @@ export const examples: Registry = [
   //   name: "price-format-basic-ex-01",
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
-  //   registryDependencies: ["https://ui.stackzero.co/r/price-format-basic.json"],
+  //   registryDependencies: ["https://ui.sikka.io/r/price-format-basic.json"],
   //   files: [
   //     {
   //       path: "@/components/commerce-ui/price-format/basic/price-format-basic-ex-01.tsx",
@@ -181,7 +181,7 @@ export const examples: Registry = [
   //   name: "price-format-sale-ex-01",
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
-  //   registryDependencies: ["https://ui.stackzero.co/r/price-format-sale.json"],
+  //   registryDependencies: ["https://ui.sikka.io/r/price-format-sale.json"],
   //   files: [
   //     {
   //       path: "@/components/commerce-ui/price-format/sale/price-format-sale-ex-01.tsx",
@@ -200,7 +200,7 @@ export const examples: Registry = [
   //   name: "price-format-sale-ex-02",
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
-  //   registryDependencies: ["https://ui.stackzero.co/r/price-format-sale.json"],
+  //   registryDependencies: ["https://ui.sikka.io/r/price-format-sale.json"],
   //   files: [
   //     {
   //       path: "@/components/commerce-ui/price-format/sale/price-format-sale-ex-02.tsx",
@@ -219,7 +219,7 @@ export const examples: Registry = [
   //   name: "face-rating-basic-ex-01",
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
-  //   registryDependencies: ["https://ui.stackzero.co/r/face-rating-basic.json"],
+  //   registryDependencies: ["https://ui.sikka.io/r/face-rating-basic.json"],
   //   files: [
   //     {
   //       path: "@/components/commerce-ui/face-rating/basic/face-rating-basic-ex-01.tsx",
@@ -238,7 +238,7 @@ export const examples: Registry = [
   //   name: "face-rating-basic-ex-02",
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
-  //   registryDependencies: ["https://ui.stackzero.co/r/face-rating-basic.json"],
+  //   registryDependencies: ["https://ui.sikka.io/r/face-rating-basic.json"],
 
   //   files: [
   //     {
@@ -258,7 +258,7 @@ export const examples: Registry = [
   //   name: "face-rating-basic-ex-03",
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
-  //   registryDependencies: ["https://ui.stackzero.co/r/face-rating-basic.json"],
+  //   registryDependencies: ["https://ui.sikka.io/r/face-rating-basic.json"],
   //   files: [
   //     {
   //       path: "@/components/commerce-ui/face-rating/basic/face-rating-basic-ex-03.tsx",
@@ -277,7 +277,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/face-rating-gradient.json",
+  //     "https://ui.sikka.io/r/face-rating-gradient.json",
   //   ],
   //   files: [
   //     {
@@ -297,7 +297,7 @@ export const examples: Registry = [
   //   name: "like-rating-basic-ex-01",
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
-  //   registryDependencies: ["https://ui.stackzero.co/r/like-rating-basic.json"],
+  //   registryDependencies: ["https://ui.sikka.io/r/like-rating-basic.json"],
   //   files: [
   //     {
   //       path: "@/components/commerce-ui/like-rating/basic/like-rating-ex-01.tsx",
@@ -314,7 +314,7 @@ export const examples: Registry = [
   //   name: "star-rating-basic-ex-01",
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
-  //   registryDependencies: ["https://ui.stackzero.co/r/star-rating-basic.json"],
+  //   registryDependencies: ["https://ui.sikka.io/r/star-rating-basic.json"],
   //   files: [
   //     {
   //       path: "@/components/commerce-ui/star-rating/basic/star-rating-basic-ex-01.tsx",
@@ -333,7 +333,7 @@ export const examples: Registry = [
   //   name: "star-rating-basic-ex-02",
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
-  //   registryDependencies: ["https://ui.stackzero.co/r/star-rating-basic.json"],
+  //   registryDependencies: ["https://ui.sikka.io/r/star-rating-basic.json"],
   //   files: [
   //     {
   //       path: "@/components/commerce-ui/star-rating/basic/star-rating-basic-ex-02.tsx",
@@ -352,7 +352,7 @@ export const examples: Registry = [
   //   name: "star-rating-basic-ex-03",
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
-  //   registryDependencies: ["https://ui.stackzero.co/r/star-rating-basic.json"],
+  //   registryDependencies: ["https://ui.sikka.io/r/star-rating-basic.json"],
   //   files: [
   //     {
   //       path: "@/components/commerce-ui/star-rating/basic/star-rating-basic-ex-03.tsx",
@@ -372,7 +372,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/star-rating-fractions.json",
+  //     "https://ui.sikka.io/r/star-rating-fractions.json",
   //   ],
   //   files: [
   //     {
@@ -393,7 +393,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/star-rating-fractions.json",
+  //     "https://ui.sikka.io/r/star-rating-fractions.json",
   //   ],
   //   files: [
   //     {
@@ -414,7 +414,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/star-rating-fractions.json",
+  //     "https://ui.sikka.io/r/star-rating-fractions.json",
   //   ],
   //   files: [
   //     {
@@ -435,7 +435,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/upvote-rating-basic.json",
+  //     "https://ui.sikka.io/r/upvote-rating-basic.json",
   //   ],
   //   files: [
   //     {
@@ -456,7 +456,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/upvote-rating-basic.json",
+  //     "https://ui.sikka.io/r/upvote-rating-basic.json",
   //   ],
   //   files: [
   //     {
@@ -477,7 +477,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react", "@number-flow/react"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/upvote-rating-animated.json",
+  //     "https://ui.sikka.io/r/upvote-rating-animated.json",
   //   ],
   //   files: [
   //     {
@@ -498,7 +498,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react", "@number-flow/react"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/upvote-rating-animated.json",
+  //     "https://ui.sikka.io/r/upvote-rating-animated.json",
   //   ],
   //   files: [
   //     {
@@ -519,7 +519,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react", "@radix-ui/react-radio-group"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/variant-selector-basic.json",
+  //     "https://ui.sikka.io/r/variant-selector-basic.json",
   //   ],
   //   files: [
   //     {
@@ -540,7 +540,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react", "@radix-ui/react-radio-group"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/variant-selector-basic.json",
+  //     "https://ui.sikka.io/r/variant-selector-basic.json",
   //   ],
   //   files: [
   //     {
@@ -561,7 +561,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react", "@radix-ui/react-radio-group"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/variant-selector-images.json",
+  //     "https://ui.sikka.io/r/variant-selector-images.json",
   //   ],
   //   files: [
   //     {
@@ -582,7 +582,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react", "@radix-ui/react-radio-group", "motion"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/variant-selector-animated.json",
+  //     "https://ui.sikka.io/r/variant-selector-animated.json",
   //   ],
   //   files: [
   //     {
@@ -603,7 +603,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react", "@radix-ui/react-radio-group", "motion"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/variant-selector-animated.json",
+  //     "https://ui.sikka.io/r/variant-selector-animated.json",
   //   ],
   //   files: [
   //     {
@@ -624,7 +624,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react", "@radix-ui/react-radio-group", "motion"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/variant-selector-multiple.json",
+  //     "https://ui.sikka.io/r/variant-selector-multiple.json",
   //   ],
   //   files: [
   //     {
@@ -645,7 +645,7 @@ export const examples: Registry = [
   //   type: "registry:example",
   //   dependencies: ["lucide-react", "@radix-ui/react-radio-group", "motion"],
   //   registryDependencies: [
-  //     "https://ui.stackzero.co/r/variant-color-selector-basic.json",
+  //     "https://ui.sikka.io/r/variant-color-selector-basic.json",
   //   ],
   //   files: [
   //     {
