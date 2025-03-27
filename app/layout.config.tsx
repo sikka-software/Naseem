@@ -35,6 +35,11 @@ export const linkItems: LinkItemType[] = [
   //   children: <HeaderCustomLinks />,
   //   type: "custom",
   // },
+  // {
+  //   secondary: true,
+  //   type: "custom",
+  //   children: <div className="mx-auto bg-red-300">Hey</div>,
+  // },
   {
     external: true,
     icon: (
@@ -50,6 +55,7 @@ export const linkItems: LinkItemType[] = [
 
 export const baseOptions: BaseLayoutProps = {
   links: [...linkItems],
+
   nav: {
     title: (
       <div className="relative flex items-center space-x-2">
@@ -63,9 +69,9 @@ export const baseOptions: BaseLayoutProps = {
         <div className="text-sm font-semibold text-nowrap sm:inline-block">
           {siteConfig.name}
         </div>
-        <span className="bg-secondary text-foreground ml-0.5 hidden rounded-full px-1.5 py-px text-[10px] font-medium select-none md:block">
+        {/* <span className="bg-secondary text-foreground ml-0.5 hidden rounded-full px-1.5 py-px text-[10px] font-medium select-none md:block">
           beta
-        </span>
+        </span> */}
       </div>
     ),
     transparentMode: "top",

@@ -5,7 +5,7 @@ import PriceFormatSale from "@/components/commerce-ui/price-format/sale/price-fo
 import { Button } from "@/components/ui/button";
 
 const DEFAULT_IMAGE_URL =
-  "https://raw.githubusercontent.com/stackzero-labs/ui/refs/heads/main/public/placeholders/headphone-1.jpg";
+  "https://raw.githubusercontent.com/sikka-software/naseem/refs/heads/main/public/placeholders/headphone-1.jpg";
 
 interface ProductCard_03Props {
   imageUrl?: string;

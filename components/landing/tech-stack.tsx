@@ -5,7 +5,7 @@ import {
   TooltipTrigger,
 } from "../ui/tooltip";
 
-const tehcStacks = {
+const techStacks = {
   react: {
     label: "React",
     icon: (
@@ -72,11 +72,11 @@ const tehcStacks = {
   },
 };
 
-export const TechStatck = () => {
+export const TechStack = () => {
   return (
     <TooltipProvider delayDuration={100}>
       <div className="mx-auto flex w-full items-center justify-center gap-4 rounded-full border p-4">
-        {Object.entries(tehcStacks).map(([key, value]) => (
+        {Object.entries(techStacks).map(([key, value]) => (
           <Tooltip key={key}>
             <TooltipTrigger
               asChild

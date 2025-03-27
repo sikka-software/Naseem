@@ -12,10 +12,10 @@ import {
 // import Link from "next/link";
 
 import { notFound } from "next/navigation";
-// const StackzeroApiCta = () => {
+// const NaseemApiCta = () => {
 //   return (
 //     <div className="mt-6 flex flex-col gap-4 rounded-md border p-2">
-//       <h1 className="text-lg font-bold">Power your apps with stackzero API</h1>
+//       <h1 className="text-lg font-bold">Power your apps with naseem API</h1>
 //       <p className="text-sm">
 //         Create a fully functional commerce website or apps in minutes with the
 //         official API integration.
@@ -23,7 +23,7 @@ import { notFound } from "next/navigation";
 
 //       <Link
 //         className="flex items-center gap-2"
-//         href="https://stackzero.co"
+//         href="https://ui.sikka.io"
 //         target="_blank"
 //       >
 //         <div className="group relative inline-flex items-center gap-2 rounded-lg bg-zinc-900 px-3 py-1 text-sm transition-colors dark:bg-zinc-100">
@@ -54,7 +54,7 @@ export default async function Page(props: {
   return (
     <DocsPage
       tableOfContent={{
-        // footer: <StackzeroApiCta />,
+        // footer: <NaseemApiCta />,
         single: false,
         style: "clerk",
       }}

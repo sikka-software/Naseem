@@ -1,0 +1,20 @@
+{
+  "name": "multilang-textarea",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "dropdown-menu",
+    "textarea"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuTrigger,\n  DropdownMenuContent,\n  DropdownMenuRadioGroup,\n  DropdownMenuRadioItem,\n} from \"@/components/ui/dropdown-menu\";\nimport { Textarea } from \"@/components/ui/textarea\";\n\nexport type MultiLangValue = {\n  [key: string]: string;\n};\n\ninterface MultilangTextareaProps\n  extends Omit<React.ComponentProps<\"textarea\">, \"onChange\" | \"value\"> {\n  onChange: (values: MultiLangValue) => void;\n  value?: MultiLangValue;\n  texts?: {\n    placeholder: string;\n    no_country_found: string;\n    search_country: string;\n  };\n  locales: {\n    code: string;\n    name: string;\n    nativeName?: string;\n    flagCDN?: string;\n    locale?: string;\n    isRTL?: false;\n  }[];\n}\n\nconst MultilangTextarea = ({\n  locales,\n  value = {},\n  onChange,\n  ...props\n}: MultilangTextareaProps) => {\n  const [selectedLocale, setSelectedLocale] = React.useState(\n    locales[0]?.code || \"\"\n  );\n\n  const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {\n    const newValues = {\n      ...value,\n      [selectedLocale]: event.target.value,\n    };\n    onChange(newValues);\n  };\n\n  const handleLocaleChange = (locale: string) => {\n    setSelectedLocale(locale);\n  };\n\n  return (\n    <div className=\"relative\">\n      <Textarea\n        // className={cn(\n        //   \"border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm\",\n        //   className\n        // )}\n        value={value[selectedLocale] || \"\"}\n        onChange={handleInputChange}\n        {...props}\n      />\n\n      <DropdownMenu>\n        <DropdownMenuTrigger asChild>\n          <Button\n            variant=\"outline\"\n            className=\"absolute end-1 top-1 h-fit p-1 text-xs\"\n            style={{ insetInlineEnd: \"4px\" }}\n          >\n            {locales.find((locale) => locale.code === selectedLocale)?.name ||\n              \"Select Language\"}\n          </Button>\n        </DropdownMenuTrigger>\n        <DropdownMenuContent>\n          <DropdownMenuRadioGroup\n            value={selectedLocale}\n            onValueChange={handleLocaleChange}\n          >\n            {locales.map((locale) => (\n              <DropdownMenuRadioItem key={locale.code} value={locale.code}>\n                {locale.name}\n              </DropdownMenuRadioItem>\n            ))}\n          </DropdownMenuRadioGroup>\n        </DropdownMenuContent>\n      </DropdownMenu>\n    </div>\n  );\n};\nMultilangTextarea.displayName = \"MultilangTextarea\";\n\nexport { MultilangTextarea };\n",
+      "path": "/components/naseem-ui/elements/multilang-textarea.tsx",
+      "target": "/components/ui/multilang-textarea.tsx"
+    }
+  ]
+}

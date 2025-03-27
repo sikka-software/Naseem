@@ -132,7 +132,7 @@ This project would not have been possible without these awesome resources:
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[product-screenshot]: https://raw.githubusercontent.com/stackzero-labs/ui/refs/heads/main/app/opengraph-image.jpeg
+[product-screenshot]: https://raw.githubusercontent.com/sikka-software/naseem/refs/heads/main/app/opengraph-image.jpeg
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Tailwind]: https://img.shields.io/badge/tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white
 [Tailwind-url]: https://tailwindcss.com/

@@ -1,0 +1,16 @@
+{
+  "name": "multilang-textarea-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { Label } from \"@/components/ui/label\";\nimport {\n  MultilangTextarea,\n  MultiLangValue,\n} from \"@/components/naseem-ui/elements/multilang-textarea\";\nimport { useState } from \"react\";\n\nconst MultiLangTextareaDemo = () => {\n  const [values, setValues] = useState<MultiLangValue>({\n    en: \"\",\n    ar: \"\",\n  });\n\n  const handleChange = (newValues: MultiLangValue) => {\n    setValues(newValues);\n    console.log(\"Current values:\", newValues);\n  };\n\n  return (\n    <div className=\"w-full max-w-[400px] space-y-4\">\n      <div>\n        <Label>Multi Language Textarea</Label>\n        <MultilangTextarea\n          className=\"w-full\"\n          onChange={handleChange}\n          value={values}\n          locales={[\n            {\n              code: \"en\",\n              name: \"English\",\n            },\n            {\n              code: \"ar\",\n              name: \"Arabic\",\n            },\n          ]}\n          placeholder=\"Enter text in multiple languages\"\n        />\n      </div>\n\n      <div className=\"bg-muted rounded-lg p-4\">\n        <p className=\"mb-2 font-medium\">Current Values:</p>\n        <pre className=\"text-sm\">{JSON.stringify(values, null, 2)}</pre>\n      </div>\n    </div>\n  );\n};\n\nexport default MultiLangTextareaDemo;\n",
+      "path": "/components/demos/multilang-textarea-demo.tsx",
+      "target": "/components/ui/multilang-textarea-demo.tsx"
+    }
+  ]
+}

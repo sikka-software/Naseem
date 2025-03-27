@@ -69,7 +69,7 @@ const Footer = () => {
 
             <div className="text-muted-foreground flex items-center gap-5">
               <Link
-                href="https://github.com/stackzero-labs/ui"
+                href="https://github.com/sikka-software/naseem"
                 target="_blank"
                 className="flex flex-row gap-2"
               >

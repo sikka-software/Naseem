@@ -14,7 +14,7 @@ import { X } from "lucide-react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 
 const DEFAULT_PLACEHOLDER_URL =
-  "https://raw.githubusercontent.com/stackzero-labs/ui/refs/heads/main/public/placeholders/headphone-2.jpg";
+  "https://raw.githubusercontent.com/sikka-software/naseem/refs/heads/main/public/placeholders/headphone-2.jpg";
 
 interface ImageViewerProps {
   className?: string;

@@ -1,4 +1,5 @@
 "use client";
+
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -6,12 +7,11 @@ import Link from "next/link";
 import { GridPattern } from "../magicui/grid-pattern";
 import { LineShadowText } from "../magicui/line-shadow-text";
 import { Button } from "../ui/button";
-import { TechStatck } from "./tech-stack";
-import { Icons } from "../ui/icons";
 
 const HeroTitle = () => {
   const theme = useTheme();
   const shadowColor = theme.resolvedTheme === "dark" ? "white" : "black";
+
   return (
     <>
       <div className="flex flex-col items-center">
@@ -79,13 +79,16 @@ const HeroTitle = () => {
           </p>
         </div>
 
-        <div className="mt-10 flex flex-col items-center gap-4">
-          <TechStatck />
+        <div className="text-fd-muted-foreground text-sm">
+          v{process.env.NEXT_PUBLIC_VERSION}
+        </div>
+        {/* <div className="mt-10 flex flex-col items-center gap-4">
+          <TechStack />
           <div className="mb-8 flex w-fit flex-row items-center gap-2 rounded-full border border-cyan-500 bg-cyan-500/20 p-2 px-6 text-center text-sm font-normal tracking-wider uppercase shadow-md">
             <Icons.tailwind className="h-6 w-6" />
             <p>Tailwindcss v.4 ready</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

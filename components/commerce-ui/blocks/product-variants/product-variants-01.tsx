@@ -25,11 +25,11 @@ const DEFAULT_SIZE_VARIANTS: VariantItem[] = [
 
 const DEFAULT_COLOR_IMAGES = {
   "color-black":
-    "https://raw.githubusercontent.com/stackzero-labs/ui/refs/heads/main/public/placeholders/headphone-1.jpg",
+    "https://raw.githubusercontent.com/sikka-software/naseem/refs/heads/main/public/placeholders/headphone-1.jpg",
   "color-white":
-    "https://raw.githubusercontent.com/stackzero-labs/ui/refs/heads/main/public/placeholders/headphone-1.jpg",
+    "https://raw.githubusercontent.com/sikka-software/naseem/refs/heads/main/public/placeholders/headphone-1.jpg",
   "color-pink":
-    "https://raw.githubusercontent.com/stackzero-labs/ui/refs/heads/main/public/placeholders/headphone-1.jpg",
+    "https://raw.githubusercontent.com/sikka-software/naseem/refs/heads/main/public/placeholders/headphone-1.jpg",
 };
 
 const DEFAULT_SIZE_PRICES = {

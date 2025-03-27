@@ -162,6 +162,9 @@ function DocsNavbar({
           ))}
         {nav.children}
       </div>
+      <div className="text-fd-muted-foreground text-sm">
+        v{process.env.NEXT_PUBLIC_VERSION}
+      </div>
       <SearchToggle hideIfDisabled className="md:hidden" />
       <NavbarSidebarTrigger className="-me-1.5 md:hidden" />
       <div className="flex flex-row items-center empty:hidden max-lg:hidden">

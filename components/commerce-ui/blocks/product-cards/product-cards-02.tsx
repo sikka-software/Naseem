@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const DEFAULT_IMAGE_URL =
-  "https://raw.githubusercontent.com/stackzero-labs/ui/refs/heads/main/public/placeholders/headphone-1.jpg";
+  "https://raw.githubusercontent.com/sikka-software/naseem/refs/heads/main/public/placeholders/headphone-1.jpg";
 
 interface ProductCard_02Props {
   imageUrl?: string;

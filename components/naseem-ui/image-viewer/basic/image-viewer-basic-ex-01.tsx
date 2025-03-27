@@ -2,9 +2,9 @@
 import ImageViewer from "@/components/commerce-ui/image-viewer/basic/image-viewer-basic";
 
 const EXAMPLE_IMAGE_URL =
-  "https://raw.githubusercontent.com/stackzero-labs/ui/refs/heads/main/public/placeholders/headphone-1.jpg";
+  "https://raw.githubusercontent.com/sikka-software/naseem/refs/heads/main/public/placeholders/headphone-1.jpg";
 const EXAMPLE_THUMBNAIL_URL =
-  "https://raw.githubusercontent.com/stackzero-labs/ui/refs/heads/main/public/placeholders/headphone-1.jpg";
+  "https://raw.githubusercontent.com/sikka-software/naseem/refs/heads/main/public/placeholders/headphone-1.jpg";
 
 export default function ImageViewer_Basic_Ex_01() {
   return (

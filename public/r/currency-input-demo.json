@@ -1,0 +1,16 @@
+{
+  "name": "currency-input-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { Label } from \"@/components/ui/label\";\nimport { CurrencyInput } from \"@/components/naseem-ui/elements/currency-input\";\n\nconst CurrencyInputDemo = () => {\n  return (\n    <div className=\"w-full max-w-[400px] space-y-4\">\n      <div>\n        <Label>Currency Input</Label>\n        <CurrencyInput className=\"w-full\" value={1234.56} />\n      </div>\n    </div>\n  );\n};\n\nexport default CurrencyInputDemo;\n",
+      "path": "/components/demos/currency-input-demo.tsx",
+      "target": "/components/ui/currency-input-demo.tsx"
+    }
+  ]
+}
