@@ -32,6 +32,7 @@ export function ComponentPreview({
 }: ComponentPreviewProps) {
   const [activeTab, setActiveTab] = useState("preview");
   const [isTerminalCopied, setIsTerminalCopied] = useState(false);
+  const [direction, setDirection] = useState<"rtl" | "ltr">("ltr");
 
   const handleTerminalClick = () => {
     const COPY = `npx shadcn@latest add ${prePath}/r/${name}.json`;
@@ -166,9 +167,14 @@ export function ComponentPreview({
             </Popover>
           </div>
         </TabsList>
-        <TabsContent value="preview">
-          <DirectionToggle />
-          <div className="preview flex min-h-[450px] w-full justify-center p-4">
+        <TabsContent className="relative" value="preview">
+          <div className="absolute top-2 end-2">
+            <DirectionToggle onDirectionChange={setDirection} />
+          </div>
+          <div
+            className="preview flex min-h-[450px] w-full justify-center p-4"
+            dir={direction}
+          >
             <ComponentLoader
               name={name}
               hasReTrigger={hasReTrigger}

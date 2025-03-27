@@ -40,7 +40,7 @@ const MultiLangInputDemo = () => {
         />
       </div>
 
-      <div className="bg-muted rounded-lg p-4">
+      <div className="bg-muted rounded-lg p-4" dir="ltr">
         <p className="mb-2 font-medium">Current Values:</p>
         <pre className="text-sm">{JSON.stringify(values, null, 2)}</pre>
       </div>

@@ -374,24 +374,6 @@ export const components: Registry = [
   // },
 
   // {
-  //   name: "variant-color-selector-basic",
-  //   type: "registry:component",
-  //   dependencies: ["lucide-react", "@radix-ui/react-radio-group"],
-  //   files: [
-  //     {
-  //       path: "@/components/commerce-ui/variant-color-selector/basic/variant-color-selector-basic.tsx",
-  //       type: "registry:component",
-  //     },
-  //   ],
-  //   component: React.lazy(
-  //     () =>
-  //       import(
-  //         "../components/commerce-ui/variant-color-selector/basic/variant-color-selector-basic"
-  //       )
-  //   ),
-  // },
-
-  // {
   //   name: "image-carousel-horizontal",
   //   type: "registry:component",
   //   dependencies: ["lucide-react", "embla-carousel-react", "embla-carousel"],
