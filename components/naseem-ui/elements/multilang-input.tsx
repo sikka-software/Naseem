@@ -83,13 +83,14 @@ const MultilangInput = ({
               "Select Language"}
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent>
+        <DropdownMenuContent className="w-fit min-w-fit" align="end">
           <DropdownMenuRadioGroup
             value={selectedLocale}
             onValueChange={handleLocaleChange}
+            className="w-fit"
           >
             {locales.map((locale) => (
-              <DropdownMenuRadioItem key={locale.code} value={locale.code}>
+              <DropdownMenuRadioItem key={locale.code} value={locale.code} className="!text-xs">
                 {locale.name}
               </DropdownMenuRadioItem>
             ))}

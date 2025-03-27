@@ -14,6 +14,7 @@ import { useState } from "react";
 import type { ComponentPreviewProps } from "types/component";
 import { CodeRenderer } from "../code-renderer";
 import { ComponentLoader } from "../component-loader";
+import DirectionToggle from "../direction-toggle";
 
 const prePath =
   process.env.NODE_ENV === "development"
@@ -51,13 +52,13 @@ export function ComponentPreview({
         <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
           <TabsTrigger
             value="preview"
-            className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
+            className="text-muted-foreground data-[state=active]:border-b-primary data-[state=active]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pt-2 pb-3 font-semibold shadow-none transition-none data-[state=active]:shadow-none"
           >
             Preview
           </TabsTrigger>
           <TabsTrigger
             value="code"
-            className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
+            className="text-muted-foreground data-[state=active]:border-b-primary data-[state=active]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pt-2 pb-3 font-semibold shadow-none transition-none data-[state=active]:shadow-none"
           >
             Code
           </TabsTrigger>
@@ -74,7 +75,7 @@ export function ComponentPreview({
               {isTerminalCopied ? (
                 <>
                   <CheckCheck className="h-3.5 w-3.5" />
-                  <span className="motion-preset-expand absolute right-0 top-1/2 flex h-full -translate-y-1/2 transform items-center rounded-e-sm bg-background px-8 text-teal-400 motion-duration-[0.3s]">
+                  <span className="motion-preset-expand bg-background motion-duration-[0.3s] absolute top-1/2 right-0 flex h-full -translate-y-1/2 transform items-center rounded-e-sm px-8 text-teal-400">
                     Copied!
                   </span>
                 </>
@@ -126,7 +127,7 @@ export function ComponentPreview({
                   {isTerminalCopied ? (
                     <>
                       <CheckCheck className="h-3.5 w-3.5" />
-                      <span className="motion-preset-expand absolute right-0 top-1/2 flex h-full -translate-y-1/2 transform items-center rounded-e-sm bg-background px-8 text-teal-400 motion-duration-[0.3s]">
+                      <span className="motion-preset-expand bg-background motion-duration-[0.3s] absolute top-1/2 right-0 flex h-full -translate-y-1/2 transform items-center rounded-e-sm px-8 text-teal-400">
                         Copied!
                       </span>
                     </>
@@ -166,6 +167,7 @@ export function ComponentPreview({
           </div>
         </TabsList>
         <TabsContent value="preview">
+          <DirectionToggle />
           <div className="preview flex min-h-[450px] w-full justify-center p-4">
             <ComponentLoader
               name={name}
