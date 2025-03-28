@@ -138,4 +138,17 @@ export const examples: Registry = [
     ],
     component: React.lazy(() => import("../components/demos/card-demo")),
   },
+  {
+    name: "app-stores-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/app-stores-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(() => import("../components/demos/app-stores-demo")),
+  },
 ];
