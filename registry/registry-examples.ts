@@ -36,6 +36,7 @@ export const examples: Registry = [
       }))
     ),
   },
+
   {
     name: "theme-switcher-demo",
     type: "registry:example",
@@ -123,5 +124,18 @@ export const examples: Registry = [
     component: React.lazy(
       () => import("../components/demos/currency-input-demo")
     ),
+  },
+  {
+    name: "destroyable-card-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(() => import("../components/demos/card-demo")),
   },
 ];
