@@ -53,7 +53,7 @@ const HeroTitle = () => {
               size="lg"
               variant="secondary"
             >
-              <Link href="/docs/components/rating-star/basic">
+              <Link href="/docs">
                 Get Started
                 <ArrowRight className="ml-2 size-5 transition-transform group-hover/arrow:translate-x-1" />
               </Link>
@@ -65,7 +65,7 @@ const HeroTitle = () => {
               asChild
               size="lg"
             >
-              <Link href="/docs/components/rating-star/basic">
+              <Link href="/docs">
                 Browse Components
                 <ArrowRight className="ml-2 size-5 transition-transform group-hover/arrow:translate-x-1" />
               </Link>

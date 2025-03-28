@@ -14,7 +14,7 @@ const footerLinks = [
     title: "Installation",
   },
   {
-    href: "/docs/components/rating-star/basic",
+    href: "/docs",
     title: "Components",
   },
 ];
