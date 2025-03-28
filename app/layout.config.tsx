@@ -17,7 +17,7 @@ export const linkItems: LinkItemType[] = [
         description: "Collection of interactive components",
         icon: <Cuboid />,
         text: "Components",
-        url: "/docs/components/rating-star/basic",
+        url: "/docs/components",
       },
     ],
     text: "Docs",
