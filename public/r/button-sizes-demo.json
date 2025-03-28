@@ -1,0 +1,16 @@
+{
+  "name": "button-sizes-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://ui.sikka.io/r/button.json"
+  ],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/naseem-ui/elements/button\";\nimport { useState } from \"react\";\nimport { useEffect } from \"react\";\n\nexport function ButtonSizesDemo() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Button size=\"xs\">Extra Small</Button>\n      <Button size=\"sm\">Small</Button>\n      <Button size=\"lg\">Large</Button>\n      <Button size=\"xl\">Extra Large</Button>\n    </div>\n  );\n}\n\nexport function ButtonDemo2() {\n  const [isLoading, setIsLoading] = useState(false);\n  useEffect(() => {\n    if (isLoading) {\n      setTimeout(() => {\n        setIsLoading(false);\n      }, 2000);\n    }\n  }, [isLoading]);\n  return (\n    <Button isLoading={isLoading} onClick={() => setIsLoading(true)}>\n      Click To Start Loading\n    </Button>\n  );\n}\n",
+      "path": "/components/demos/button-demo.tsx",
+      "target": "/components/ui/button-demo.tsx"
+    }
+  ]
+}

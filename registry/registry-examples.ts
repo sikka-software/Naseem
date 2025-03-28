@@ -151,4 +151,32 @@ export const examples: Registry = [
     ],
     component: React.lazy(() => import("../components/demos/app-stores-demo")),
   },
+  {
+    name: "auth-buttons-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/auth-buttons-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/auth-buttons-demo")
+    ),
+  },
+  {
+    name: "alert-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/alert-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(() => import("../components/demos/alert-demo")),
+  },
 ];

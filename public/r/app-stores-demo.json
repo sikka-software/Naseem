@@ -1,0 +1,14 @@
+{
+  "name": "app-stores-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "import { AppStores } from \"../naseem-ui/elements/app-stores\";\n\nconst AppStoresDemo = () => {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <AppStores store=\"apple\" />\n      <AppStores store=\"google\" />\n    </div>\n  );\n};\n\nexport default AppStoresDemo;\n",
+      "path": "/components/demos/app-stores-demo.tsx",
+      "target": "/components/ui/app-stores-demo.tsx"
+    }
+  ]
+}

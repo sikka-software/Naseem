@@ -1,0 +1,14 @@
+{
+  "name": "alert-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { Alert } from \"../naseem-ui/elements/alert\";\n\nconst AlertDemo = () => {\n  return (\n    <div className=\"w-full max-w-md\">\n      <Alert text=\"This is an alert\" title=\"Alert Title\" severity=\"info\" />\n      <Alert text=\"This is an alert\" title=\"Alert Title\" severity=\"warning\" />\n      <Alert text=\"This is an alert\" title=\"Alert Title\" severity=\"error\" />\n      <Alert text=\"This is an alert\" title=\"Alert Title\" severity=\"success\" />\n    </div>\n  );\n};\n\nexport default AlertDemo;\n",
+      "path": "/components/demos/alert-demo.tsx",
+      "target": "/components/ui/alert-demo.tsx"
+    }
+  ]
+}

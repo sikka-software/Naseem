@@ -1,0 +1,52 @@
+---
+title: Auth Buttons
+description: A component for displaying auth buttons
+---
+
+<ComponentPreview
+  name="auth-buttons-demo"
+  componentName="auth-buttons"
+  classNameComponentContainer="min-h-[350px]"
+  showCommand={true}
+/>
+
+## Usage
+
+```tsx
+import { AuthButtons } from "@/components/naseem-ui/blocks/auth/auth-buttons";
+```
+
+## Props
+
+| Prop                 | Type         | Default     | Description                                                |
+| -------------------- | ------------ | ----------- | ---------------------------------------------------------- |
+| `viaApple`           | `boolean`    | `false`     | Whether to show the Apple button                           |
+| `viaGoogle`          | `boolean`    | `false`     | Whether to show the Google button                          |
+| `viaMicrosoft`       | `boolean`    | `false`     | Whether to show the Microsoft button                       |
+| `viaTwitter`         | `boolean`    | `false`     | Whether to show the Twitter button                         |
+| `viaGithub`          | `boolean`    | `false`     | Whether to show the Github button                          |
+| `viaEmail`           | `boolean`    | `false`     | Whether to show the Email button                           |
+| `viaPhone`           | `boolean`    | `false`     | Whether to show the Phone button                           |
+| `isAppleLoading`     | `boolean`    | `false`     | Whether to show the loading state for the Apple button     |
+| `isGoogleLoading`    | `boolean`    | `false`     | Whether to show the loading state for the Google button    |
+| `isMicrosoftLoading` | `boolean`    | `false`     | Whether to show the loading state for the Microsoft button |
+| `isTwitterLoading`   | `boolean`    | `false`     | Whether to show the loading state for the Twitter button   |
+| `isGithubLoading`    | `boolean`    | `false`     | Whether to show the loading state for the Github button    |
+| `isEmailLoading`     | `boolean`    | `false`     | Whether to show the loading state for the Email button     |
+| `isPhoneLoading`     | `boolean`    | `false`     | Whether to show the loading state for the Phone button     |
+| `isNafathLoading`    | `boolean`    | `false`     | Whether to show the loading state for the Nafath button    |
+| `isMetamaskLoading`  | `boolean`    | `false`     | Whether to show the loading state for the Metamask button  |
+| `handleApple`        | `() => void` | `undefined` | The function to handle the Apple button click              |
+| `handleGoogle`       | `() => void` | `undefined` | The function to handle the Google button click             |
+| `handleMicrosoft`    | `() => void` | `undefined` | The function to handle the Microsoft button click          |
+| `handleTwitter`      | `() => void` | `undefined` | The function to handle the Twitter button click            |
+| `handleGithub`       | `() => void` | `undefined` | The function to handle the Github button click             |
+| `handleEmail`        | `() => void` | `undefined` | The function to handle the Email button click              |
+| `handlePhone`        | `() => void` | `undefined` | The function to handle the Phone button click              |
+| `handleNafath`       | `() => void` | `undefined` | The function to handle the Nafath button click             |
+| `handleMetamask`     | `() => void` | `undefined` | The function to handle the Metamask button click           |
+| `texts`              | `{    continueWithMetamask?: string;  continueWithNafath?: string; continueWithGoogle?: string; continueWithGithub?: string; continueWithTwitter?: string; continueWithApple?: string; continueWithMicrosoft?: string; continueWithEmail?: string; continueWithPhone?: string; }` | `undefined` | The texts to display for the buttons |
+|`themeMode`|`"dark" | "light"`|`"light"`| The theme mode to use for the buttons |
+|`className`|`string`|`undefined`| The className to use for the buttons |
+|`classNames`|`{    container?: string; button?: string;    }`|`undefined`| The classNames to use for the buttons |  
+|`size`|`"sm" | "md" | "lg"`|`"md"` | The size to use for the buttons |

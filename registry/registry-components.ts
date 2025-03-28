@@ -155,4 +155,20 @@ export const components: Registry = [
       }))
     ),
   },
+  {
+    name: "alert",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/alert.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/alert").then((mod) => ({
+        default: mod.Alert,
+      }))
+    ),
+  },
 ];
