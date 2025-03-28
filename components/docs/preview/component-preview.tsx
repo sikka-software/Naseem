@@ -15,6 +15,7 @@ import type { ComponentPreviewProps } from "types/component";
 import { CodeRenderer } from "../code-renderer";
 import { ComponentLoader } from "../component-loader";
 import DirectionToggle from "../direction-toggle";
+import { CodeBlockCommand } from "./code-block-command";
 
 const prePath =
   process.env.NODE_ENV === "development"
@@ -29,13 +30,15 @@ export function ComponentPreview({
   hasReTrigger = false,
   highlightedCode,
   name,
+  componentName,
+  showCommand,
 }: ComponentPreviewProps) {
   const [activeTab, setActiveTab] = useState("preview");
   const [isTerminalCopied, setIsTerminalCopied] = useState(false);
   const [direction, setDirection] = useState<"rtl" | "ltr">("ltr");
 
   const handleTerminalClick = () => {
-    const COPY = `npx shadcn@latest add ${prePath}/r/${name}.json`;
+    const COPY = `npx shadcn@latest add ${prePath}/r/${componentName}.json`;
     navigator.clipboard.writeText(COPY);
     setIsTerminalCopied(true);
     setTimeout(() => {
@@ -44,7 +47,7 @@ export function ComponentPreview({
   };
 
   return (
-    <div className="not-prose relative z-0 flex items-center justify-between pb-4">
+    <div className="not-prose relative z-0 flex flex-col items-center justify-between pb-4">
       <Tabs
         value={activeTab}
         onValueChange={setActiveTab}
@@ -66,7 +69,7 @@ export function ComponentPreview({
 
           <div className="grow"></div>
 
-          <div className="align-center mb-2 hidden flex-row gap-2 lg:flex">
+          {/* <div className="align-center mb-2 hidden flex-row gap-2 lg:flex">
             <Button
               size="sm"
               onClick={handleTerminalClick}
@@ -91,27 +94,14 @@ export function ComponentPreview({
                   />
                 </>
               )}
-              <span className="font-mono">npx shadcn add {name}</span>{" "}
+              <span className="font-mono">
+                npx shadcn add https://ui.sikka.io/r/{componentName}.json
+              </span>{" "}
             </Button>
-            <Button size="sm" asChild variant="default">
-              <a
-                href={`${prePath}/preview/${name}`}
-                target="_blank"
-                rel="noreferrer"
-                className={cn("group no-underline transition-all duration-200")}
-              >
-                Live Preview
-                <ArrowUpRight
-                  className={cn(
-                    "h-4 w-4",
-                    "transition-transform duration-200 group-hover:rotate-45"
-                  )}
-                />
-              </a>
-            </Button>
-          </div>
 
-          <div className="mb-2 block lg:hidden">
+          </div> */}
+
+          {/* <div className="mb-2 block lg:hidden">
             <Popover>
               <PopoverTrigger asChild>
                 <Button variant="outline">
@@ -165,14 +155,14 @@ export function ComponentPreview({
                 </Button>
               </PopoverContent>
             </Popover>
-          </div>
+          </div> */}
         </TabsList>
         <TabsContent className="relative" value="preview">
-          <div className="absolute top-2 end-2">
+          <div className="absolute end-2 top-2">
             <DirectionToggle onDirectionChange={setDirection} />
           </div>
           <div
-            className="preview flex min-h-[450px] w-full justify-center p-4"
+            className="preview flex min-h-[300px] w-full justify-center p-4"
             dir={direction}
           >
             <ComponentLoader
@@ -186,6 +176,8 @@ export function ComponentPreview({
           <CodeRenderer code={code} highlightedCode={highlightedCode} />
         </TabsContent>
       </Tabs>
+
+      {showCommand && <CodeBlockCommand componentName={componentName || ""} />}
     </div>
   );
 }

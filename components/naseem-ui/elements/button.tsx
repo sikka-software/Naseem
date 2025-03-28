@@ -3,12 +3,10 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
-import { HelperText } from "@/components/naseem-ui/elements/helper-text";
-import { Label, LabelProps } from "@/components/naseem-ui/elements/label";
 import { Loading } from "@/components/naseem-ui/elements/loading";
 
 const buttonVariants = cva(
-  "inline-flex items-center select-none rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center cursor-pointer select-none rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -47,31 +45,18 @@ export interface ButtonProps
   asChild?: boolean;
   centered?: boolean;
   isLoading?: boolean;
-  label?: string;
-  labelProps?: LabelProps;
-  /** The small red text under the input field to show validation.   */
-  helperText?: React.ReactNode;
-  showHelperText?: boolean;
-  /**
-   * If true, the button will include a label and helper text. This is useful for forms where the button is part of the form.
-   */
-  asInput?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,
-      label,
       variant,
       size,
       // asChild = false,
       centered = true,
       isLoading,
       children,
-      labelProps,
-      showHelperText = false,
-      asInput = false,
       ...props
     },
     ref
@@ -84,63 +69,29 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ? "bg-primary"
         : "bg-primary-foreground";
 
-    if (asInput) {
-      return (
-        <div className="flex flex-col gap-2">
-          {label && <Label {...labelProps}>{label}</Label>}
-          <Comp
-            className={cn(
-              buttonVariants({ variant, size, className }),
-              centered && "justify-center"
-            )}
-            ref={ref}
-            {...props}
-          >
-            {isLoading ? (
-              <Loading
-                design={
-                  size === "icon" || size === "smallIcon"
-                    ? "spinner"
-                    : "dots-pulse"
-                }
-                themeMode={variant === "outline" ? "light" : "dark"}
-                color={loadingColor}
-                size={size === "sm" || size === "xs" ? "xs" : "button"}
-              />
-            ) : (
-              children
-            )}
-          </Comp>
-          {showHelperText && <HelperText helperText={props.helperText} />}
-        </div>
-      );
-    } else {
-      return (
-        <Comp
-          className={cn(
-            buttonVariants({ variant, size, className }),
-            centered && "justify-center"
-          )}
-          ref={ref}
-          {...props}
-        >
-          {isLoading ? (
-            <Loading
-              design={
-                size === "icon" || size === "smallIcon"
-                  ? "spinner"
-                  : "dots-pulse"
-              }
-              themeMode={variant === "outline" ? "light" : "dark"}
-              color={loadingColor}
-              size={size === "sm" || size === "xs" ? "xs" : "button"}
-            />
-          ) : (
-            children
-          )}
-        </Comp>
-      );
-    }
+    return (
+      <Comp
+        className={cn(
+          buttonVariants({ variant, size, className }),
+          centered && "justify-center"
+        )}
+        ref={ref}
+        {...props}
+      >
+        {isLoading ? (
+          <Loading
+            design={
+              size === "icon" || size === "smallIcon" ? "spinner" : "dots-pulse"
+            }
+            themeMode={variant === "outline" ? "light" : "dark"}
+            color={loadingColor}
+            size={size === "sm" || size === "xs" ? "xs" : "button"}
+          />
+        ) : (
+          children
+        )}
+      </Comp>
+    );
   }
 );
 

@@ -4,6 +4,8 @@ export type ComponentPreviewProps = {
   highlightedCode: string;
   hasReTrigger?: boolean;
   classNameComponentContainer?: string;
+  componentName?: string;
+  showCommand?: boolean;
 };
 
 export type ComponentDisplayProps = {

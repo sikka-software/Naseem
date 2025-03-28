@@ -3,19 +3,38 @@ import * as React from "react";
 
 export const examples: Registry = [
   {
-    name: "button-sizes",
+    name: "button-sizes-demo",
     type: "registry:example",
-    dependencies: ["lucide-react"],
-    registryDependencies: [
-      "https://ui.sikka.io/r/image-carousel-horizontal.json",
-    ],
+    dependencies: [],
+    registryDependencies: ["https://ui.sikka.io/r/button.json"],
     files: [
       {
-        path: "@/components/demos/button-sizes.tsx",
+        path: "@/components/demos/button-demo.tsx",
         type: "registry:example",
       },
     ],
-    component: React.lazy(() => import("../components/demos/button-sizes")),
+    component: React.lazy(() =>
+      import("../components/demos/button-demo").then((module) => ({
+        default: module.ButtonSizesDemo,
+      }))
+    ),
+  },
+  {
+    name: "button-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: ["https://ui.sikka.io/r/button.json"],
+    files: [
+      {
+        path: "@/components/demos/button-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(() =>
+      import("../components/demos/button-demo").then((module) => ({
+        default: module.ButtonDemo2,
+      }))
+    ),
   },
   {
     name: "theme-switcher-demo",

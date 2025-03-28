@@ -83,6 +83,8 @@
     "tailwindcss-motion": "^1.1.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
-    "wrangler": "^4.5.0"
+    "unist-builder": "^4.0.0",
+    "wrangler": "^4.5.0",
+    "unist-util-visit": "^4.1.2"
   }
 }
