@@ -1,6 +1,6 @@
 ---
 title: Multi Language Input
-description: Multi Language Input
+description: An input component that supports multiple languages
 ---
 
 <ComponentPreview
@@ -8,4 +8,83 @@ description: Multi Language Input
   classNameComponentContainer="min-h-[350px]"
 />
 
-## Multi Language Input
+## Usage
+
+The Multi Language Input component allows users to enter text in multiple languages with a language selector dropdown.
+
+```tsx
+import { MultilangInput, MultiLangValue } from "@/components/naseem-ui/elements/multilang-input"
+import { useState } from "react"
+
+export default function Example() {
+  const [values, setValues] = useState<MultiLangValue>({
+    en: "",
+    ar: ""
+  })
+
+  return (
+    <MultilangInput
+      value={values}
+      onChange={setValues}
+      locales={[
+        { code: "en", name: "English" },
+        { code: "ar", name: "Arabic" }
+      ]}
+      placeholder="Enter text"
+    />
+  )
+}
+```
+
+## Features
+
+- Language selector dropdown
+- Stores values per language code
+- Supports any number of languages
+- Built on Radix UI dropdown
+- Customizable locale objects
+- RTL language support
+- Standard input props supported
+
+## Implementation
+
+The component uses:
+- React state to track current language and values
+- Radix UI dropdown for language selection
+- Standard HTML input with controlled value
+- TypeScript interfaces for type safety
+
+## Props
+
+<TypeTable type={{
+  locales: {
+    type: 'Array<{ code: string; name: string; nativeName?: string; flagCDN?: string; locale?: string; isRTL?: boolean }>',
+    default: '[]',
+    description: 'Array of supported languages',
+    required: true
+  },
+  value: {
+    type: 'MultiLangValue (Record<string, string>)',
+    default: '{}',
+    description: 'Current values keyed by language code'
+  },
+  onChange: {
+    type: '(values: MultiLangValue) => void',
+    default: 'undefined',
+    description: 'Handler for value changes',
+    required: true
+  },
+  texts: {
+    type: '{ placeholder?: string; no_country_found?: string; search_country?: string }',
+    default: 'undefined',
+    description: 'Optional translations for UI text'
+  }
+}} />
+
+## Dependencies
+
+```json
+{
+  "@radix-ui/react-dropdown-menu": "latest",
+  "react": "latest"
+}

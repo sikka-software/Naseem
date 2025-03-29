@@ -1,6 +1,6 @@
 ---
 title: Card
-description: A card component
+description: A card component with destroyable capability
 ---
 
 ## Destroyable Card
@@ -11,3 +11,66 @@ description: A card component
   classNameComponentContainer='min-h-[350px]'
   showCommand={true}
 />
+
+## Usage
+
+The DestroyableCard component provides a dismissible card with smooth animations and flexible positioning.
+
+```tsx
+import { DestroyableCard } from "@/components/naseem-ui/elements/destroyable-card"
+
+export default function Example() {
+  return (
+    <DestroyableCard position="bottom-right" fixed>
+      <div>Your content here</div>
+    </DestroyableCard>
+  )
+}
+```
+
+## Features
+
+- Smooth destroy animation with fade-out
+- Configurable position (bottom-right or bottom-left)
+- Fixed or relative positioning
+- RTL language support
+- Accessible close button
+- Built on Radix UI Card components
+
+## Implementation
+
+The component uses:
+- React state for animation control
+- setTimeout for delayed removal
+- Radix UI Card components for base styling
+- Tailwind CSS for transitions and positioning
+- SVG for close icon
+
+## Props
+
+<TypeTable type={{
+  position: {
+    type: '"bottom-right" | "bottom-left"',
+    default: '"bottom-right"',
+    description: 'Position of the card when fixed',
+  },
+  direction: {
+    type: '"rtl" | "ltr"',
+    default: 'undefined',
+    description: 'Text direction for RTL languages',
+  },
+  fixed: {
+    type: 'boolean',
+    default: 'false',
+    description: 'Whether the card should be fixed positioned',
+  }
+}} />
+
+## Dependencies
+
+```json
+{
+  "@radix-ui/react-card": "latest",
+  "react": "latest",
+  "tailwindcss": "latest"
+}

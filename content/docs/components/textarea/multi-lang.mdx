@@ -1,6 +1,6 @@
 ---
 title: Multi Language Textarea
-description: Multi Language Textarea
+description: A textarea component that supports multiple languages
 ---
 
 <ComponentPreview
@@ -8,4 +8,85 @@ description: Multi Language Textarea
   classNameComponentContainer="min-h-[350px]"
 />
 
-## Multi Language Textarea
+## Usage
+
+The Multi Language Textarea component allows users to enter multiline text in multiple languages with a language selector dropdown.
+
+```tsx
+import { MultilangTextarea, MultiLangValue } from "@/components/naseem-ui/elements/multilang-textarea"
+import { useState } from "react"
+
+export default function Example() {
+  const [values, setValues] = useState<MultiLangValue>({
+    en: "",
+    ar: ""
+  })
+
+  return (
+    <MultilangTextarea
+      value={values}
+      onChange={setValues}
+      locales={[
+        { code: "en", name: "English" },
+        { code: "ar", name: "Arabic" }
+      ]}
+      placeholder="Enter multiline text"
+    />
+  )
+}
+```
+
+## Features
+
+- Language selector dropdown
+- Stores values per language code
+- Supports any number of languages
+- Built on Radix UI dropdown and textarea
+- Customizable locale objects
+- RTL language support
+- Standard textarea props supported
+- Auto-resizing height
+
+## Implementation
+
+The component uses:
+- React state to track current language and values
+- Radix UI dropdown for language selection
+- Radix UI Textarea component
+- TypeScript interfaces for type safety
+
+## Props
+
+<TypeTable type={{
+  locales: {
+    type: 'Array<{ code: string; name: string; nativeName?: string; flagCDN?: string; locale?: string; isRTL?: boolean }>',
+    default: '[]',
+    description: 'Array of supported languages',
+    required: true
+  },
+  value: {
+    type: 'MultiLangValue (Record<string, string>)',
+    default: '{}',
+    description: 'Current values keyed by language code'
+  },
+  onChange: {
+    type: '(values: MultiLangValue) => void',
+    default: 'undefined',
+    description: 'Handler for value changes',
+    required: true
+  },
+  texts: {
+    type: '{ placeholder?: string; no_country_found?: string; search_country?: string }',
+    default: 'undefined',
+    description: 'Optional translations for UI text'
+  }
+}} />
+
+## Dependencies
+
+```json
+{
+  "@radix-ui/react-dropdown-menu": "latest",
+  "@radix-ui/react-textarea": "latest",
+  "react": "latest"
+}
