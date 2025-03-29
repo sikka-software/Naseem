@@ -1,6 +1,6 @@
 ---
 title: Button
-description: Different size variants available for the button component
+description: A customizable button component with multiple variants and sizes
 ---
 
 <ComponentPreview 
@@ -16,13 +16,24 @@ description: Different size variants available for the button component
   classNameComponentContainer="min-h-[350px]"
 />
 
+## Variants
+
+The Button component comes with several style variants:
+
+- `default`: Primary button style
+- `light`: Light background with primary text
+- `destructive`: Red background for destructive actions  
+- `outline`: Border with transparent background
+- `secondary`: Secondary color scheme
+- `ghost`: Minimal hover effect
+- `link`: Text link style
+- `combobox`: Special style for comboboxes
+- `neoBrutalism`: Bold neo-brutalism design
 
 ## Available Sizes
 
-The Button component comes with several predefined size variants to suit different use cases:
-
 - `default`: Standard button size (h-10 with balanced padding)
-- `heightless`: Flexible height with consistent horizontal padding
+- `heightless`: Flexible height with consistent horizontal padding  
 - `xs`: Extra small buttons for compact interfaces
 - `sm`: Small buttons for secondary actions
 - `lg`: Large buttons for primary actions
@@ -30,34 +41,65 @@ The Button component comes with several predefined size variants to suit differe
 - `icon`: Square buttons for icon-only content
 - `smallIcon`: Compact square buttons for small icons
 
+## Features
+
+### Loading State
+
+```tsx
+<Button isLoading>Loading...</Button>
+```
+
+The loading state automatically shows:
+- Dots pulse animation for normal buttons
+- Spinner animation for icon buttons
+- Appropriate colors based on variant
+
+### Centering
+
+```tsx 
+<Button centered={false}>Left Aligned</Button>
+```
+
+By default buttons center their content. Set `centered={false}` to align left.
+
 ## Usage
 
 ```tsx
-import { Button } from "@/components/elements/button"
+import { Button } from "@/components/naseem-ui/elements/button"
 
-export default function ButtonSizes() {
+export default function Example() {
   return (
     <div className="flex flex-col gap-4">
-      <Button size="xs">Extra Small</Button>
-      <Button size="sm">Small</Button>
-      <Button>Default</Button>
-      <Button size="lg">Large</Button>
-      <Button size="xl">Extra Large</Button>
-      <Button size="icon">
-        <IconComponent />
-      </Button>
-      <Button size="smallIcon">
-        <SmallIconComponent />
-      </Button>
+      <Button variant="default">Default</Button>
+      <Button variant="destructive">Delete</Button>
+      <Button variant="outline">Outline</Button>
+      <Button isLoading>Loading</Button>
     </div>
   )
 }
 ```
 
+## Props
+
 <TypeTable type={{
+  variant: {
+    type: '"default" | "light" | "destructive" | "outline" | "secondary" | "ghost" | "link" | "combobox" | "neoBrutalism"',
+    default: '"default"',
+    description: 'Visual style variant',
+  },
   size: {
     type: '"default" | "heightless" | "xs" | "sm" | "lg" | "xl" | "icon" | "smallIcon"',
     default: '"default"',
-    description: 'The size variant of the button.',
+    description: 'Size variant',
+  },
+  centered: {
+    type: 'boolean',
+    default: 'true',
+    description: 'Whether to center button content',
+  },
+  isLoading: {
+    type: 'boolean',
+    default: 'false',
+    description: 'Shows loading indicator when true',
   },
 }} />
