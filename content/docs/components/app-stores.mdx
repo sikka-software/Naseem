@@ -1,6 +1,6 @@
 ---
 title: App Stores
-description: A component for displaying app stores
+description: A component for displaying app store buttons
 ---
 
 <ComponentPreview 
@@ -9,3 +9,47 @@ description: A component for displaying app stores
   classNameComponentContainer='min-h-[350px]'
   showCommand={true}
 />
+
+## Usage
+
+The `AppStores` component displays either an Apple App Store or Google Play store button based on the `store` prop.
+
+### Import
+
+```tsx
+import { AppStores } from "@components/naseem-ui/elements/app-stores";
+```
+
+### Basic Example
+
+```tsx
+// Apple App Store button with click handler
+<AppStores
+  store="apple"
+  onClick={() => console.log('App Store button clicked')}
+/>
+
+// Google Play button with click handler
+<AppStores
+  store="google"
+  onClick={() => console.log('Google Play button clicked')}
+/>
+```
+
+## Props
+
+| Prop  | Type | Required | Default | Description |
+|-------|------|----------|---------|-------------|
+| store | `"apple" \| "google"` | Yes | - | Determines which app store button to display |
+| onClick | `React.MouseEventHandler<HTMLDivElement>` | No | - | Click handler for the button |
+
+## Styling
+
+The component comes with default styling but can be customized by wrapping it in a container with your own classes. The buttons have the following dimensions:
+- Width: 192px (12rem)
+- Height: 56px (3.5rem)
+
+The component uses the following Tailwind classes by default:
+- `flex justify-center` for the container
+- `rounded-lg` for button corners
+- Appropriate dark mode styling

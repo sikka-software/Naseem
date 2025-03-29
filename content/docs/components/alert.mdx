@@ -1,6 +1,6 @@
 ---
 title: Alert
-description: A component for displaying alerts
+description: A component for displaying contextual feedback messages to users
 ---
 
 <ComponentPreview 
@@ -8,4 +8,88 @@ description: A component for displaying alerts
   componentName="alert"
   classNameComponentContainer='min-h-[350px]'
   showCommand={true}
+/>
+
+## Overview
+
+The Alert component displays important contextual feedback messages to users. It supports multiple severity levels, custom icons, actions, and can be configured to auto-dismiss after a specified duration.
+
+## Props
+
+Here are the available props for the Alert component:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| severity | `"info"` \| `"warning"` \| `"error"` \| `"success"` \| `"none"` \| `"hyper"` \| `"oceanic"` | `"none"` | The severity level of the alert |
+| title | `React.ReactNode` | - | The title of the alert |
+| text | `React.ReactNode` | - | The main content of the alert (required) |
+| duration | `number` | - | Duration in ms before alert auto-dismisses |
+| direction | `"ltr"` \| `"rtl"` | `"ltr"` | Text direction |
+| actions | Array of action objects | - | Action buttons to display |
+| persistent | `boolean` | `false` | If true, removes the close button |
+| icon | `React.ReactNode` | - | Custom icon to display |
+| classNames | `Object` | - | Custom class names for sub-components |
+| onAlertClosed | `() => void` | - | Callback when alert is closed |
+| noDestroy | `boolean` | `false` | If true, keeps alert in DOM when closed |
+
+## Examples
+
+### Basic Usage
+
+```tsx
+<Alert 
+  title="Information"
+  text="This is an informational message"
+  severity="info"
+/>
+```
+
+### With Actions
+
+```tsx
+<Alert
+  title="Warning"
+  text="Your session will expire soon"
+  severity="warning"
+  actions={[
+    {
+      label: "Extend",
+      onClick: () => extendSession(),
+      variant: "outline"
+    }
+  ]}
+/>
+```
+
+### Auto-dismissing
+
+```tsx
+<Alert
+  text="Operation completed successfully"
+  severity="success"
+  duration={3000}
+/>
+```
+
+### Custom Icon
+
+```tsx
+<Alert
+  title="Custom"
+  text="Alert with custom icon"
+  icon={<CheckCircleIcon />}
+/>
+```
+
+### Gradient Styles
+
+```tsx
+<Alert
+  text="Hyper style alert"
+  severity="hyper"
+/>
+
+<Alert
+  text="Oceanic style alert"
+  severity="oceanic"
 />
