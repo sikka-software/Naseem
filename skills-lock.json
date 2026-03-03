@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "shadcn-registry": {
+      "source": "zaaakher/agent-skills",
+      "sourceType": "github",
+      "computedHash": "195208723e52ad43e9391184d5f5166cbc2301e1cd1de11a4b5a9d77f0f6dd4b"
+    }
+  }
+}
