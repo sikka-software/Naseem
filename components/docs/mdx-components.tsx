@@ -1,6 +1,6 @@
 import { Reference, References } from "@/components/ui/references";
 import { extractSourceCode } from "@/lib/code";
-import { createTypeTable } from "fumadocs-typescript/ui";
+import { AutoTypeTable } from "fumadocs-typescript/ui";
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
 import { Callout } from "fumadocs-ui/components/callout";
 import { Card, Cards } from "fumadocs-ui/components/card";
@@ -24,7 +24,6 @@ import {
 } from "./preview/components-install";
 import { ComponentSource } from "./preview/component-source";
 import { ComponentLoader } from "./component-loader";
-const { AutoTypeTable } = createTypeTable();
 
 export function getMDXComponents(components: MDXComponents): MDXComponents {
   return {

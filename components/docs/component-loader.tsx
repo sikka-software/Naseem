@@ -24,7 +24,7 @@ export function ComponentLoader({
     const component = getComponentByName(name)?.component;
     console.log("component", name);
     if (component) {
-      setComponent(() => component);
+      setComponent(component as React.ComponentType);
     }
   }, [name]);
 

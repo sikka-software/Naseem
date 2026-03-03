@@ -1,8 +1,8 @@
 "use client";
 import { type ButtonHTMLAttributes } from "react";
 import { SearchIcon } from "lucide-react";
-import { useSearchContext } from "fumadocs-ui/provider";
-import { useI18n } from "fumadocs-ui/provider";
+import { useSearchContext } from "fumadocs-ui/contexts/search";
+import { useI18n } from "fumadocs-ui/contexts/i18n";
 import { cn } from "../../lib/cn";
 import { buttonVariants } from "../ui/button";
 

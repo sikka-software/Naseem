@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 import { cn } from '../../lib/cn';
-import { useI18n } from 'fumadocs-ui/provider';
+import { useI18n } from 'fumadocs-ui/contexts/i18n';
 
 export interface NavProviderProps {
   /**

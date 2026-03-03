@@ -1,11 +1,11 @@
-import { blog } from "@/lib/source";
+import { blogLoader } from "@/lib/source";
 import Link from "next/link";
 
 export default function Page(): React.ReactElement {
-  const posts = [...blog.getPages()].sort(
+  const posts = [...blogLoader.getPages()].sort(
     (a, b) =>
-      new Date(b.data.date ?? b.file.name).getTime() -
-      new Date(a.data.date ?? a.file.name).getTime()
+      new Date(b.data.date ?? b.path).getTime() -
+      new Date(a.data.date ?? a.path).getTime()
   );
 
   return (
@@ -23,7 +23,7 @@ export default function Page(): React.ReactElement {
             </p>
 
             <p className="text-fd-muted-foreground mt-auto pt-4 text-xs">
-              {new Date(post.data.date ?? post.file.name).toDateString()}
+              {new Date(post.data.date ?? post.path).toDateString()}
             </p>
           </Link>
         ))}

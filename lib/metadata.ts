@@ -1,12 +1,8 @@
-import { createMetadataImage } from "fumadocs-core/server";
-import { source, blog } from "@/lib/source";
+import { source } from "@/lib/source";
 
-export const metadataImage = createMetadataImage({
-  imageRoute: "/docs-og",
-  source,
-});
-
-export const metadataImageBlog = createMetadataImage({
-  imageRoute: "/blog-og",
-  source: blog,
-});
+export const metadataImage = {
+  /* 
+   * Note: createMetadataImage was removed in v16.
+   * Use Next.js Metadata API instead for OG images.
+   */
+};

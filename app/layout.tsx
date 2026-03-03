@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { RootProvider } from "fumadocs-ui/provider";
+import { RootProvider } from "fumadocs-ui/provider/next";
 import { GeistSans } from "geist/font/sans";
 import { Metadata } from "next";
 import localFont from "next/font/local";
@@ -18,11 +18,9 @@ const geistSans = localFont({
 
 interface LayoutProps {
   children: ReactNode;
-  params: Promise<{ locale: string }>;
 }
 
-export default async function Layout({ children, params }: LayoutProps) {
-  const { locale } = await params;
+export default async function Layout({ children }: LayoutProps) {
   const messages = await getMessages();
 
   return (
@@ -47,7 +45,7 @@ export default async function Layout({ children, params }: LayoutProps) {
       >
         <NextIntlClientProvider
           messages={messages}
-          locale={locale}
+          locale="en"
           timeZone="Asia/Riyadh"
           now={new Date()}
         >

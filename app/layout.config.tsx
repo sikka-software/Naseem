@@ -1,5 +1,5 @@
 import { siteConfig } from "@/config/site";
-import { LinkItemType } from "fumadocs-ui/layouts/links";
+import type { LinkItemType } from "fumadocs-ui/utils/link-item";
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 import { Album, Cuboid, Newspaper } from "lucide-react";
 import Image from "next/image";
@@ -25,21 +25,12 @@ export const linkItems: LinkItemType[] = [
     url: "/docs",
   },
   {
-    active: "nested-url",
+    active: "nested-url" as const,
     icon: <Newspaper />,
     label: "Naseem Blog",
     text: "Blog",
     url: "/blog",
   },
-  // {
-  //   children: <HeaderCustomLinks />,
-  //   type: "custom",
-  // },
-  // {
-  //   secondary: true,
-  //   type: "custom",
-  //   children: <div className="mx-auto bg-red-300">Hey</div>,
-  // },
   {
     external: true,
     icon: (
@@ -54,7 +45,7 @@ export const linkItems: LinkItemType[] = [
 ];
 
 export const baseOptions: BaseLayoutProps = {
-  links: [...linkItems],
+  links: linkItems,
 
   nav: {
     title: (
@@ -69,9 +60,6 @@ export const baseOptions: BaseLayoutProps = {
         <div className="text-sm font-semibold text-nowrap sm:inline-block">
           {siteConfig.name}
         </div>
-        {/* <span className="bg-secondary text-foreground ml-0.5 hidden rounded-full px-1.5 py-px text-[10px] font-medium select-none md:block">
-          beta
-        </span> */}
       </div>
     ),
     transparentMode: "top",

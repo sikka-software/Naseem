@@ -1,6 +1,5 @@
 import { getMDXComponents } from "@/components/docs/mdx-components";
 // import { ShimmerButton } from "@/components/magicui/shimmer-button";
-import { metadataImage } from "@/lib/metadata";
 import { source } from "@/lib/source";
 import {
   DocsBody,
@@ -83,8 +82,8 @@ export async function generateMetadata(props: {
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
-  return metadataImage.withImage(page.slugs, {
+  return {
     description: page.data.description,
     title: page.data.title,
-  });
+  };
 }

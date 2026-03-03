@@ -1,116 +1,34 @@
-import { BaseLinkItem, type LinkItemType } from "../links";
-import {
-  SidebarFolder,
-  SidebarFolderContent,
-  SidebarFolderLink,
-  SidebarFolderTrigger,
-  SidebarItem,
-  type SidebarProps,
-} from "./sidebar";
-import { cn } from "../../lib/cn";
-import { buttonVariants } from "../ui/button";
-import type { PageTree } from "fumadocs-core/server";
+import type { Folder, Item, Node, Root, Separator } from "fumadocs-core/page-tree";
 import type { FC, ReactNode } from "react";
-import type { Option } from "../layout/root-toggle";
 import { notFound } from "next/navigation";
 
 export const layoutVariables = {
-  "--fd-layout-offset": "max(calc(50vw - var(--fd-layout-width) / 2), 0px)",
+  "--fd-layout-offset": "max(calc(50vw - var(--fd-sidebar-width) / 2), 0px)",
 };
 
 export interface TabOptions {
-  transform?: (option: Option, node: PageTree.Folder) => Option | null;
+  transform?: (option: unknown, node: Folder) => unknown | null;
 }
 
-export interface SidebarOptions extends SidebarProps {
+export interface SidebarOptions {
   enabled: boolean;
   component: ReactNode;
 
   collapsible?: boolean;
   components?: Partial<SidebarComponents>;
 
-  /**
-   * Root Toggle options
-   */
-  tabs?: Option[] | TabOptions | false;
+  tabs?: unknown[] | TabOptions | false;
 
   banner?: ReactNode;
   footer?: ReactNode;
 
-  /**
-   * Hide search trigger. You can also disable search for the entire site from `<RootProvider />`.
-   *
-   * @defaultValue false
-   */
   hideSearch?: boolean;
 }
 
 export interface SidebarComponents {
-  Item: FC<{ item: PageTree.Item }>;
-  Folder: FC<{ item: PageTree.Folder; level: number; children: ReactNode }>;
-  Separator: FC<{ item: PageTree.Separator }>;
-}
-
-export function SidebarLinkItem({
-  item,
-  ...props
-}: {
-  item: LinkItemType;
-  className?: string;
-}) {
-  if (item.type === "menu")
-    return (
-      <SidebarFolder {...props}>
-        {item.url ? (
-          <SidebarFolderLink href={item.url}>
-            {item.icon}
-            {item.text}
-          </SidebarFolderLink>
-        ) : (
-          <SidebarFolderTrigger>
-            {item.icon}
-            {item.text}
-          </SidebarFolderTrigger>
-        )}
-        <SidebarFolderContent>
-          {item.items.map((child, i) => (
-            <SidebarLinkItem key={i} item={child} />
-          ))}
-        </SidebarFolderContent>
-      </SidebarFolder>
-    );
-
-  if (item.type === "button") {
-    return (
-      <BaseLinkItem
-        item={item}
-        {...props}
-        className={cn(
-          buttonVariants({
-            variant: "secondary",
-          }),
-          "gap-1.5 [&_svg]:size-4",
-          props.className
-        )}
-      >
-        {item.icon}
-        {item.text}
-      </BaseLinkItem>
-    );
-  }
-
-  if (item.type === "custom") return item.children;
-
-  return (
-    <SidebarItem
-      href={item.url}
-      icon={item.icon}
-      external={item.external}
-      {...props}
-    >
-      {item.text}
-    </SidebarItem>
-  );
+  Item: FC<{ item: Item }>;
+  Folder: FC<{ item: Folder; level: number; children: ReactNode }>;
+  Separator: FC<{ item: Separator }>;
 }
 
 export function checkPageTree(passed: unknown) {
@@ -129,7 +47,7 @@ export function checkPageTree(passed: unknown) {
 
 export function getSidebarTabsFromOptions(
   options: SidebarOptions["tabs"],
-  tree: PageTree.Root
+  tree: Root
 ) {
   if (Array.isArray(options)) {
     return options;
@@ -140,9 +58,10 @@ export function getSidebarTabsFromOptions(
   }
 }
 
-const defaultTransform: TabOptions["transform"] = (option, node) => {
-  if (!node.icon) return option;
+const defaultTransform: TabOptions["transform"] = (_option, node) => {
+  if (!node.icon) return _option;
 
+  const option = _option as Record<string, unknown>;
   return {
     ...option,
     icon: (
@@ -154,17 +73,17 @@ const defaultTransform: TabOptions["transform"] = (option, node) => {
 };
 
 function getSidebarTabs(
-  pageTree: PageTree.Root,
+  pageTree: Root,
   { transform = defaultTransform }: TabOptions = {}
-): Option[] {
-  function findOptions(node: PageTree.Folder): Option[] {
-    const results: Option[] = [];
+): unknown[] {
+  function findOptions(node: Folder): unknown[] {
+    const results: unknown[] = [];
 
     if (node.root) {
       const index = node.index ?? node.children.at(0);
 
       if (index?.type === "page") {
-        const option: Option = {
+        const option: unknown = {
           description: node.description,
           icon: node.icon,
           title: node.name,
@@ -185,11 +104,11 @@ function getSidebarTabs(
     return results;
   }
 
-  return findOptions(pageTree as PageTree.Folder);
+  return findOptions(pageTree as Folder);
 }
 
 function getFolderUrls(
-  folder: PageTree.Folder,
+  folder: Folder,
   output: Set<string>
 ): Set<string> {
   if (folder.index) output.add(folder.index.url);

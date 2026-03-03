@@ -6,8 +6,7 @@ import {
 import { getBlogMDXComponents } from "@/components/docs/mdx-components";
 import { ScrollProgress } from "@/components/docs/scroll-progress";
 import { siteConfig } from "@/config/site";
-import { metadataImageBlog } from "@/lib/metadata";
-import { blog } from "@/lib/source";
+import { blogLoader } from "@/lib/source";
 import { InlineTOC } from "fumadocs-ui/components/inline-toc";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -16,7 +15,7 @@ export default async function Page(props: {
   params: Promise<{ slug: string }>;
 }): Promise<React.ReactElement> {
   const params = await props.params;
-  const page = blog.getPage([params.slug]);
+  const page = blogLoader.getPage([params.slug]);
 
   if (!page) notFound();
 
@@ -29,7 +28,7 @@ export default async function Page(props: {
         description={page.data.description}
         author={page.data.author}
         date={page.data.date}
-        name={page.file.name}
+        name={page.path}
       />
       <article className="container flex flex-col px-0 lg:flex-row lg:px-4 lg:py-8">
         <div className="min-w-0 flex-1 p-4">
@@ -54,28 +53,19 @@ export async function generateMetadata(props: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const params = await props.params;
-  const page = blog.getPage([params.slug]);
+  const page = blogLoader.getPage([params.slug]);
 
   if (!page) notFound();
   const description = page.data.description ?? siteConfig.description;
 
-  // return createMetadata({
-  //   title: page.data.title,
-  //   description,
-  // });
-
-  // return {
-  //   description,
-  //   title: page.data.title,
-  // };
-  return metadataImageBlog.withImage(page.slugs, {
+  return {
     title: page.data.title,
-    description: description,
-  });
+    description,
+  };
 }
 
 export function generateStaticParams(): { slug: string }[] {
-  return blog
+  return blogLoader
     .getPages()
     .map((page) => page.slugs[0])
     .filter((slug): slug is string => slug !== undefined)

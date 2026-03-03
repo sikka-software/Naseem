@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '../../lib/cn';
 import { isActive } from '../../lib/is-active';
-import { useSidebar } from 'fumadocs-ui/provider';
+import { useSidebar } from 'fumadocs-ui/components/sidebar/base';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 
 export interface Option {
