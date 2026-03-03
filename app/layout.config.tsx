@@ -3,6 +3,7 @@ import type { LinkItemType } from "fumadocs-ui/utils/link-item";
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 import { Album, Cuboid, Newspaper } from "lucide-react";
 import Image from "next/image";
+import NaseemLogo from "@/components/naseem-logo";
 
 export const linkItems: LinkItemType[] = [
   {
@@ -50,16 +51,7 @@ export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
       <div className="relative flex items-center space-x-2">
-        <Image
-          src="/logo.svg"
-          alt="logo"
-          width={24}
-          height={24}
-          className="block"
-        />
-        <div className="text-sm font-semibold text-nowrap sm:inline-block">
-          {siteConfig.name}
-        </div>
+        <NaseemLogo className="size-30" />
       </div>
     ),
     transparentMode: "top",

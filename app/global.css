@@ -2,10 +2,10 @@
 @import "fumadocs-ui/css/black.css";
 @import "fumadocs-ui/css/preset.css";
 
-@plugin 'tailwindcss-animate';
+@plugin "tailwindcss-animate";
 @plugin "tailwindcss-motion";
 
-@source '../node_modules/fumadocs-ui/dist/**/*.js';
+@source "../node_modules/fumadocs-ui/dist/**/*.js";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -45,7 +45,6 @@
 
   --color-error: hsl(var(--error));
   --color-error-foreground: hsl(var(--error-foreground));
-
 
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
@@ -117,7 +116,6 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-
   *,
   ::after,
   ::before,
@@ -130,13 +128,13 @@
 /* Fumadocs UI overrides */
 :root {
   --color-fd-card: hsl(0 0% 98%);
-  --color-fd-primary: hsl(262.1 83.3% 57.8%);
+  --color-fd-primary: hsl(218 86% 62%);
   --color-fd-background: hsl(0 0% 98%);
 }
 
 .dark {
   --color-fd-card: hsl(224 71.4% 6%);
-  --color-fd-primary: hsl(262.1 83.3% 57.8%);
+  --color-fd-primary: hsl(218 86% 62%);
   --color-fd-background: hsl(224 71.4% 6%);
 }
 
@@ -148,7 +146,7 @@
     --card-foreground: 224 71.4% 4.1%;
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
-    --primary: 262.1 83.3% 57.8%;
+    --primary: 218 86% 62%;
     --primary-foreground: 210 20% 98%;
     --secondary: 220 14.3% 95.9%;
     --secondary-foreground: 220.9 39.3% 11%;
@@ -197,7 +195,7 @@
     --card-foreground: 210 20% 98%;
     --popover: 224 71.4% 4.1%;
     --popover-foreground: 210 20% 98%;
-    --primary: 266 51% 52%;
+    --primary: 218 86% 62%;
     --primary-foreground: 210 20% 98%;
     --secondary: 215 27.9% 16.9%;
     --secondary-foreground: 210 20% 98%;
@@ -222,7 +220,6 @@
     /* Dark grey */
 
     /* --destructive-foreground: 0 85.7% 97.3%; */
-
 
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
@@ -274,7 +271,8 @@
 */
 
 @theme inline {
-  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite
+    alternate;
   --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
 
   /*

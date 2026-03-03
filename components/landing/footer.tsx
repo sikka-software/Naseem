@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import { GithubIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import NaseemSymbol from "../naseem-symbol";
 
 const footerLinks = [
   {
@@ -24,23 +25,11 @@ const Footer = () => {
     <div className="flex flex-col">
       <div className="bg-muted grow" />
       <footer>
-        <div className="mx-auto max-w-screen-xl">
+        <div className="mx-auto max-w-7xl">
           <div className="flex flex-col items-center justify-start py-12">
             {/* Logo */}
             <div className="relative flex items-center space-x-2">
-              <Image
-                src="/logo.svg"
-                alt="logo"
-                width={24}
-                height={24}
-                className="block"
-              />
-              <div className="text-sm font-semibold text-nowrap sm:inline-block">
-                {siteConfig.name}
-              </div>
-              <span className="bg-secondary text-foreground ml-0.5 hidden rounded-full px-1.5 py-px text-[10px] font-medium select-none md:block">
-                beta
-              </span>
+              <NaseemSymbol className="size-8 text-[#4c88f2]" />
             </div>
 
             <ul className="mt-6 flex flex-wrap items-center gap-4">
