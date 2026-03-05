@@ -1,0 +1,14 @@
+{
+  "name": "sikka-popover-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport SikkaPopover from \"@/components/naseem-ui/elements/sikka-popover\";\nimport { Popover, PopoverContent, PopoverTrigger } from \"../ui/popover\";\nimport { Button } from \"../ui/button\";\nimport SikkaLogo from \"../naseem-ui/icons/sikka\";\n\nconst SikkaPopoverDemo = () => {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <Popover>\n        <PopoverTrigger asChild>\n          <Button\n            size=\"icon\"\n            variant=\"outline\"\n            onClick={() => console.log(\"show sikka popup\")}\n          >\n            <SikkaLogo className=\"size-3.5\" />\n          </Button>\n        </PopoverTrigger>\n        <PopoverContent>\n          <SikkaPopover />\n        </PopoverContent>\n      </Popover>\n    </div>\n  );\n};\n\nexport default SikkaPopoverDemo;\n",
+      "path": "components/demos/sikka-popover-demo.tsx",
+      "target": "components/ui/sikka-popover-demo.tsx"
+    }
+  ]
+}

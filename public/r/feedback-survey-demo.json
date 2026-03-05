@@ -1,0 +1,14 @@
+{
+  "name": "feedback-survey-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport FeedbackSurvey from \"@/components/naseem-ui/elements/feedback-survey\";\n\nconst FeedbackSurveyDemo = () => {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <FeedbackSurvey />\n    </div>\n  );\n};\n\nexport default FeedbackSurveyDemo;\n",
+      "path": "components/demos/feedback-survey-demo.tsx",
+      "target": "components/ui/feedback-survey-demo.tsx"
+    }
+  ]
+}

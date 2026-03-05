@@ -1,0 +1,14 @@
+{
+  "name": "sikka-icons-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { GitHub } from \"@/components/naseem-ui/icons/github\";\nimport { XformerlyTwitter } from \"@/components/naseem-ui/icons/x\";\nimport { LinkedIn } from \"@/components/naseem-ui/icons/linkedin\";\nimport { Instagram } from \"@/components/naseem-ui/icons/instagram\";\nimport { WhatsApp } from \"@/components/naseem-ui/icons/whatsapp\";\nimport SikkaLogo from \"@/components/naseem-ui/icons/sikka\";\n\nconst IconsDemo = () => {\n  return (\n    <div className=\"space-y-8\">\n      <div className=\"space-y-4\">\n        <h3 className=\"text-lg font-medium\">Sikka Logo</h3>\n        <div className=\"flex items-center gap-4\">\n          <SikkaLogo className=\"size-8\" />\n     \n        </div>\n      </div>\n\n      <div className=\"space-y-4\">\n        <h3 className=\"text-lg font-medium\">Social Media Icons</h3>\n        <div className=\"flex items-center gap-4\">\n          <div className=\"flex flex-col items-center gap-2\">\n            <GitHub className=\"h-8 w-8\" />\n            <span className=\"text-muted-foreground text-xs\">GitHub</span>\n          </div>\n          <div className=\"flex flex-col items-center gap-2\">\n            <XformerlyTwitter className=\"h-8 w-8\" />\n            <span className=\"text-muted-foreground text-xs\">X / Twitter</span>\n          </div>\n          <div className=\"flex flex-col items-center gap-2\">\n            <LinkedIn className=\"h-8 w-8\" />\n            <span className=\"text-muted-foreground text-xs\">LinkedIn</span>\n          </div>\n          <div className=\"flex flex-col items-center gap-2\">\n            <Instagram className=\"h-8 w-8\" />\n            <span className=\"text-muted-foreground text-xs\">Instagram</span>\n          </div>\n          <div className=\"flex flex-col items-center gap-2\">\n            <WhatsApp className=\"h-8 w-8\" />\n            <span className=\"text-muted-foreground text-xs\">WhatsApp</span>\n          </div>\n        </div>\n      </div>\n\n      <div className=\"space-y-4\">\n        <h3 className=\"text-lg font-medium\">Icon Sizes</h3>\n        <div className=\"flex items-center gap-4\">\n          <SikkaLogo className=\"h-4 w-4\" />\n          <SikkaLogo className=\"h-6 w-6\" />\n          <SikkaLogo className=\"h-8 w-8\" />\n          <SikkaLogo className=\"h-12 w-12\" />\n          <SikkaLogo className=\"h-16 w-16\" />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default IconsDemo;\n",
+      "path": "components/demos/icons-demo.tsx",
+      "target": "components/ui/icons-demo.tsx"
+    }
+  ]
+}
