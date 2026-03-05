@@ -5,14 +5,14 @@ const LanguageSwitcherDemo = () => {
   const t = useTranslations();
   return (
     <LanguageSwitcher
-      local="en"
-      locales={[
-        { code: "en", label: t("en"), isRTL: false },
-        { code: "ar", label: t("ar"), isRTL: true },
-      ]}
-      onChange={(value) => {
-        console.log(value);
-      }}
+    // local="en"
+    // locales={[
+    //   { code: "en", label: t("en"), isRTL: false },
+    //   { code: "ar", label: t("ar"), isRTL: true },
+    // ]}
+    // onChange={(value) => {
+    //   console.log(value);
+    // }}
     />
   );
 };
