@@ -1,10 +1,9 @@
 {
-  "light": "Light",
-  "dark": "Dark",
-  "system": "System",
-  "ar": "Arabic",
   "en": "English",
-  "HomePage": {
-    "title": "Hello world!"
-  }
+  "ar": "العربية",
+  "test": "Test",
+  "dark": "Dark",
+  "light": "Light",
+  "system": "System",
+  "theme": "Theme"
 }

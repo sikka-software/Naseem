@@ -20,7 +20,49 @@
       "type": "registry:component",
       "content": "\"use client\";\n\nimport { Moon, Sun } from \"lucide-react\";\nimport { useTranslations, useLocale } from \"next-intl\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Tooltip, TooltipContent, TooltipTrigger } from \"@/components/ui/tooltip\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuGroup,\n  DropdownMenuRadioGroup,\n  DropdownMenuRadioItem,\n  DropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\nimport { useTheme } from \"next-themes\";\n\nexport function ThemeSwitcher() {\n  const t = useTranslations();\n  const { setTheme, theme } = useTheme();\n\n  return (\n    <DropdownMenu>\n      <Tooltip delayDuration={100}>\n        <TooltipTrigger asChild>\n          <DropdownMenuTrigger asChild>\n            <Button variant=\"outline\" size=\"icon\">\n              <Sun className=\"h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90\" />\n              <Moon className=\"absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0\" />\n              <span className=\"sr-only\">Toggle theme</span>\n            </Button>\n          </DropdownMenuTrigger>\n        </TooltipTrigger>\n        <TooltipContent\n          className=\"px-2 py-1 text-xs\"\n          side=\"bottom\"\n          align=\"start\"\n        >\n          <p>{t(\"theme\")}</p>\n        </TooltipContent>\n      </Tooltip>\n      <DropdownMenuContent align=\"end\">\n        <DropdownMenuGroup>\n          <DropdownMenuRadioGroup\n            value={theme}\n            onValueChange={(e) => setTheme(e)}\n          >\n            <DropdownMenuRadioItem value=\"light\">\n              {t(\"light\")}\n            </DropdownMenuRadioItem>\n            <DropdownMenuRadioItem value=\"dark\">\n              {t(\"dark\")}\n            </DropdownMenuRadioItem>\n            <DropdownMenuRadioItem value=\"system\">\n              {t(\"system\")}\n            </DropdownMenuRadioItem>\n          </DropdownMenuRadioGroup>\n        </DropdownMenuGroup>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  );\n}\n",
       "path": "components/naseem-ui/elements/theme-switcher.tsx",
-      "target": "components/ui/theme-switcher.tsx"
+      "target": "components/ui/naseem/theme-switcher.tsx"
+    },
+    {
+      "type": "registry:file",
+      "content": "export const locales = [\"ar\", \"en\"] as const;\nexport const defaultLocale = \"ar\" as const;\n\nexport type Locale = (typeof locales)[number];\n\nexport const localeLabels: Record<Locale, string> = {\n  ar: \"العربية\",\n  en: \"English\",\n};\n\nexport const localeDirections: Record<Locale, \"ltr\" | \"rtl\"> = {\n  ar: \"rtl\",\n  en: \"ltr\",\n};\n",
+      "path": "i18n/config.ts",
+      "target": "i18n/config.ts"
+    },
+    {
+      "type": "registry:file",
+      "content": "import { getRequestConfig } from \"next-intl/server\";\nimport { notFound } from \"next/navigation\";\nimport { locales, defaultLocale, Locale } from \"./config\";\n\nexport default getRequestConfig(async ({ locale: rawLocale }) => {\n  const locale = rawLocale || defaultLocale;\n\n  // Validate that the incoming `locale` parameter is valid\n  if (!locales.includes(locale as Locale)) {\n    return notFound();\n  }\n\n  return {\n    timeZone: \"Asia/Riyadh\",\n    locale,\n    messages: (await import(`../messages/${locale}.json`)).default,\n    // Set a default time zone to avoid ENVIRONMENT_FALLBACK warning\n    // This ensures consistent date/time formatting across server and client\n  };\n});\n",
+      "path": "i18n/request.ts",
+      "target": "i18n/request.ts"
+    },
+    {
+      "type": "registry:file",
+      "content": "import {createNavigation} from 'next-intl/navigation';\nimport {routing} from './routing';\n \nexport const {Link, redirect, usePathname, useRouter, getPathname} =\n  createNavigation(routing);",
+      "path": "i18n/navigation.ts",
+      "target": "i18n/navigation.ts"
+    },
+    {
+      "type": "registry:file",
+      "content": "import { defineRouting } from \"next-intl/routing\";\nimport { locales, defaultLocale } from \"./config\";\n\nexport const routing = defineRouting({\n  locales,\n  defaultLocale,\n  localePrefix: \"always\",\n});\n",
+      "path": "i18n/routing.ts",
+      "target": "i18n/routing.ts"
+    },
+    {
+      "type": "registry:file",
+      "content": "{\n  \"en\": \"English\",\n  \"ar\": \"العربية\",\n  \"test\": \"تجربة\",\n  \"light\": \"فاتح\",\n  \"dark\": \"داكن\",\n  \"system\": \"النظام\",\n  \"theme\": \"نمط الموقع\"\n}\n",
+      "path": "messages/ar.json",
+      "target": "messages/ar.json"
+    },
+    {
+      "type": "registry:file",
+      "content": "{\n  \"en\": \"English\",\n  \"ar\": \"العربية\",\n  \"test\": \"Test\",\n  \"dark\": \"Dark\",\n  \"light\": \"Light\",\n  \"system\": \"System\",\n  \"theme\": \"Theme\"\n}\n",
+      "path": "messages/en.json",
+      "target": "messages/en.json"
+    },
+    {
+      "type": "registry:file",
+      "content": "import createNextIntlPlugin from \"next-intl/plugin\";\nimport type { NextConfig } from \"next\";\n\nconst withNextIntl = createNextIntlPlugin(\"./i18n/request.ts\");\n\nconst nextConfig: NextConfig = {\n  /* config options here */\n};\n\nexport default withNextIntl(nextConfig);\n",
+      "path": "next.config.example.ts",
+      "target": "next.config.example.ts"
     }
   ]
 }

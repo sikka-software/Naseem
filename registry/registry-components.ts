@@ -50,6 +50,42 @@ export const components: Registry = [
       {
         path: "components/naseem-ui/elements/theme-switcher.tsx",
         type: "registry:component",
+        target: "components/ui/naseem/theme-switcher.tsx", // add this
+      },
+      {
+        path: "i18n/config.ts",
+        type: "registry:file",
+        target: "i18n/config.ts",
+      },
+      {
+        path: "i18n/request.ts",
+        type: "registry:file",
+        target: "i18n/request.ts",
+      },
+      {
+        path: "i18n/navigation.ts",
+        type: "registry:file",
+        target: "i18n/navigation.ts",
+      },
+      {
+        path: "i18n/routing.ts",
+        type: "registry:file",
+        target: "i18n/routing.ts",
+      },
+      {
+        path: "messages/ar.json",
+        type: "registry:file",
+        target: "messages/ar.json",
+      },
+      {
+        path: "messages/en.json",
+        type: "registry:file",
+        target: "messages/en.json",
+      },
+      {
+        path: "next.config.example.ts",
+        type: "registry:file",
+        target: "next.config.example.ts",
       },
     ],
     component: React.lazy(() =>
