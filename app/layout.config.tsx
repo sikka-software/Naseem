@@ -24,13 +24,13 @@ export const linkItems: LinkItemType[] = [
     type: "menu",
     url: "/docs",
   },
-  {
-    active: "nested-url" as const,
-    icon: <Newspaper />,
-    label: "Naseem Blog",
-    text: "Blog",
-    url: "/blog",
-  },
+  // {
+  //   active: "nested-url" as const,
+  //   icon: <Newspaper />,
+  //   label: "Naseem Blog",
+  //   text: "Blog",
+  //   url: "/blog",
+  // },
   {
     external: true,
     icon: (
