@@ -105,4 +105,34 @@ export const examples: Registry = [
       () => import("../components/demos/auth-buttons-demo")
     ),
   },
+  {
+    name: "sikka-popover-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/sikka-popover-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/sikka-popover-demo")
+    ),
+  },
+  {
+    name: "sikka-icons-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/icons-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/icons-demo")
+    ),
+  },
 ];

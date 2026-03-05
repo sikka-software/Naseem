@@ -2,38 +2,6 @@ import type { Registry } from "@/registry/schema";
 import * as React from "react";
 
 export const components: Registry = [
-  // {
-  //   name: "dialog",
-  //   type: "registry:component",
-  //   dependencies: ["lucide-react"],
-  //   files: [
-  //     {
-  //       path: "@/components/naseem-ui/elements/dialog.tsx",
-  //       type: "registry:component",
-  //     },
-  //   ],
-  //   component: React.lazy(() =>
-  //     import("@/components/naseem-ui/elements/dialog").then((mod) => ({
-  //       default: mod.Dialog,
-  //     }))
-  //   ),
-  // },
-  // {
-  //   name: "loading-bar",
-  //   type: "registry:component",
-  //   dependencies: ["lucide-react", "nprogress"],
-  //   files: [
-  //     {
-  //       path: "@/components/naseem-ui/elements/loading-bar.tsx",
-  //       type: "registry:component",
-  //     },
-  //   ],
-  //   component: React.lazy(() =>
-  //     import("@/components/naseem-ui/elements/loading-bar").then((mod) => ({
-  //       default: mod.LoadingBar,
-  //     }))
-  //   ),
-  // },
   {
     name: "theme-switcher",
     type: "registry:component",
@@ -50,7 +18,7 @@ export const components: Registry = [
       {
         path: "components/naseem-ui/elements/theme-switcher.tsx",
         type: "registry:component",
-        target: "components/ui/naseem/theme-switcher.tsx", // add this
+        target: "components/ui/naseem/theme-switcher.tsx",
       },
       {
         path: "i18n/config.ts",
@@ -222,6 +190,60 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/currency-input").then((mod) => ({
         default: mod.CurrencyInput,
+      }))
+    ),
+  },
+  {
+    name: "sikka-popover",
+    type: "registry:component",
+    dependencies: ["@radix-ui/react-popover"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/sikka-popover.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/sikka-popover").then((mod) => ({
+        default: mod.default,
+      }))
+    ),
+  },
+  {
+    name: "sikka-icons",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/naseem-ui/icons/sikka.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "@/components/naseem-ui/icons/github.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "@/components/naseem-ui/icons/x.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "@/components/naseem-ui/icons/linkedin.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "@/components/naseem-ui/icons/instagram.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "@/components/naseem-ui/icons/whatsapp.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/icons/sikka").then((mod) => ({
+        default: mod.default,
       }))
     ),
   },

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "motion/react";
 import { useLocale, useTranslations } from "next-intl";
 import SikkaLogo from "../icons/sikka";
