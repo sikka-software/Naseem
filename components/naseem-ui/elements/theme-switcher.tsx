@@ -3,8 +3,8 @@
 import { Moon, Sun } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 
-import { Button } from "./button";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
+import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +12,7 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from "./dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import { useTheme } from "next-themes";
 
 export function ThemeSwitcher() {

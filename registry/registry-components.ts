@@ -53,7 +53,8 @@ export const components: Registry = [
   {
     name: "theme-switcher",
     type: "registry:component",
-    dependencies: ["lucide-react"],
+    dependencies: ["lucide-react", "next-themes", "next-intl"],
+    registryDependencies: ["button", "dropdown-menu", "tooltip"],
     files: [
       {
         path: "@/components/naseem-ui/elements/theme-switcher.tsx",
