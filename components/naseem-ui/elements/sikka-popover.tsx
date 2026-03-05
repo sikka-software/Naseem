@@ -54,7 +54,7 @@ const links = [
 ];
 
 export default function CompanyCard() {
-  const t = useTranslations("Sikka");
+  const t = useTranslations("sikka");
   const locale = useLocale();
 
   return (
@@ -85,30 +85,19 @@ export default function CompanyCard() {
       >
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#111]">
           <SikkaLogo className="size-4.5 text-white" />
-          <svg
-            id="Layer_1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 394.82 329.55"
-            className="size-4.5 text-white"
-          >
-            <path
-              fill="currentColor"
-              d="M183.67,0c-6.29,0-11.42,5.1-11.42,11.32v134.95L58.84,7.36c-4.58-5.66-6.86-7.36-13.15-7.36H4.18C.19,0,0,3.41,0,7.36c0,1.7.58,3.96,1.73,5.1l124.37,152.31L1.73,317.08c-1.15,1.15-1.73,3.41-1.73,5.1,0,3.96.19,7.36,4.18,7.36h41.51c6.29,0,8.57-1.7,13.15-7.36l113.41-138.91v134.95c0,6.21,5.13,11.32,11.42,11.32h27.48c6.29,0,11.42-5.1,11.42-11.32v-134.95l113.41,138.91c4.58,5.66,6.86,7.36,13.15,7.36h41.51c3.98,0,4.18-3.41,4.18-7.36,0-1.7-.58-3.96-1.73-5.1l-124.37-152.31L393.1,12.46c1.15-1.15,1.73-3.41,1.73-5.1,0-3.96-.19-7.36-4.18-7.36h-41.51c-6.29,0-8.57,1.7-13.15,7.36l-113.41,138.91V11.32c0-6.21-5.13-11.32-11.42-11.32h-27.48Z"
-            />
-          </svg>
         </div>
         <div>
-          <div className="text-primary text-[15px] leading-tight font-semibold tracking-tight">
+          <div className="text-[15px] leading-tight font-semibold tracking-tight text-black dark:text-white">
             {t("name")}
           </div>
-          <div className="text-primary mt-0.5 text-[11px] font-normal tracking-widest uppercase">
+          <div className="mt-0.5 text-[11px] font-normal tracking-widest text-black uppercase dark:text-white">
             {t("est")}
           </div>
         </div>
       </motion.div>
 
       <motion.p
-        className="text-primary mb-5 text-[13.5px] leading-relaxed font-light italic"
+        className="mb-5 text-[13.5px] leading-relaxed font-light text-black italic dark:text-white"
         variants={{
           initial: { opacity: 0, y: 10 },
           animate: { opacity: 1, y: 0 },
@@ -130,7 +119,7 @@ export default function CompanyCard() {
           <motion.a
             key={link.href}
             href={link.href}
-            className="group text-primary flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-[13px] font-normal no-underline transition-colors duration-150 hover:bg-gray-100 hover:text-[#111]"
+            className="group flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-[13px] font-normal text-black no-underline transition-colors duration-150 hover:bg-gray-100 hover:text-[#111] dark:text-white hover:dark:bg-gray-800"
             target={link.href.startsWith("http") ? "_blank" : undefined}
             rel="noopener noreferrer"
             variants={{

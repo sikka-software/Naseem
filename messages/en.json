@@ -5,5 +5,10 @@
   "theme": "Theme",
   "dark": "Dark",
   "light": "Light",
-  "system": "System"
+  "system": "System",
+  "sikka": {
+    "name": "Sikka Software",
+    "est": "Est. 2015",
+    "description": "Independent software studio specializing in focused, well-crafted web products."
+  }
 }

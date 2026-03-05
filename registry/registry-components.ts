@@ -196,11 +196,15 @@ export const components: Registry = [
   {
     name: "sikka-popover",
     type: "registry:component",
-    dependencies: ["@radix-ui/react-popover"],
-    registryDependencies: ["button"],
+    dependencies: ["motion", "next-intl"],
+    registryDependencies: [],
     files: [
       {
         path: "@/components/naseem-ui/elements/sikka-popover.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "@/components/naseem-ui/icons/sikka.tsx",
         type: "registry:component",
       },
     ],
