@@ -3,6 +3,7 @@ import { baseOptions, linkItems } from "@/app/layout.config";
 import { source } from "@/lib/source";
 import { DocsLayout, DocsLayoutProps } from "fumadocs-ui/layouts/notebook";
 import NaseemLogo from "@/components/naseem-logo";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const docsOptions: DocsLayoutProps = {
   ...baseOptions,
@@ -13,12 +14,16 @@ const docsOptions: DocsLayoutProps = {
     ...baseOptions.nav,
     title: (
       <div className="relative flex items-center space-x-2">
-        <NaseemLogo className="size-30 -my-10" />
+        <NaseemLogo className="-my-10 size-30" />
       </div>
     ),
   },
 };
 
 export default function Layout({ children }: { children: ReactNode }) {
-  return <DocsLayout {...docsOptions}>{children}</DocsLayout>;
+  return (
+    <DocsLayout {...docsOptions}>
+      <TooltipProvider>{children}</TooltipProvider>
+    </DocsLayout>
+  );
 }

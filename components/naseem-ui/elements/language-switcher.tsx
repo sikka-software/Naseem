@@ -32,20 +32,18 @@ export const LanguageSwitcher = () => {
 
   return (
     <DropdownMenu>
-      <TooltipProvider>
-        <Tooltip delayDuration={100}>
-          <TooltipTrigger asChild>
-            <DropdownMenuTrigger asChild>
-              <Button size="icon" variant="outline">
-                <Globe className="h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-          </TooltipTrigger>
-          <TooltipContent side="bottom" align="start">
-            <p>{t("language")}</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+      <Tooltip delayDuration={100}>
+        <TooltipTrigger asChild>
+          <DropdownMenuTrigger asChild>
+            <Button size="icon" variant="outline">
+              <Globe className="h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+        </TooltipTrigger>
+        <TooltipContent side="bottom" align="start">
+          <p>{t("language")}</p>
+        </TooltipContent>
+      </Tooltip>
 
       <DropdownMenuContent align="end">
         <DropdownMenuRadioGroup value={locale} onValueChange={changeLanguage}>
