@@ -39,7 +39,7 @@ const getComponentFiles = async (files: File[], registryType: string) => {
     if (typeof file === "string") {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       //@ts-ignore
-      const normalizedPath = file.startsWith("/") ? file : `/${file}`;
+      const normalizedPath = file.startsWith("/") ? file.slice(1) : file;
       const filePath = path.join(REGISTRY_BASE_PATH, normalizedPath);
       const fileContent = await fs.readFile(filePath, "utf-8");
 
@@ -49,12 +49,12 @@ const getComponentFiles = async (files: File[], registryType: string) => {
         type: registryType,
         content: fileContent,
         path: normalizedPath,
-        target: `/components/ui/${fileName}`,
+        target: `components/ui/${fileName}`,
       };
     }
     const normalizedPath = file.path.startsWith("/")
-      ? file.path
-      : `/${file.path}`.replace("@/", "");
+      ? file.path.slice(1)
+      : file.path.replace("@/", "");
 
     const filePath = path.join(REGISTRY_BASE_PATH, normalizedPath);
     const fileContent = await fs.readFile(filePath, "utf-8");
@@ -64,11 +64,11 @@ const getComponentFiles = async (files: File[], registryType: string) => {
     const getTargetPath = (type: string) => {
       switch (type) {
         case "registry:hook":
-          return `/hooks/${fileName}`;
+          return `hooks/${fileName}`;
         case "registry:lib":
-          return `/lib/${fileName}`;
+          return `lib/${fileName}`;
         default:
-          return `/components/ui/${fileName}`;
+          return `components/ui/${fileName}`;
       }
     };
 

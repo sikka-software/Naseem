@@ -7,8 +7,8 @@
     {
       "type": "registry:example",
       "content": "\"use client\";\n\nimport { DestroyableCard } from \"../naseem-ui/elements/destroyable-card\";\n\nconst DestroyableCardDemo = () => {\n  return (\n    <DestroyableCard>\n      <div>CardDemo</div>\n    </DestroyableCard>\n  );\n};\n\nexport default DestroyableCardDemo;\n",
-      "path": "/components/demos/card-demo.tsx",
-      "target": "/components/ui/card-demo.tsx"
+      "path": "components/demos/card-demo.tsx",
+      "target": "components/ui/card-demo.tsx"
     }
   ]
 }

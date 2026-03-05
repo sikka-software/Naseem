@@ -9,8 +9,8 @@
     {
       "type": "registry:example",
       "content": "import { ThemeSwitcher } from \"@/components/naseem-ui/elements/theme-switcher\";\n\nconst ThemeSwitcherDemo = () => {\n  return <ThemeSwitcher />;\n};\n\nexport default ThemeSwitcherDemo;\n",
-      "path": "/components/demos/theme-switcher-demo.tsx",
-      "target": "/components/ui/theme-switcher-demo.tsx"
+      "path": "components/demos/theme-switcher-demo.tsx",
+      "target": "components/ui/theme-switcher-demo.tsx"
     }
   ]
 }
