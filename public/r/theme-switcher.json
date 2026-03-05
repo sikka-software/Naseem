@@ -24,7 +24,7 @@
     },
     {
       "type": "registry:file",
-      "content": "export const locales = [\"ar\", \"en\"] as const;\nexport const defaultLocale = \"ar\" as const;\n\nexport type Locale = (typeof locales)[number];\n\nexport const localeLabels: Record<Locale, string> = {\n  ar: \"العربية\",\n  en: \"English\",\n};\n\nexport const localeDirections: Record<Locale, \"ltr\" | \"rtl\"> = {\n  ar: \"rtl\",\n  en: \"ltr\",\n};\n",
+      "content": "export const locales = [\"ar\", \"en\"] as const;\nexport const defaultLocale = \"en\" as const;\n\nexport type Locale = (typeof locales)[number];\n\nexport const localeLabels: Record<Locale, string> = {\n  ar: \"العربية\",\n  en: \"English\",\n};\n\nexport const localeDirections: Record<Locale, \"ltr\" | \"rtl\"> = {\n  ar: \"rtl\",\n  en: \"ltr\",\n};\n",
       "path": "i18n/config.ts",
       "target": "i18n/config.ts"
     },
@@ -42,19 +42,19 @@
     },
     {
       "type": "registry:file",
-      "content": "import { defineRouting } from \"next-intl/routing\";\nimport { locales, defaultLocale } from \"./config\";\n\nexport const routing = defineRouting({\n  locales,\n  defaultLocale,\n  localePrefix: \"always\",\n});\n",
+      "content": "import { defineRouting } from \"next-intl/routing\";\nimport { createNavigation } from \"next-intl/navigation\";\n\nexport const routing = defineRouting({\n  locales: [\"en\", \"ar\"],\n  defaultLocale: \"en\",\n});\n\nexport const { Link, redirect, usePathname, useRouter, getPathname } =\n  createNavigation(routing);\n",
       "path": "i18n/routing.ts",
       "target": "i18n/routing.ts"
     },
     {
       "type": "registry:file",
-      "content": "{\n  \"en\": \"English\",\n  \"ar\": \"العربية\",\n  \"test\": \"تجربة\",\n  \"light\": \"فاتح\",\n  \"dark\": \"داكن\",\n  \"system\": \"النظام\",\n  \"theme\": \"نمط الموقع\"\n}\n",
+      "content": "{\n  \"language\": \"اللغة\",\n  \"en\": \"English\",\n  \"ar\": \"العربية\",\n  \"theme\": \"نمط الموقع\",\n  \"light\": \"فاتح\",\n  \"dark\": \"داكن\",\n  \"system\": \"النظام\"\n}\n",
       "path": "messages/ar.json",
       "target": "messages/ar.json"
     },
     {
       "type": "registry:file",
-      "content": "{\n  \"en\": \"English\",\n  \"ar\": \"العربية\",\n  \"test\": \"Test\",\n  \"dark\": \"Dark\",\n  \"light\": \"Light\",\n  \"system\": \"System\",\n  \"theme\": \"Theme\"\n}\n",
+      "content": "{\n  \"language\": \"Language\",\n  \"en\": \"English\",\n  \"ar\": \"العربية\",\n  \"theme\": \"Theme\",\n  \"dark\": \"Dark\",\n  \"light\": \"Light\",\n  \"system\": \"System\"\n}\n",
       "path": "messages/en.json",
       "target": "messages/en.json"
     },

@@ -41,9 +41,9 @@ export const components: Registry = [
       "lucide-react",
       "next-themes",
       "next-intl",
-      "class-variance-authority", // button's dep
-      "tailwind-merge", // utils dep
-      "clsx", // utils dep
+      "class-variance-authority",
+      "tailwind-merge",
+      "clsx",
     ],
     registryDependencies: ["button", "dropdown-menu", "tooltip", "utils"],
     files: [
@@ -97,12 +97,54 @@ export const components: Registry = [
   {
     name: "language-switcher",
     type: "registry:component",
-    dependencies: ["lucide-react", "next-themes"],
-    registryDependencies: ["button", "dropdown-menu"],
+    dependencies: [
+      "lucide-react",
+      "next-themes",
+      "next-intl",
+      "class-variance-authority",
+      "tailwind-merge",
+      "clsx",
+    ],
+    registryDependencies: ["button", "dropdown-menu", "tooltip", "utils"],
     files: [
       {
-        path: "@/components/naseem-ui/elements/language-switcher.tsx",
+        path: "components/naseem-ui/elements/language-switcher.tsx",
         type: "registry:component",
+      },
+      {
+        path: "i18n/config.ts",
+        type: "registry:file",
+        target: "i18n/config.ts",
+      },
+      {
+        path: "i18n/request.ts",
+        type: "registry:file",
+        target: "i18n/request.ts",
+      },
+      {
+        path: "i18n/navigation.ts",
+        type: "registry:file",
+        target: "i18n/navigation.ts",
+      },
+      {
+        path: "i18n/routing.ts",
+        type: "registry:file",
+        target: "i18n/routing.ts",
+      },
+      {
+        path: "messages/ar.json",
+        type: "registry:file",
+        target: "messages/ar.json",
+      },
+      {
+        path: "messages/en.json",
+        type: "registry:file",
+        target: "messages/en.json",
+      },
+      {
+        path: "next.config.example.ts",
+        type: "registry:file",
+        target: "next.config.example.ts",
       },
     ],
     component: React.lazy(() =>

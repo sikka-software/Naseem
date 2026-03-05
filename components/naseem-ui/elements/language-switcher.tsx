@@ -1,8 +1,17 @@
 "use client";
 
-import { Languages } from "lucide-react";
-// UI
-import { Button } from "./button";
+import { useTranslations, useLocale } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/routing";
+import { Button } from "@/components/ui/button";
+
+import { Globe } from "lucide-react";
+
+import {
+  TooltipProvider,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,46 +19,40 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-// import { useTranslations } from "next-intl";
 
-export function LanguageSwitcher({
-  className,
-  style,
-  onChange,
-  local,
-  locales,
-}: {
-  className?: string;
-  style?: React.CSSProperties;
-  onChange: (value: string) => void;
-  local: string;
-  locales: { code: string; label: string; isRTL: boolean }[];
-}) {
-  // const t = useTranslations();
+export const LanguageSwitcher = () => {
+  const t = useTranslations();
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
-  if (!locales) return null;
+  const changeLanguage = (nextLocale: string) => {
+    router.replace(pathname, { locale: nextLocale as any });
+  };
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          variant="outline"
-          size="icon"
-          style={style}
-          className={className}
-        >
-          <Languages className="size-5" />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuRadioGroup value={local} onValueChange={onChange}>
-          {locales?.map((locale) => (
-            <DropdownMenuRadioItem value={locale.code} key={locale.code}>
-              {locale.label}
-            </DropdownMenuRadioItem>
-          ))}
+      <TooltipProvider>
+        <Tooltip delayDuration={100}>
+          <TooltipTrigger asChild>
+            <DropdownMenuTrigger asChild>
+              <Button size="icon" variant="outline">
+                <Globe className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+          </TooltipTrigger>
+          <TooltipContent side="bottom" align="start">
+            <p>{t("language")}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+
+      <DropdownMenuContent align="end">
+        <DropdownMenuRadioGroup value={locale} onValueChange={changeLanguage}>
+          <DropdownMenuRadioItem value="en">{t("en")}</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="ar">{t("ar")}</DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   );
-}
+};

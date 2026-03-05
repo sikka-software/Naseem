@@ -1,9 +1,9 @@
 {
+  "language": "Language",
   "en": "English",
   "ar": "العربية",
-  "test": "Test",
+  "theme": "Theme",
   "dark": "Dark",
   "light": "Light",
-  "system": "System",
-  "theme": "Theme"
+  "system": "System"
 }
