@@ -251,4 +251,41 @@ export const components: Registry = [
       }))
     ),
   },
+  {
+    name: "feedback-survey",
+    type: "registry:component",
+    dependencies: ["lucide-react", "next-intl", "posthog-js"],
+    registryDependencies: ["button", "tooltip", "dialog"],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/feedback-survey.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "@/components/naseem-ui/icons/instagram.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "@/components/naseem-ui/icons/github.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "@/components/naseem-ui/icons/linkedin.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "@/components/naseem-ui/icons/whatsapp.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "@/components/naseem-ui/icons/x.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/feedback-survey").then((mod) => ({
+        default: mod.default,
+      }))
+    ),
+  },
 ];

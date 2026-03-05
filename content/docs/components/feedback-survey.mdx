@@ -1,0 +1,194 @@
+---
+title: Feedback Survey
+description: A feedback collection component with PostHog integration, social media links, and RTL support
+---
+
+<ComponentPreview
+  name="feedback-survey-demo"
+  classNameComponentContainer='min-h-[200px] flex items-center justify-center'
+/>
+
+## Usage
+
+The Feedback Survey component provides a tooltip-triggered dialog for collecting user feedback with PostHog analytics integration.
+
+```tsx
+import FeedbackSurvey from "@/components/naseem-ui/elements/feedback-survey"
+
+export default function Example() {
+  return <FeedbackSurvey />
+}
+```
+
+## Features
+
+- Tooltip trigger with question icon
+- Modal dialog for feedback submission
+- PostHog survey integration
+- Success state with social media links
+- RTL support for Arabic language
+- Loading state during submission
+- Internationalized text via next-intl
+- Responsive design
+
+## Structure
+
+The component consists of two main parts:
+
+1. **FeedbackToggle** - A tooltip-wrapped button that triggers the survey dialog
+2. **CustomSurvey** - The dialog containing:
+   - Feedback textarea input
+   - Submit button with loading state
+   - Success state with social media follow links
+
+## PostHog Integration
+
+The component uses PostHog for survey analytics. Make sure you have PostHog initialized in your app:
+
+```tsx
+import posthog from "posthog-js"
+import { PostHogProvider } from "posthog-js/react"
+
+posthog.init("YOUR_PROJECT_KEY", {
+  api_host: "https://app.posthog.com",
+})
+
+export default function App({ children }) {
+  return <PostHogProvider>{children}</PostHogProvider>
+}
+```
+
+### Survey Configuration
+
+Update the survey IDs in the component:
+
+```tsx
+const QUESTION_ID = "your-question-id"
+const SURVEY_ID = "your-survey-id"
+```
+
+## Localization
+
+Add translations to your locale files:
+
+```json
+{
+  "feedback": "Feedback",
+  "feedback-title": "We'd love your feedback",
+  "feedback-placeholder": "What do you think? How can we improve?",
+  "submit": "Submit",
+  "feedback-success": "Thank you for your feedback!",
+  "feedback-success-description": "Your feedback has been sent successfully.",
+  "in-the-meantime-follow-us": "In the meantime, follow us",
+  "close": "Close"
+}
+```
+
+## Examples
+
+### Basic Usage
+
+```tsx
+import FeedbackSurvey from "@/components/naseem-ui/elements/feedback-survey"
+
+export function HeaderWithFeedback() {
+  return (
+    <header className="flex items-center justify-between p-4">
+      <h1>My App</h1>
+      <FeedbackSurvey />
+    </header>
+  )
+}
+```
+
+### In Navigation Bar
+
+```tsx
+import FeedbackSurvey from "@/components/naseem-ui/elements/feedback-survey"
+
+export function NavBar() {
+  return (
+    <nav className="flex items-center gap-4">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <div className="ml-auto">
+        <FeedbackSurvey />
+      </div>
+    </nav>
+  )
+}
+```
+
+### With Custom Styling Container
+
+```tsx
+import FeedbackSurvey from "@/components/naseem-ui/elements/feedback-survey"
+
+export function FooterWithFeedback() {
+  return (
+    <footer className="p-4 bg-muted">
+      <div className="flex justify-end">
+        <FeedbackSurvey />
+      </div>
+    </footer>
+  )
+}
+```
+
+## Social Media Links
+
+The success state includes links to:
+
+| Platform | Link |
+|----------|------|
+| Website | sikka.io |
+| GitHub | github.com/sikka-software |
+| LinkedIn | linkedin.com/company/80940262 |
+| WhatsApp | wa.me/966531045453 |
+| Instagram | instagram.com/sikka_sa |
+| X/Twitter | x.com/sikka_sa |
+
+To customize these links, edit the social media section in the component.
+
+## Props
+
+The component doesn't accept any props. It manages its own state internally.
+
+## Dependencies
+
+```json
+{
+  "lucide-react": "latest",
+  "next-intl": "latest",
+  "posthog-js": "latest"
+}
+```
+
+## Registry Dependencies
+
+- `button` - For the trigger button and action buttons
+- `tooltip` - For the tooltip on the trigger button
+- `dialog` - For the feedback modal
+
+## Accessibility
+
+- Keyboard navigation support
+- Focus management in dialog
+- ARIA labels for buttons
+- Proper heading hierarchy
+- RTL support for Arabic users
+
+## States
+
+1. **Initial** - Tooltip button visible
+2. **Open** - Dialog with feedback textarea
+3. **Submitting** - Loading spinner on submit button
+4. **Success** - Confirmation message with social links
+
+## Related Components
+
+- [Sikka Icons](/docs/components/sikka-icons)
+- [Sikka Popover](/docs/components/sikka-popover)
+- [Button](/docs/components/button)
+- [Dialog](/docs/components/dialog)
+- [Tooltip](/docs/components/tooltip)
