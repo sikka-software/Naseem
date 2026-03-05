@@ -24,23 +24,12 @@ export default async function Layout({ children }: LayoutProps) {
   const messages = await getMessages();
 
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      data-website-id="b4c4225c-b9a3-4199-bd56-d9fc8d987e1a"
-    >
-      {/* {!isDev ? (
-        <Script
-          async
-          src="https://cloud.umami.is/script.js"
-          data-website-id="b4c4225c-b9a3-4199-bd56-d9fc8d987e1a"
-        />
-      ) : null} */}
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           GeistSans.variable,
-          geistSans.className,
-          "bg-background relative flex min-h-screen flex-col antialiased"
+          geistSans.className
+          // "bg-background relative flex min-h-screen flex-col antialiased"
         )}
       >
         <NextIntlClientProvider

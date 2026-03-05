@@ -22,7 +22,7 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg--500">
       <div className="bg-muted grow" />
       <footer>
         <div className="mx-auto max-w-7xl">

@@ -2,7 +2,6 @@ import { siteConfig } from "@/config/site";
 import type { LinkItemType } from "fumadocs-ui/utils/link-item";
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 import { Album, Cuboid, Newspaper } from "lucide-react";
-import Image from "next/image";
 import NaseemLogo from "@/components/naseem-logo";
 
 export const linkItems: LinkItemType[] = [
