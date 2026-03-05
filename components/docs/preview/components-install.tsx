@@ -47,12 +47,12 @@ function ComponentInstall({ children }: { children: React.ReactNode }) {
 const CLIInstall = ({ name }: { name: string }) => {
   const handleCodeToCopy = (value: "npx" | "pnpm" | "bun") => {
     switch (value) {
-      case "npx":
-        return `npx shadcn@latest add ${prePath}/r/${name}.json`;
       case "pnpm":
-        return `pnpm dlx shadcn@latest add ${prePath}/r/${name}.json`;
+        return `pnpm dlx @sikka/naseem add ${prePath}/r/${name}.json`;
+      case "npx":
+        return `npx @sikka/naseem add ${prePath}/r/${name}.json`;
       case "bun":
-        return `bunx shadcn@latest add ${prePath}/r/${name}.json`;
+        return `bunx @sikka/naseem add ${prePath}/r/${name}.json`;
     }
   };
 

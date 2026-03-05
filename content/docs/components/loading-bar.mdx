@@ -1,0 +1,138 @@
+---
+title: Loading Bar
+description: A page loading progress bar component for route transitions
+---
+
+<ComponentPreview
+  name="loading-bar-demo"
+  componentName="loading-bar"
+  classNameComponentContainer='min-h-[350px]'
+  showCommand={true}
+/>
+
+## Usage
+
+The `LoadingBar` component displays a progress bar at the top of the page during route transitions in Next.js applications.
+
+### Import
+
+```tsx
+import { LoadingBar } from "@/components/naseem-ui/elements/loading-bar";
+```
+
+### Basic Example
+
+```tsx
+// Add to your root layout or main app component
+<LoadingBar />
+```
+
+### Custom Color
+
+```tsx
+<LoadingBar color="#3b82f6" />
+```
+
+### Custom Height
+
+```tsx
+<LoadingBar height={4} />
+```
+
+### Advanced Configuration
+
+```tsx
+<LoadingBar
+  color="hsl(var(--primary))"
+  startPosition={0.3}
+  stopDelayMs={200}
+  height={5}
+  options={{
+    minimum: 0.1,
+    easing: "ease",
+    speed: 200,
+    trickleSpeed: 200,
+  }}
+/>
+```
+
+## Props
+
+<TypeTable type={{
+  color: {
+    type: 'string',
+    default: '"hsl(var(--primary))"',
+    description: 'Color of the loading bar (accepts any CSS color value)',
+  },
+  startPosition: {
+    type: 'number',
+    default: '0.3',
+    description: 'Initial position of the progress bar (0-1)',
+  },
+  stopDelayMs: {
+    type: 'number',
+    default: '0',
+    description: 'Delay in milliseconds before the bar disappears after navigation completes',
+  },
+  height: {
+    type: 'number',
+    default: '5',
+    description: 'Height of the loading bar in pixels',
+  },
+  options: {
+    type: 'object',
+    default: 'undefined',
+    description: 'NProgress configuration options',
+  },
+}} />
+
+## NProgress Options
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `minimum` | number | `0.08` | Minimum progress percentage when starting |
+| `easing` | string | `"ease"` | CSS easing function for animations |
+| `speed` | number | `200` | Animation speed in milliseconds |
+| `trickleSpeed` | number | `200` | How often the bar increments during loading |
+| `showSpinner` | boolean | `true` | Show spinner in top-right corner |
+
+## Features
+
+- Automatic page navigation detection with Next.js Router
+- Customizable color and height
+- Smooth progress animations
+- Optional spinner indicator
+- Configurable progress behavior
+- Theme-aware (uses CSS variables by default)
+- No manual start/stop required
+
+## Implementation
+
+The component uses:
+- Next.js Router events for navigation detection
+- NProgress library for progress bar functionality
+- Styled-jsx for scoped CSS styling
+- CSS variables for theme integration
+
+## Dependencies
+
+```json
+{
+  "nprogress": "latest",
+  "next": "latest",
+  "react": "latest"
+}
+```
+
+## Tips
+
+1. **Placement**: Add the `LoadingBar` component once in your root layout (`app/layout.tsx`) for global coverage.
+
+2. **Color Matching**: Use your theme's primary color for consistency:
+   ```tsx
+   <LoadingBar color="hsl(var(--primary))" />
+   ```
+
+3. **Performance**: The component has minimal performance impact as it only activates during navigation.
+
+4. **Spinner**: The spinner appears automatically in the top-right corner. Disable it via options if not needed.

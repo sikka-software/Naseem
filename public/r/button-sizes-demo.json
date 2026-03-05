@@ -1,16 +1,18 @@
 {
   "name": "button-sizes-demo",
   "type": "registry:example",
-  "dependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [
-    "https://ui.sikka.io/r/button.json"
+    "button"
   ],
   "files": [
     {
       "type": "registry:example",
-      "content": "\"use client\";\n\nimport { Button } from \"@/components/naseem-ui/elements/button\";\nimport { useState } from \"react\";\nimport { useEffect } from \"react\";\n\nexport function ButtonSizesDemo() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Button size=\"xs\">Extra Small</Button>\n      <Button size=\"sm\">Small</Button>\n      <Button size=\"lg\">Large</Button>\n      <Button size=\"xl\">Extra Large</Button>\n    </div>\n  );\n}\n\nexport function ButtonDemo2() {\n  const [isLoading, setIsLoading] = useState(false);\n  useEffect(() => {\n    if (isLoading) {\n      setTimeout(() => {\n        setIsLoading(false);\n      }, 2000);\n    }\n  }, [isLoading]);\n  return (\n    <Button isLoading={isLoading} onClick={() => setIsLoading(true)}>\n      Click To Start Loading\n    </Button>\n  );\n}\n",
-      "path": "components/demos/button-demo.tsx",
-      "target": "components/ui/button-demo.tsx"
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { ArrowRight } from \"lucide-react\";\n\nconst ButtonSizesDemo = () => {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button size=\"sm\">Small</Button>\n      <Button size=\"default\">Default</Button>\n      <Button size=\"lg\">Large</Button>\n      <Button size=\"icon\">\n        <ArrowRight className=\"h-4 w-4\" />\n      </Button>\n    </div>\n  );\n};\n\nexport default ButtonSizesDemo;\n",
+      "path": "components/demos/button-sizes-demo.tsx",
+      "target": "components/ui/button-sizes-demo.tsx"
     }
   ]
 }

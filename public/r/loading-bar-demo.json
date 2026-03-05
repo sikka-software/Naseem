@@ -1,0 +1,16 @@
+{
+  "name": "loading-bar-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "nprogress"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { LoadingBar } from \"@/components/naseem-ui/elements/loading-bar\";\nimport Link from \"next/link\";\n\nconst LoadingBarDemo = () => {\n  return (\n    <div className=\"w-full max-w-[600px] space-y-6\">\n      <div className=\"space-y-2\">\n        <h3 className=\"font-medium\">Loading Bar Demo</h3>\n        <p className=\"text-sm text-muted-foreground\">\n          The loading bar automatically shows during page navigation. Click the\n          link below to see it in action.\n        </p>\n      </div>\n\n      <LoadingBar color=\"hsl(var(--primary))\" height={4} />\n\n      <div className=\"flex items-center gap-4\">\n        <Link\n          href=\"/\"\n          className=\"inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90\"\n        >\n          Navigate to Home (see loading bar)\n        </Link>\n      </div>\n\n      <div className=\"rounded-lg border bg-card p-4\">\n        <h4 className=\"mb-2 font-medium\">Features:</h4>\n        <ul className=\"list-inside list-disc text-sm space-y-1\">\n          <li>Automatic page navigation detection</li>\n          <li>Customizable color and height</li>\n          <li>Smooth progress animation</li>\n          <li>Spinner indicator for loading state</li>\n        </ul>\n      </div>\n    </div>\n  );\n};\n\nexport default LoadingBarDemo;\n",
+      "path": "components/demos/loading-bar-demo.tsx",
+      "target": "components/ui/loading-bar-demo.tsx"
+    }
+  ]
+}

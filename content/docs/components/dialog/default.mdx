@@ -1,0 +1,144 @@
+---
+title: Dialog
+description: A modal dialog component for displaying content in an overlay
+---
+
+<ComponentPreview
+  name="dialog-demo"
+  componentName="dialog"
+  classNameComponentContainer='min-h-[350px]'
+  showCommand={true}
+/>
+
+## Usage
+
+The `Dialog` component displays content in a modal overlay with accessible focus management and keyboard navigation.
+
+### Import
+
+```tsx
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+  DialogFooter,
+  DialogClose,
+} from "@/components/naseem-ui/elements/dialog";
+```
+
+### Basic Example
+
+```tsx
+<Dialog>
+  <DialogTrigger>Open Dialog</DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Dialog Title</DialogTitle>
+      <DialogDescription>
+        This is a description for the dialog.
+      </DialogDescription>
+    </DialogHeader>
+    <div>Your dialog content here</div>
+    <DialogFooter>
+      <DialogClose>Close</DialogClose>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+### RTL Support
+
+```tsx
+<Dialog>
+  <DialogTrigger>RTL Dialog</DialogTrigger>
+  <DialogContent dir="rtl">
+    <DialogHeader>
+      <DialogTitle>عنوان الحوار</DialogTitle>
+      <DialogDescription>
+        هذا وصف للحوار.
+      </DialogDescription>
+    </DialogHeader>
+  </DialogContent>
+</Dialog>
+```
+
+### Persistent Dialog (Prevent Outside Click Close)
+
+```tsx
+<Dialog>
+  <DialogTrigger>Persistent Dialog</DialogTrigger>
+  <DialogContent persist>
+    <DialogHeader>
+      <DialogTitle>Cannot Close</DialogTitle>
+      <DialogDescription>
+        Click outside won't close this dialog.
+      </DialogDescription>
+    </DialogHeader>
+  </DialogContent>
+</Dialog>
+```
+
+## Components
+
+| Component | Description |
+|-----------|-------------|
+| `Dialog` | Root component that manages dialog state |
+| `DialogTrigger` | Trigger element that opens the dialog |
+| `DialogContent` | Main content container with overlay |
+| `DialogHeader` | Header section for title and description |
+| `DialogFooter` | Footer section for actions |
+| `DialogTitle` | Accessible dialog title |
+| `DialogDescription` | Accessible dialog description |
+| `DialogClose` | Button to close the dialog |
+| `DialogOverlay` | Backdrop overlay (used internally) |
+| `DialogPortal` | Portal container (used internally) |
+
+## Props
+
+### DialogContent
+
+<TypeTable type={{
+  persist: {
+    type: 'boolean',
+    default: 'false',
+    description: 'Prevent closing when clicking outside the dialog',
+  },
+  className: {
+    type: 'string',
+    default: 'undefined',
+    description: 'Additional CSS classes',
+  },
+}} />
+
+## Features
+
+- Built on Radix UI Dialog primitives
+- Full keyboard navigation support (Esc to close)
+- Focus trap within dialog
+- Accessible ARIA attributes
+- RTL language support
+- Responsive design (adapts to mobile)
+- Smooth animations
+- Optional persistent mode (prevent outside click close)
+- Automatic overlay backdrop
+
+## Implementation
+
+The component uses:
+- Radix UI Dialog for accessibility and behavior
+- Tailwind CSS for styling and animations
+- Lucide icons for the close button
+- Responsive design with max-width constraints
+
+## Dependencies
+
+```json
+{
+  "@radix-ui/react-dialog": "latest",
+  "lucide-react": "latest",
+  "react": "latest"
+}
+```

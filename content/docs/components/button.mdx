@@ -3,8 +3,8 @@ title: Button
 description: A customizable button component with multiple variants and sizes
 ---
 
-<ComponentPreview 
-  name="button-demo"    
+<ComponentPreview
+  name="button-demo"
   componentName="button"
   classNameComponentContainer='min-h-[350px]'
   showCommand={true}
@@ -21,51 +21,23 @@ description: A customizable button component with multiple variants and sizes
 The Button component comes with several style variants:
 
 - `default`: Primary button style
-- `light`: Light background with primary text
-- `destructive`: Red background for destructive actions  
+- `destructive`: Red background for destructive actions
 - `outline`: Border with transparent background
 - `secondary`: Secondary color scheme
 - `ghost`: Minimal hover effect
 - `link`: Text link style
-- `combobox`: Special style for comboboxes
-- `neoBrutalism`: Bold neo-brutalism design
 
 ## Available Sizes
 
-- `default`: Standard button size (h-10 with balanced padding)
-- `heightless`: Flexible height with consistent horizontal padding  
-- `xs`: Extra small buttons for compact interfaces
-- `sm`: Small buttons for secondary actions
+- `default`: Standard button size (h-9 with balanced padding)
+- `sm`: Small buttons for compact interfaces
 - `lg`: Large buttons for primary actions
-- `xl`: Extra large buttons for high-emphasis actions
 - `icon`: Square buttons for icon-only content
-- `smallIcon`: Compact square buttons for small icons
-
-## Features
-
-### Loading State
-
-```tsx
-<Button isLoading>Loading...</Button>
-```
-
-The loading state automatically shows:
-- Dots pulse animation for normal buttons
-- Spinner animation for icon buttons
-- Appropriate colors based on variant
-
-### Centering
-
-```tsx 
-<Button centered={false}>Left Aligned</Button>
-```
-
-By default buttons center their content. Set `centered={false}` to align left.
 
 ## Usage
 
 ```tsx
-import { Button } from "@/components/naseem-ui/elements/button"
+import { Button } from "@/components/ui/button"
 
 export default function Example() {
   return (
@@ -73,7 +45,7 @@ export default function Example() {
       <Button variant="default">Default</Button>
       <Button variant="destructive">Delete</Button>
       <Button variant="outline">Outline</Button>
-      <Button isLoading>Loading</Button>
+      <Button variant="ghost">Ghost</Button>
     </div>
   )
 }
@@ -83,23 +55,18 @@ export default function Example() {
 
 <TypeTable type={{
   variant: {
-    type: '"default" | "light" | "destructive" | "outline" | "secondary" | "ghost" | "link" | "combobox" | "neoBrutalism"',
+    type: '"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
     default: '"default"',
     description: 'Visual style variant',
   },
   size: {
-    type: '"default" | "heightless" | "xs" | "sm" | "lg" | "xl" | "icon" | "smallIcon"',
+    type: '"default" | "sm" | "lg" | "icon"',
     default: '"default"',
     description: 'Size variant',
   },
-  centered: {
-    type: 'boolean',
-    default: 'true',
-    description: 'Whether to center button content',
-  },
-  isLoading: {
+  asChild: {
     type: 'boolean',
     default: 'false',
-    description: 'Shows loading indicator when true',
+    description: 'Whether to render as a child component using Slot',
   },
 }} />
