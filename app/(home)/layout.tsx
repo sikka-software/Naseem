@@ -5,8 +5,10 @@ import Footer from "@/components/landing/footer";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <div className="h-screen max-h-screen min-h-screen bg-red-400">
-      <HomeLayout {...baseOptions}>{children}</HomeLayout>
+    <div className="flex h-screen flex-col overflow-hidden">
+      <HomeLayout {...baseOptions} className="flex-1 overflow-hidden">
+        {children}
+      </HomeLayout>
       <Footer />
     </div>
   );

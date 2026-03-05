@@ -8,7 +8,7 @@ import { HeroSection } from "@/components/landing/hero";
 
 export default function HomePage() {
   return (
-    <main className="flex flex-col justify-center bg-green-400/50 text-center">
+    <main className="flex h-full flex-col justify-center text-center">
       <HeroSection />
     </main>
   );

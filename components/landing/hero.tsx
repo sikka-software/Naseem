@@ -14,8 +14,8 @@ const HeroTitle = () => {
 
   return (
     <>
-      <div className="bg--400 flex flex-col items-center">
-        <h1 className="mb-4 hidden text-4xl leading-none font-semibold tracking-tighter text-balance sm:text-5xl md:block md:text-6xl lg:text-7xl">
+      <div className="flex flex-col items-center">
+        <h1 className="mb-3 hidden text-3xl leading-none font-semibold tracking-tighter text-balance sm:text-4xl md:block md:text-5xl lg:text-6xl">
           Build{" "}
           <span className="bg-linear-to-r from-violet-500 to-teal-500 bg-clip-text text-transparent">
             apps
@@ -27,7 +27,7 @@ const HeroTitle = () => {
           </LineShadowText>
         </h1>
 
-        <h1 className="mb-4 block text-6xl leading-none font-semibold tracking-tighter text-balance sm:text-5xl md:hidden md:text-6xl lg:text-7xl">
+        <h1 className="mb-3 block text-4xl leading-none font-semibold tracking-tighter text-balance sm:text-3xl md:hidden md:text-4xl lg:text-5xl">
           Build{" "}
           <span className="bg-linear-to-r from-violet-500 to-teal-500 bg-clip-text text-transparent">
             commerce
@@ -35,7 +35,7 @@ const HeroTitle = () => {
           apps <span className="italic">faster</span>
         </h1>
 
-        <p className="text-muted-foreground mb-8 text-2xl font-light text-balance md:text-xl">
+        <p className="text-muted-foreground mb-4 text-lg text-balance md:text-base">
           <span className="text-foreground font-normal">
             Copy-paste components{" "}
           </span>{" "}
@@ -43,10 +43,10 @@ const HeroTitle = () => {
           <span className="text-foreground font-normal">project</span>.
         </p>
 
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-3">
           <div>
             <Button
-              className="group/arrow px-7 py-7 text-lg font-bold md:px-4 md:py-4 md:text-sm"
+              className="group/arrow px-6 py-5 text-base font-bold md:px-4 md:py-4 md:text-sm"
               asChild
               size="lg"
             >
@@ -55,27 +55,27 @@ const HeroTitle = () => {
           </div>
           <div className="hidden md:block">
             <Button
-              className="group/arrow px-7 py-7 text-lg font-bold md:px-4 md:py-4 md:text-sm"
+              className="group/arrow px-6 py-5 text-base font-bold md:px-4 md:py-4 md:text-sm"
               asChild
               size="lg"
               variant="secondary"
             >
               <Link href="/docs">
                 Get Started
-                <ArrowRight className="ml-2 size-5 transition-transform group-hover/arrow:translate-x-1" />
+                <ArrowRight className="ml-2 size-4 transition-transform group-hover/arrow:translate-x-1" />
               </Link>
             </Button>
           </div>
         </div>
 
-        <div className="mt-6 w-full text-center">
-          <p>
+        <div className="mt-4 w-full text-center">
+          <p className="text-sm">
             100% free and <span className="font-semibold">Open Source</span>
           </p>
         </div>
-        <div className="mt-6 w-full text-center">
-          <p className="text-sm">
-            This is tailored for{" "}
+        <div className="mt-2 w-full text-center">
+          <p className="text-xs">
+            Tailored for{" "}
             <a
               href="https://sikka.io"
               target="_blank"
@@ -83,12 +83,7 @@ const HeroTitle = () => {
             >
               Sikka Software
             </a>
-            , but you're free to use it as you like
           </p>
-        </div>
-
-        <div className="text-fd-muted-foreground mt-10 text-sm">
-          v{process.env.NEXT_PUBLIC_VERSION}
         </div>
       </div>
     </>
@@ -97,8 +92,8 @@ const HeroTitle = () => {
 
 export function HeroSection() {
   return (
-    <section className="relative rounded-xl px-4">
-      <div className="h250 absolute hidden size-full w-full items-center justify-center overflow-hidden mask-[radial-gradient(circle,#000_50%,transparent_80%)] md:flex">
+    <section className="relative h-full w-full rounded-xl px-4">
+      <div className="absolute hidden size-full w-full items-center justify-center overflow-hidden mask-[radial-gradient(circle,#000_50%,transparent_80%)] md:flex">
         <GridPattern
           width={20}
           height={20}
@@ -110,8 +105,8 @@ export function HeroSection() {
           )}
         />
       </div>
-      <div className="mx-auto my-6 grid place-items-center gap-8">
-        <div className="relative z-20 max-w-3xl space-y-8 text-center">
+      <div className="grid h-full place-items-center gap-4">
+        <div className="relative z-20 max-w-3xl space-y-4 text-center">
           <HeroTitle />
         </div>
       </div>
