@@ -3,36 +3,6 @@ import * as React from "react";
 
 export const examples: Registry = [
   {
-    name: "button-demo",
-    type: "registry:example",
-    dependencies: [],
-    registryDependencies: ["button"],
-    files: [
-      {
-        path: "@/components/demos/button-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-    component: React.lazy(() =>
-      import("../components/demos/button-demo")
-    ),
-  },
-  {
-    name: "button-sizes-demo",
-    type: "registry:example",
-    dependencies: ["lucide-react"],
-    registryDependencies: ["button"],
-    files: [
-      {
-        path: "@/components/demos/button-sizes-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-    component: React.lazy(() =>
-      import("../components/demos/button-sizes-demo")
-    ),
-  },
-  {
     name: "theme-switcher-demo",
     type: "registry:example",
     dependencies: ["lucide-react"],
@@ -121,19 +91,6 @@ export const examples: Registry = [
     ),
   },
   {
-    name: "destroyable-card-demo",
-    type: "registry:example",
-    dependencies: [],
-    registryDependencies: [],
-    files: [
-      {
-        path: "@/components/demos/card-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-    component: React.lazy(() => import("../components/demos/card-demo")),
-  },
-  {
     name: "app-stores-demo",
     type: "registry:example",
     dependencies: [],
@@ -160,18 +117,5 @@ export const examples: Registry = [
     component: React.lazy(
       () => import("../components/demos/auth-buttons-demo")
     ),
-  },
-  {
-    name: "loading-bar-demo",
-    type: "registry:example",
-    dependencies: ["nprogress"],
-    registryDependencies: [],
-    files: [
-      {
-        path: "@/components/demos/loading-bar-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-    component: React.lazy(() => import("../components/demos/loading-bar-demo")),
   },
 ];
