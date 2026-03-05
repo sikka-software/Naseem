@@ -1,0 +1,197 @@
+---
+title: Sikka Icons
+description: A collection of brand and social media icons for Sikka including GitHub, X/Twitter, LinkedIn, Instagram, and WhatsApp
+---
+
+<ComponentPreview
+  name="sikka-icons-demo"
+  classNameComponentContainer='min-h-[400px]'
+/>
+
+## Usage
+
+Import icons from the icons directory and use them as SVG components:
+
+```tsx
+import { GitHub } from "@/components/naseem-ui/icons/github"
+import { XformerlyTwitter } from "@/components/naseem-ui/icons/x"
+import { LinkedIn } from "@/components/naseem-ui/icons/linkedin"
+import { Instagram } from "@/components/naseem-ui/icons/instagram"
+import { WhatsApp } from "@/components/naseem-ui/icons/whatsapp"
+import SikkaLogo from "@/components/naseem-ui/icons/sikka"
+
+export default function Example() {
+  return (
+    <div className="flex gap-4">
+      <GitHub className="h-6 w-6" />
+      <XformerlyTwitter className="h-6 w-6" />
+      <LinkedIn className="h-6 w-6" />
+      <Instagram className="h-6 w-6" />
+      <WhatsApp className="h-6 w-6" />
+      <SikkaLogo className="h-8 w-8" />
+    </div>
+  )
+}
+```
+
+## Available Icons
+
+### Brand Icons
+
+#### Sikka Logo
+
+The official Sikka logo SVG component.
+
+```tsx
+import SikkaLogo from "@/components/naseem-ui/icons/sikka"
+
+<SikkaLogo className="h-12 w-12" />
+```
+
+### Social Media Icons
+
+| Icon | Component | Import |
+|------|-----------|--------|
+| GitHub | `GitHub` | `@/components/naseem-ui/icons/github` |
+| X / Twitter | `XformerlyTwitter` | `@/components/naseem-ui/icons/x` |
+| LinkedIn | `LinkedIn` | `@/components/naseem-ui/icons/linkedin` |
+| Instagram | `Instagram` | `@/components/naseem-ui/icons/instagram` |
+| WhatsApp | `WhatsApp` | `@/components/naseem-ui/icons/whatsapp` |
+
+## Examples
+
+### Social Links Bar
+
+```tsx
+import { GitHub } from "@/components/naseem-ui/icons/github"
+import { XformerlyTwitter } from "@/components/naseem-ui/icons/x"
+import { LinkedIn } from "@/components/naseem-ui/icons/linkedin"
+
+export function SocialLinks() {
+  return (
+    <div className="flex items-center gap-4">
+      <a href="https://github.com" aria-label="GitHub">
+        <GitHub className="h-5 w-5 hover:text-primary transition-colors" />
+      </a>
+      <a href="https://twitter.com" aria-label="X / Twitter">
+        <XformerlyTwitter className="h-5 w-5 hover:text-primary transition-colors" />
+      </a>
+      <a href="https://linkedin.com" aria-label="LinkedIn">
+        <LinkedIn className="h-5 w-5 hover:text-primary transition-colors" />
+      </a>
+    </div>
+  )
+}
+```
+
+### Icon Sizes
+
+All icons support standard SVG sizing through className:
+
+```tsx
+<div className="flex items-center gap-4">
+  <GitHub className="h-4 w-4" />  {/* Small */}
+  <GitHub className="h-6 w-6" />  {/* Default */}
+  <GitHub className="h-8 w-8" />  {/* Medium */}
+  <GitHub className="h-12 w-12" /> {/* Large */}
+  <GitHub className="h-16 w-16" /> {/* Extra Large */}
+</div>
+```
+
+### Colored Icons
+
+Use Tailwind's text color utilities to style icons:
+
+```tsx
+<div className="flex items-center gap-4">
+  <GitHub className="h-8 w-8 text-gray-900 dark:text-white" />
+  <XformerlyTwitter className="h-8 w-8 text-black dark:text-white" />
+  <LinkedIn className="h-8 w-8 text-blue-600" />
+  <Instagram className="h-8 w-8 text-pink-600" />
+  <WhatsApp className="h-8 w-8 text-green-500" />
+</div>
+```
+
+### Button with Icon
+
+```tsx
+import { Button } from "@/components/ui/button"
+import { GitHub } from "@/components/naseem-ui/icons/github"
+
+<Button variant="outline" size="icon">
+  <GitHub className="h-5 w-5" />
+</Button>
+```
+
+## Props
+
+All icon components accept standard SVG props:
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `className` | `string` | CSS classes for styling (size, color, etc.) |
+| `style` | `React.CSSProperties` | Inline styles |
+| `width` | `string \| number` | SVG width attribute |
+| `height` | `string \| number` | SVG height attribute |
+| `fill` | `string` | SVG fill color |
+| `stroke` | `string` | SVG stroke color |
+
+## Best Practices
+
+### Accessibility
+
+Always provide accessible labels when using icons as links or buttons:
+
+```tsx
+<a href="https://github.com" aria-label="Visit our GitHub">
+  <GitHub className="h-6 w-6" />
+</a>
+
+<button aria-label="Share on Twitter">
+  <XformerlyTwitter className="h-5 w-5" />
+</button>
+```
+
+### Sizing
+
+Use Tailwind's utility classes for consistent sizing:
+
+```tsx
+// ✅ Good - using Tailwind classes
+<GitHub className="h-5 w-5" />
+<GitHub className="h-6 w-6" />
+
+// ❌ Avoid - using width/height props
+<GitHub width={20} height={20} />
+```
+
+### Color
+
+Icons inherit the current text color by default. Use `text-*` classes to customize:
+
+```tsx
+// Inherits parent text color
+<div className="text-primary">
+  <GitHub className="h-6 w-6" />
+</div>
+
+// Explicit color
+<GitHub className="h-6 w-6 text-blue-500" />
+```
+
+## File Structure
+
+```
+components/naseem-ui/icons/
+├── sikka.tsx       # Sikka logo
+├── github.tsx      # GitHub icon
+├── x.tsx           # X (formerly Twitter) icon
+├── linkedin.tsx    # LinkedIn icon
+├── instagram.tsx   # Instagram icon
+└── whatsapp.tsx    # WhatsApp icon
+```
+
+## Related Components
+
+- [Button](/docs/components/button)
+- [Sikka Popover](/docs/components/sikka-popover)
