@@ -33,19 +33,6 @@ export const examples: Registry = [
     ),
   },
   {
-    name: "dialog-demo",
-    type: "registry:example",
-    dependencies: ["lucide-react"],
-    registryDependencies: [],
-    files: [
-      {
-        path: "@/components/demos/dialog-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-    component: React.lazy(() => import("../components/demos/dialog-demo")),
-  },
-  {
     name: "multilang-input-demo",
     type: "registry:example",
     dependencies: ["lucide-react"],
