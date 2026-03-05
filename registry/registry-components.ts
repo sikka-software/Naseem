@@ -3,22 +3,6 @@ import * as React from "react";
 
 export const components: Registry = [
   {
-    name: "button",
-    type: "registry:component",
-    dependencies: ["lucide-react"],
-    files: [
-      {
-        path: "@/components/naseem-ui/elements/button.tsx",
-        type: "registry:component",
-      },
-    ],
-    component: React.lazy(() =>
-      import("@/components/naseem-ui/elements/button").then((mod) => ({
-        default: mod.Button,
-      }))
-    ),
-  },
-  {
     name: "dialog",
     type: "registry:component",
     dependencies: ["lucide-react"],
@@ -53,11 +37,18 @@ export const components: Registry = [
   {
     name: "theme-switcher",
     type: "registry:component",
-    dependencies: ["lucide-react", "next-themes", "next-intl"],
-    registryDependencies: ["button", "dropdown-menu", "tooltip"],
+    dependencies: [
+      "lucide-react",
+      "next-themes",
+      "next-intl",
+      "class-variance-authority", // button's dep
+      "tailwind-merge", // utils dep
+      "clsx", // utils dep
+    ],
+    registryDependencies: ["button", "dropdown-menu", "tooltip", "utils"],
     files: [
       {
-        path: "@/components/naseem-ui/elements/theme-switcher.tsx",
+        path: "components/naseem-ui/elements/theme-switcher.tsx",
         type: "registry:component",
       },
     ],

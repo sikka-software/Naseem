@@ -4,12 +4,16 @@
   "dependencies": [
     "lucide-react",
     "next-themes",
-    "next-intl"
+    "next-intl",
+    "class-variance-authority",
+    "tailwind-merge",
+    "clsx"
   ],
   "registryDependencies": [
     "button",
     "dropdown-menu",
-    "tooltip"
+    "tooltip",
+    "utils"
   ],
   "files": [
     {
