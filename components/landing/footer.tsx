@@ -12,10 +12,6 @@ const footerLinks = [
     title: "Overview",
   },
   {
-    href: "/docs/installation",
-    title: "Installation",
-  },
-  {
     href: "/docs",
     title: "Components",
   },
@@ -23,7 +19,7 @@ const footerLinks = [
 
 const Footer = ({ className }: { className?: string }) => {
   return (
-    <div className={cn("flex flex-shrink-0 flex-col", className)}>
+    <div className={cn("flex shrink-0 flex-col", className)}>
       <footer className="w-full">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col items-center justify-center py-6">

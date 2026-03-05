@@ -2,38 +2,38 @@ import type { Registry } from "@/registry/schema";
 import * as React from "react";
 
 export const components: Registry = [
-  {
-    name: "dialog",
-    type: "registry:component",
-    dependencies: ["lucide-react"],
-    files: [
-      {
-        path: "@/components/naseem-ui/elements/dialog.tsx",
-        type: "registry:component",
-      },
-    ],
-    component: React.lazy(() =>
-      import("@/components/naseem-ui/elements/dialog").then((mod) => ({
-        default: mod.Dialog,
-      }))
-    ),
-  },
-  {
-    name: "loading-bar",
-    type: "registry:component",
-    dependencies: ["lucide-react", "nprogress"],
-    files: [
-      {
-        path: "@/components/naseem-ui/elements/loading-bar.tsx",
-        type: "registry:component",
-      },
-    ],
-    component: React.lazy(() =>
-      import("@/components/naseem-ui/elements/loading-bar").then((mod) => ({
-        default: mod.LoadingBar,
-      }))
-    ),
-  },
+  // {
+  //   name: "dialog",
+  //   type: "registry:component",
+  //   dependencies: ["lucide-react"],
+  //   files: [
+  //     {
+  //       path: "@/components/naseem-ui/elements/dialog.tsx",
+  //       type: "registry:component",
+  //     },
+  //   ],
+  //   component: React.lazy(() =>
+  //     import("@/components/naseem-ui/elements/dialog").then((mod) => ({
+  //       default: mod.Dialog,
+  //     }))
+  //   ),
+  // },
+  // {
+  //   name: "loading-bar",
+  //   type: "registry:component",
+  //   dependencies: ["lucide-react", "nprogress"],
+  //   files: [
+  //     {
+  //       path: "@/components/naseem-ui/elements/loading-bar.tsx",
+  //       type: "registry:component",
+  //     },
+  //   ],
+  //   component: React.lazy(() =>
+  //     import("@/components/naseem-ui/elements/loading-bar").then((mod) => ({
+  //       default: mod.LoadingBar,
+  //     }))
+  //   ),
+  // },
   {
     name: "theme-switcher",
     type: "registry:component",
@@ -222,22 +222,6 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/currency-input").then((mod) => ({
         default: mod.CurrencyInput,
-      }))
-    ),
-  },
-  {
-    name: "alert",
-    type: "registry:component",
-    dependencies: ["lucide-react"],
-    files: [
-      {
-        path: "@/components/naseem-ui/elements/alert.tsx",
-        type: "registry:component",
-      },
-    ],
-    component: React.lazy(() =>
-      import("@/components/naseem-ui/elements/alert").then((mod) => ({
-        default: mod.Alert,
       }))
     ),
   },

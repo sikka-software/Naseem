@@ -37,7 +37,6 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#contributing">Contributing</a></li>
@@ -78,15 +77,6 @@ Since this project is a collection of components, you can just copy and paste th
 
 You can use the components in your project by copying and pasting the components from the [official documentation](https://ui.sikka.io).
 
-### Installation
-
-This project uses `tailwindcss` v.4 as the utility-first CSS framework. Please follow the official [tailwind documentation](https://tailwindcss.com/docs/installation/using-vite) to get started using tailwindcss.
-
-Some components also rely on `shadcn/ui` for the design system and `motion/react` for animations.
-
-Check the [installation guide](https://ui.sikka.io/docs/installation) for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 

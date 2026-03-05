@@ -36,7 +36,6 @@ export const examples: Registry = [
   //     }))
   //   ),
   // },
-
   // {
   //   name: "theme-switcher-demo",
   //   type: "registry:example",
@@ -167,16 +166,4 @@ export const examples: Registry = [
   //   ),
   // },
   // {
-  //   name: "alert-demo",
-  //   type: "registry:example",
-  //   dependencies: [],
-  //   registryDependencies: [],
-  //   files: [
-  //     {
-  //       path: "@/components/demos/alert-demo.tsx",
-  //       type: "registry:example",
-  //     },
-  //   ],
-  //   component: React.lazy(() => import("../components/demos/alert-demo")),
-  // },
 ];
