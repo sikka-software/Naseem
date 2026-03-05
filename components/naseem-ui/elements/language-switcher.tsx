@@ -3,11 +3,8 @@
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
-
 import { Globe } from "lucide-react";
-
 import {
-  TooltipProvider,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
