@@ -102,7 +102,7 @@ export function CurrencyInput({
         {...props}
       />
       {showCurrencySymbol && (
-        <span className="text-muted-foreground absolute end-2 top-1/2 -translate-y-1/2">
+        <span className="text-muted-foreground absolute inset-e-2 top-1/2 -translate-y-1/2">
           <SARSymbol className="size-4" />
         </span>
       )}

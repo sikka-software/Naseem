@@ -1,0 +1,113 @@
+---
+title: Image Grid
+description: An interactive 3x3 image grid component with expandable cells and smooth animations
+---
+
+<ComponentPreview
+  name="image-grid-demo"
+  classNameComponentContainer='min-h-[700px]'
+/>
+
+## Usage
+
+The Image Grid component displays a 3x3 grid of images that expand when clicked. It creates an engaging image gallery with smooth spring animations and dynamic layout changes.
+
+```tsx
+import ImageGrid from "@/components/elements/image-grid"
+
+export default function Example() {
+  return <ImageGrid />
+}
+```
+
+## Features
+
+- Smooth spring animations powered by Motion
+- Responsive design (adapts to mobile and desktop)
+- Click to expand/collapse cells
+- Dynamic grid layout with expanding rows and columns
+- Image scale animation on expand
+- Dark overlay with gradient
+- Label reveal with blur animation
+- Index counter display
+- Custom DM Mono typography
+- 9 pre-configured landscape images
+
+## Implementation
+
+The component uses:
+- `motion` from Motion for smooth spring animations
+- `useState` and `useEffect` for state management and responsive behavior
+- CSS-in-JS for dynamic styling
+- Google Fonts (DM Mono) for typography
+
+## Code Structure
+
+```tsx
+"use client";
+
+import { motion } from "motion/react";
+import { useState, useEffect } from "react";
+
+const images = [
+  {
+    url: "https://example.com/image.jpg",
+    label: "Image Label",
+  },
+  // Add more images...
+];
+
+export default function ImageGrid() {
+  const [open, setOpen] = useState<null | number>(null);
+  const [dimensions, setDimensions] = useState({ size: 0 });
+
+  // Responsive dimension handling
+  // Render motion grid cells...
+}
+```
+
+## Props
+
+The Image Grid component is self-contained and manages its own state internally. It doesn't accept any props as the content is defined within the component.
+
+## Customization
+
+To customize the images, modify the `images` array at the top of the component file:
+
+```tsx
+const images = [
+  {
+    url: "https://your-image-url.jpg",
+    label: "Your Label",
+  },
+  // Add more images (up to 9 for 3x3 grid)...
+];
+```
+
+## Configuration Values
+
+The component uses responsive configuration values:
+
+| Property | Mobile | Desktop |
+|----------|--------|---------|
+| Grid Size | 340px | 520px |
+| Gap | 4px | 8px |
+| Base Radius | 8px | 16px |
+| Expanded Radius | 14px | 28px |
+
+## Dependencies
+
+```json
+{
+  "motion": "latest"
+}
+```
+
+## Styling
+
+The component uses inline styles for dynamic values and includes:
+- Spring animations with bounce and stiffness
+- Gradient overlays for text readability
+- Blur transitions for label reveals
+- Scale animations for images
+- Responsive typography scaling

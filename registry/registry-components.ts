@@ -356,4 +356,21 @@ export const components: Registry = [
       }))
     ),
   },
+  {
+    name: "image-grid",
+    type: "registry:component",
+    dependencies: ["motion"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/image-grid.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/image-grid").then((mod) => ({
+        default: mod.default,
+      }))
+    ),
+  },
 ];
