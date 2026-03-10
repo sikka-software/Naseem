@@ -47,7 +47,7 @@ const Footer = ({ className }: { className?: string }) => {
             <span className="text-muted-foreground text-xs">
               &copy; {new Date().getFullYear()}{" "}
               <Link href="/" target="_blank">
-                commerce-ui
+                Sikka Software
               </Link>
               . All rights reserved.
             </span>

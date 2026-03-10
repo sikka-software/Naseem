@@ -10,5 +10,13 @@
     "name": "Sikka Software",
     "est": "Est. 2015",
     "description": "Independent software studio specializing in focused, well-crafted web products."
-  }
+  },
+  "feedback": "Feedback",
+  "feedback-title": "Send us your feedback",
+  "feedback-placeholder": "Enter your feedback here…",
+  "feedback-success": "Thank you for your feedback!",
+  "feedback-success-description": "We appreciate your feedback and will use it to improve our service.",
+  "in-the-meantime-follow-us": "Follow us on social media:",
+  "close": "Close",
+  "submit": "Submit"
 }

@@ -288,4 +288,21 @@ export const components: Registry = [
       }))
     ),
   },
+  {
+    name: "accordion",
+    type: "registry:component",
+    dependencies: ["lucide-react", "motion"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/accordion.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/accordion").then((mod) => ({
+        default: mod.default,
+      }))
+    ),
+  },
 ];
