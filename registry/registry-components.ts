@@ -339,4 +339,21 @@ export const components: Registry = [
       }))
     ),
   },
+  {
+    name: "expandable-grid",
+    type: "registry:component",
+    dependencies: ["motion", "lucide-react"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/expandable-grid.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/expandable-grid").then((mod) => ({
+        default: mod.default,
+      }))
+    ),
+  },
 ];

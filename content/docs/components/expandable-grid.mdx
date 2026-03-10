@@ -1,0 +1,126 @@
+---
+title: Expandable Grid
+description: An interactive 3x3 grid component with expandable cells and smooth animations
+---
+
+<ComponentPreview
+  name="expandable-grid-demo"
+  classNameComponentContainer='min-h-[700px]'
+/>
+
+## Usage
+
+The Expandable Grid component displays a 3x3 grid of feature cards that expand when clicked. It creates an engaging feature showcase with smooth spring animations and dynamic layout changes.
+
+```tsx
+import ExpandableGridCells from "@/components/elements/expandable-grid"
+
+export default function Example() {
+  return <ExpandableGridCells />
+}
+```
+
+## Features
+
+- Smooth spring animations powered by Motion
+- Responsive design (adapts to mobile and desktop)
+- Click to expand/collapse cells
+- Dynamic grid layout with expanding rows and columns
+- Four visual states: collapsed, column-only, row-only, and fully expanded
+- Icon and text animations with blur transitions
+- Custom DM Mono and DM Sans typography
+- 9 pre-configured feature cards with Lucide icons
+
+## Implementation
+
+The component uses:
+- `motion` from Motion for smooth spring animations
+- `useState` and `useEffect` for state management and responsive behavior
+- `lucide-react` for icons
+- CSS-in-JS for dynamic styling
+- Google Fonts (DM Mono, DM Sans) for typography
+
+## Code Structure
+
+```tsx
+"use client";
+
+import { motion } from "motion/react";
+import { useState, useEffect } from "react";
+import { Zap, Shield, BarChart2, ... } from "lucide-react";
+
+const features = [
+  {
+    icon: Zap,
+    title: "Instant Deploy",
+    description: "Push your changes live in seconds...",
+  },
+  // Add more features...
+];
+
+export default function ExpandableGridCells() {
+  const [open, setOpen] = useState<null | number>(null);
+  const [dimensions, setDimensions] = useState({ size: 0 });
+
+  // Responsive dimension handling
+  // Render motion grid cells...
+}
+```
+
+## Props
+
+The Expandable Grid component is self-contained and manages its own state internally. It doesn't accept any props as the content is defined within the component.
+
+## Customization
+
+To customize the features, modify the `features` array at the top of the component file:
+
+```tsx
+const features = [
+  {
+    icon: YourIcon,
+    title: "Your Title",
+    description: "Your description here...",
+  },
+  // Add more features (up to 9 for 3x3 grid)...
+];
+```
+
+## Visual States
+
+Each cell can be in one of four states:
+
+| State | Description | Visual |
+|-------|-------------|--------|
+| `collapsed` | Default state, all cells equal size | Icon centered |
+| `col-only` | Cell is in expanded column | Tall cell, icon visible |
+| `row-only` | Cell is in expanded row | Wide cell, icon visible |
+| `full` | Cell is at intersection of expanded row and column | Full size, icon + title + description |
+
+## Configuration Values
+
+The component uses responsive configuration values:
+
+| Property | Mobile | Desktop |
+|----------|--------|---------|
+| Grid Size | 340px | 540px |
+| Gap | 4px | 8px |
+| Base Radius | 8px | 20px |
+| Expanded Radius | 14px | 28px |
+
+## Dependencies
+
+```json
+{
+  "motion": "latest",
+  "lucide-react": "latest"
+}
+```
+
+## Styling
+
+The component uses inline styles for dynamic values and includes:
+- Spring animations with bounce and stiffness
+- Dynamic background colors (light gray to dark when expanded)
+- Blur transitions for content reveals
+- Responsive typography scaling

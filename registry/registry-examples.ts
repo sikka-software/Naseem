@@ -195,4 +195,19 @@ export const examples: Registry = [
       () => import("../components/demos/strips-vertical-demo")
     ),
   },
+  {
+    name: "expandable-grid-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/expandable-grid-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/expandable-grid-demo")
+    ),
+  },
 ];
