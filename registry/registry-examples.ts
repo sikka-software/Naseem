@@ -165,4 +165,34 @@ export const examples: Registry = [
       () => import("../components/demos/accordion-demo")
     ),
   },
+  {
+    name: "strips-horizontal-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/strips-horizontal-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/strips-horizontal-demo")
+    ),
+  },
+  {
+    name: "strips-vertical-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/strips-vertical-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/strips-vertical-demo")
+    ),
+  },
 ];

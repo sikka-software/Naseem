@@ -305,4 +305,38 @@ export const components: Registry = [
       }))
     ),
   },
+  {
+    name: "strips-horizontal",
+    type: "registry:component",
+    dependencies: ["motion"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/strips-horizontal.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/strips-horizontal").then((mod) => ({
+        default: mod.default,
+      }))
+    ),
+  },
+  {
+    name: "strips-vertical",
+    type: "registry:component",
+    dependencies: ["motion"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/strips-vertical.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/strips-vertical").then((mod) => ({
+        default: mod.default,
+      }))
+    ),
+  },
 ];
