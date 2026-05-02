@@ -23,14 +23,14 @@ const Label = React.forwardRef<
       required,
       ...props
     },
-    ref,
+    ref
   ) => (
     <div className="flex flex-row items-center gap-1 transition-all">
       <label
         ref={ref}
         className={cn(
           "text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
-          className,
+          className
         )}
         {...props}
       >
@@ -65,7 +65,7 @@ const Label = React.forwardRef<
       </Tooltip>
     )} */}
     </div>
-  ),
+  )
 );
 
 Label.displayName = "Label";

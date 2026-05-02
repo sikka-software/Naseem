@@ -63,24 +63,30 @@ export const Loading: FC<LoadingTypes> = ({
             className={cn(
               "repeat-infinite animate-bounce rounded-full delay-100",
               size === "button" ? "h-2 w-2" : sizeStyles[size],
-              animationStyles[design.split("-")[1] as keyof typeof animationStyles],
-              color ? color : "bg-primary",
+              animationStyles[
+                design.split("-")[1] as keyof typeof animationStyles
+              ],
+              color ? color : "bg-primary"
             )}
           ></div>
           <div
             className={cn(
               "repeat-infinite animate-bounce rounded-full delay-200",
               size === "button" ? "h-2 w-2" : sizeStyles[size],
-              animationStyles[design.split("-")[1] as keyof typeof animationStyles],
-              color ? color : "bg-primary",
+              animationStyles[
+                design.split("-")[1] as keyof typeof animationStyles
+              ],
+              color ? color : "bg-primary"
             )}
           ></div>
           <div
             className={cn(
               "repeat-infinite animate-bounce rounded-full delay-300",
               size === "button" ? "h-2 w-2" : sizeStyles[size],
-              animationStyles[design.split("-")[1] as keyof typeof animationStyles],
-              color ? color : "bg-primary",
+              animationStyles[
+                design.split("-")[1] as keyof typeof animationStyles
+              ],
+              color ? color : "bg-primary"
             )}
           ></div>
         </div>
@@ -88,7 +94,11 @@ export const Loading: FC<LoadingTypes> = ({
     case "square":
       return (
         <svg
-          className={cn("squircle-container", sizeStyles[size], classNames?.container)}
+          className={cn(
+            "squircle-container",
+            sizeStyles[size],
+            classNames?.container
+          )}
           viewBox="0 0 35 35"
           height="35"
           width="35"
@@ -123,7 +133,11 @@ export const Loading: FC<LoadingTypes> = ({
           height="37"
           width="37"
           preserveAspectRatio="xMidYMid meet"
-          className={cn("squircle-container", sizeStyles[size], classNames?.container)}
+          className={cn(
+            "squircle-container",
+            sizeStyles[size],
+            classNames?.container
+          )}
         >
           <path
             className={cn("squircle-track", classNames?.track)}
@@ -147,12 +161,14 @@ export const Loading: FC<LoadingTypes> = ({
           className={cn(
             "progress-loading rounded after:rounded",
             progressSizes[size],
-            classNames?.container,
+            classNames?.container
           )}
         ></div>
       );
     case "orbit":
-      return <div className={cn("orbit-container", classNames?.container)}></div>;
+      return (
+        <div className={cn("orbit-container", classNames?.container)}></div>
+      );
 
     default:
       return (
@@ -160,7 +176,11 @@ export const Loading: FC<LoadingTypes> = ({
           viewBox="0 0 40 40"
           height="40"
           width="40"
-          className={cn("circle-container", sizeStyles[size], classNames?.container)}
+          className={cn(
+            "circle-container",
+            sizeStyles[size],
+            classNames?.container
+          )}
         >
           <circle
             className={cn(
@@ -169,7 +189,7 @@ export const Loading: FC<LoadingTypes> = ({
                 "stroke-primary": themeMode === "light",
                 "stroke-primary-foreground": themeMode === "dark",
               },
-              classNames?.track,
+              classNames?.track
             )}
             cx="20"
             cy="20"
@@ -185,7 +205,7 @@ export const Loading: FC<LoadingTypes> = ({
                 "stroke-primary": themeMode === "light",
                 "stroke-primary-foreground": themeMode === "dark",
               },
-              classNames?.car,
+              classNames?.car
             )}
             cx="20"
             cy="20"

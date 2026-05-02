@@ -28,7 +28,10 @@ export function ThemeToggle({
     setMounted(true);
   }, []);
 
-  const container = cn("inline-flex items-center rounded-full border p-[3px]", className);
+  const container = cn(
+    "inline-flex items-center rounded-full border p-[3px]",
+    className
+  );
 
   if (mode === "light-dark") {
     const value = mounted ? resolvedTheme : null;
@@ -50,18 +53,20 @@ export function ThemeToggle({
 
   return (
     <div className={container} data-theme-toggle="" {...props}>
-      {[["light", Sun] as const, ["dark", Moon] as const, ["system", Airplay] as const].map(
-        ([key, Icon]) => (
-          <button
-            key={key}
-            aria-label={key}
-            className={cn(itemVariants({ active: value === key }))}
-            onClick={() => setTheme(key)}
-          >
-            <Icon className="size-full" />
-          </button>
-        ),
-      )}
+      {[
+        ["light", Sun] as const,
+        ["dark", Moon] as const,
+        ["system", Airplay] as const,
+      ].map(([key, Icon]) => (
+        <button
+          key={key}
+          aria-label={key}
+          className={cn(itemVariants({ active: value === key }))}
+          onClick={() => setTheme(key)}
+        >
+          <Icon className="size-full" />
+        </button>
+      ))}
     </div>
   );
 }

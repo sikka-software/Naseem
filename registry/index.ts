@@ -20,10 +20,13 @@ export const registry: Registry = [
 ];
 
 // Utility functions
-export const getComponentByName = (name: string) => registry.find((item) => item.name === name);
+export const getComponentByName = (name: string) =>
+  registry.find((item) => item.name === name);
 
 export const getDemoComponentByName = (name: string) =>
-  registry.find((item) => item.name === name && item.type === "registry:example");
+  registry.find(
+    (item) => item.name === name && item.type === "registry:example"
+  );
 
 export const getComponentsByCategory = (category: string) => {
   return ensureArray(registry)

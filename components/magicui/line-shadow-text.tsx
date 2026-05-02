@@ -2,7 +2,9 @@ import { cn } from "@/lib/utils";
 import { motion, MotionProps } from "motion/react";
 
 interface LineShadowTextProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps>, MotionProps {
+  extends
+    Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps>,
+    MotionProps {
   shadowColor?: string;
   as?: React.ElementType;
 }
@@ -30,7 +32,7 @@ export function LineShadowText({
         "after:bg-[linear-gradient(45deg,transparent_45%,var(--shadow-color)_45%,var(--shadow-color)_55%,transparent_0)]",
         "after:-z-10 after:bg-[length:0.06em_0.06em] after:bg-clip-text after:text-transparent",
         "after:animate-line-shadow",
-        className,
+        className
       )}
       data-text={content}
       {...props}

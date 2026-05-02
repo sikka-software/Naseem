@@ -1,5 +1,9 @@
 import { Badge } from "@/components/ui/badge";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { InfoIcon } from "lucide-react";
 import * as React from "react";
 
@@ -34,23 +38,31 @@ export const ComponentPropsTable: React.FC<PropsTableProps> = ({ types }) => {
       <table className="min-w-full divide-y divide-gray-200">
         <thead>
           <tr>
-            <th className="px-6 py-3 text-left text-sm font-medium tracking-wider">Prop</th>
-            <th className="px-6 py-3 text-left text-sm font-medium tracking-wider">Type</th>
+            <th className="px-6 py-3 text-left text-sm font-medium tracking-wider">
+              Prop
+            </th>
+            <th className="px-6 py-3 text-left text-sm font-medium tracking-wider">
+              Type
+            </th>
             {/* <th className="px-6 py-3 text-left text-sm font-medium tracking-wider">
             Required
           </th> */}
-            <th className="px-6 py-3 text-left text-sm font-medium tracking-wider">Default</th>
+            <th className="px-6 py-3 text-left text-sm font-medium tracking-wider">
+              Default
+            </th>
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-200">
           {Object.keys(types).map((typeName) => (
             <tr key={typeName}>
-              <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-500">
+              <td className="px-6 py-4 text-sm whitespace-nowrap text-gray-500">
                 <div className="flex flex-row items-start gap-1 align-middle">
-                  <code className="rounded-md bg-fd-primary/10 p-1 text-fd-primary">
+                  <code className="bg-fd-primary/10 text-fd-primary rounded-md p-1">
                     {typeName}
                   </code>
-                  {types[typeName].required && <span className="text-md text-red-500">*</span>}
+                  {types[typeName].required && (
+                    <span className="text-md text-red-500">*</span>
+                  )}
                   {types[typeName].description && (
                     <Popover>
                       <PopoverTrigger>
@@ -79,14 +91,18 @@ export const ComponentPropsTable: React.FC<PropsTableProps> = ({ types }) => {
                       <InfoIcon size={16} />
                     </PopoverTrigger>
                     <PopoverContent className="p-2">
-                      <p className="font-mono text-sm">{types[typeName].typeValue}</p>
+                      <p className="font-mono text-sm">
+                        {types[typeName].typeValue}
+                      </p>
                     </PopoverContent>
                   </Popover>
                 )}
               </td>
 
-              <td className="whitespace-nowrap px-6 py-4 font-mono text-sm text-gray-500">
-                {types[typeName].defaultValue?.value || types[typeName].default || "-"}
+              <td className="px-6 py-4 font-mono text-sm whitespace-nowrap text-gray-500">
+                {types[typeName].defaultValue?.value ||
+                  types[typeName].default ||
+                  "-"}
               </td>
             </tr>
           ))}

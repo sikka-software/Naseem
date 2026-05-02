@@ -7,7 +7,10 @@ const REGISTRY_URL = "https://naseem.sikka.io/r";
 
 const program = new Command();
 
-program.name("naseem").description("Sikka's component registry").version("1.0.0");
+program
+  .name("naseem")
+  .description("Sikka's component registry")
+  .version("1.0.0");
 
 program
   .command("add <component>")

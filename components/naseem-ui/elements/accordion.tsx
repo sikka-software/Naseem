@@ -1,14 +1,24 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Briefcase, ChevronDown, Code, Globe, Server, Smartphone, Store } from "lucide-react";
+import {
+  Briefcase,
+  ChevronDown,
+  Code,
+  Globe,
+  Server,
+  Smartphone,
+  Store,
+} from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
 
 const Accordion = () => {
   const [open, setOpen] = useState<number | null>(null);
 
-  const getItemPosition = (index: number): "alone" | "first" | "middle" | "last" => {
+  const getItemPosition = (
+    index: number
+  ): "alone" | "first" | "middle" | "last" => {
     if (open === index) return "alone";
 
     const isOpen = (i: number) => open === i;
@@ -61,7 +71,10 @@ const Accordion = () => {
                     variants={{ open: { rotate: 180 }, closed: { rotate: 0 } }}
                     transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
                   >
-                    <ChevronDown className="size-4" style={{ strokeWidth: 2 }} />
+                    <ChevronDown
+                      className="size-4"
+                      style={{ strokeWidth: 2 }}
+                    />
                   </motion.div>
                 </motion.div>
                 <motion.div
@@ -94,15 +107,21 @@ const Accordion = () => {
                 borderColor: "hsl(var(--border))",
                 borderLeftWidth: 1,
                 borderRightWidth: 1,
-                borderTopWidth: position === "last" || position === "middle" ? 0 : 1,
-                borderBottomWidth: position === "first" || position === "middle" ? 0 : 1,
+                borderTopWidth:
+                  position === "last" || position === "middle" ? 0 : 1,
+                borderBottomWidth:
+                  position === "first" || position === "middle" ? 0 : 1,
               }}
               animate={{
                 marginBottom: 0,
-                borderTopLeftRadius: position === "first" || position === "alone" ? 24 : 0,
-                borderTopRightRadius: position === "first" || position === "alone" ? 24 : 0,
-                borderBottomLeftRadius: position === "last" || position === "alone" ? 24 : 0,
-                borderBottomRightRadius: position === "last" || position === "alone" ? 24 : 0,
+                borderTopLeftRadius:
+                  position === "first" || position === "alone" ? 24 : 0,
+                borderTopRightRadius:
+                  position === "first" || position === "alone" ? 24 : 0,
+                borderBottomLeftRadius:
+                  position === "last" || position === "alone" ? 24 : 0,
+                borderBottomRightRadius:
+                  position === "last" || position === "alone" ? 24 : 0,
               }}
               transition={{ duration: 0.3, type: "spring", bounce: 0.2 }}
             >

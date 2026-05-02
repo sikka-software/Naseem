@@ -4,7 +4,11 @@ import { Moon, Sun } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 
 import { Button } from "@/components/ui/button";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -31,16 +35,29 @@ export function ThemeSwitcher() {
             </Button>
           </DropdownMenuTrigger>
         </TooltipTrigger>
-        <TooltipContent className="px-2 py-1 text-xs" side="bottom" align="start">
+        <TooltipContent
+          className="px-2 py-1 text-xs"
+          side="bottom"
+          align="start"
+        >
           <p>{t("theme")}</p>
         </TooltipContent>
       </Tooltip>
       <DropdownMenuContent align="end">
         <DropdownMenuGroup>
-          <DropdownMenuRadioGroup value={theme} onValueChange={(e) => setTheme(e)}>
-            <DropdownMenuRadioItem value="light">{t("light")}</DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value="dark">{t("dark")}</DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value="system">{t("system")}</DropdownMenuRadioItem>
+          <DropdownMenuRadioGroup
+            value={theme}
+            onValueChange={(e) => setTheme(e)}
+          >
+            <DropdownMenuRadioItem value="light">
+              {t("light")}
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="dark">
+              {t("dark")}
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="system">
+              {t("system")}
+            </DropdownMenuRadioItem>
           </DropdownMenuRadioGroup>
         </DropdownMenuGroup>
       </DropdownMenuContent>

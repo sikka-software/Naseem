@@ -1,4 +1,10 @@
-import type { Folder, Item, Node, Root, Separator } from "fumadocs-core/page-tree";
+import type {
+  Folder,
+  Item,
+  Node,
+  Root,
+  Separator,
+} from "fumadocs-core/page-tree";
 import type { FC, ReactNode } from "react";
 import { notFound } from "next/navigation";
 
@@ -33,14 +39,22 @@ export interface SidebarComponents {
 
 export function checkPageTree(passed: unknown) {
   if (!passed) notFound();
-  if (typeof passed === "object" && "children" in passed && Array.isArray(passed.children)) return;
+  if (
+    typeof passed === "object" &&
+    "children" in passed &&
+    Array.isArray(passed.children)
+  )
+    return;
 
   throw new Error(
-    "You passed an invalid page tree to `<DocsLayout />`. Check your usage in layout.tsx if you have enabled i18n.",
+    "You passed an invalid page tree to `<DocsLayout />`. Check your usage in layout.tsx if you have enabled i18n."
   );
 }
 
-export function getSidebarTabsFromOptions(options: SidebarOptions["tabs"], tree: Root) {
+export function getSidebarTabsFromOptions(
+  options: SidebarOptions["tabs"],
+  tree: Root
+) {
   if (Array.isArray(options)) {
     return options;
   } else if (typeof options === "object") {
@@ -66,7 +80,7 @@ const defaultTransform: TabOptions["transform"] = (_option, node) => {
 
 function getSidebarTabs(
   pageTree: Root,
-  { transform = defaultTransform }: TabOptions = {},
+  { transform = defaultTransform }: TabOptions = {}
 ): unknown[] {
   function findOptions(node: Folder): unknown[] {
     const results: unknown[] = [];

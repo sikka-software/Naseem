@@ -190,7 +190,7 @@ export const blocks: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/blocks/auth/auth-buttons").then((mod) => ({
         default: mod.AuthButtons,
-      })),
+      }))
     ),
   },
 ];

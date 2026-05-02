@@ -49,7 +49,8 @@ export default function VerticalImageStrips() {
 
   const isMobile = window.innerWidth < 768;
   const STRIP_WIDTH = isMobile ? 40 : 60;
-  const EXPANDED_WIDTH = dimensions.width - (images.length - 1) * (isMobile ? 4 : 10);
+  const EXPANDED_WIDTH =
+    dimensions.width - (images.length - 1) * (isMobile ? 4 : 10);
   const HEIGHT = dimensions.height;
   const GAP_BETWEEN_STRIPS = isMobile ? 4 : 10;
   const OUTTER_RADIUS = isMobile ? 20 : 40;
@@ -159,7 +160,8 @@ export default function VerticalImageStrips() {
                 style={{
                   position: "absolute",
                   inset: 0,
-                  background: "linear-gradient(to top, #000 0%, transparent 60%)",
+                  background:
+                    "linear-gradient(to top, #000 0%, transparent 60%)",
                   pointerEvents: "none",
                 }}
               />

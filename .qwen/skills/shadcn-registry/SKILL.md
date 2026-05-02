@@ -187,7 +187,11 @@ Every item in `registry.json` follows this schema:
   "title": "Hello World",
   "description": "A hello world component with a button.",
   "author": "Your Name <you@example.com>",
-  "registryDependencies": ["button", "@acme/other-item", "https://example.com/r/remote-dep.json"],
+  "registryDependencies": [
+    "button",
+    "@acme/other-item",
+    "https://example.com/r/remote-dep.json"
+  ],
   "dependencies": ["zod@^3.20.0", "motion"],
   "devDependencies": ["tw-animate-css"],
   "files": [
@@ -268,7 +272,10 @@ Every item in `registry.json` follows this schema:
      variant?: "default" | "outline";
    };
 
-   export function MyComponent({ label, variant = "default" }: MyComponentProps) {
+   export function MyComponent({
+     label,
+     variant = "default",
+   }: MyComponentProps) {
      // ...
    }
    ```
@@ -292,11 +299,18 @@ export type MetricCardProps = {
   className?: string;
 };
 
-export function MetricCard({ title, value, trend = "neutral", className }: MetricCardProps) {
+export function MetricCard({
+  title,
+  value,
+  trend = "neutral",
+  className,
+}: MetricCardProps) {
   return (
     <Card className={cn("w-full", className)}>
       <CardHeader>
-        <CardTitle className="text-sm font-medium text-muted-foreground">{title}</CardTitle>
+        <CardTitle className="text-sm font-medium text-muted-foreground">
+          {title}
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="flex items-center justify-between">
@@ -591,7 +605,11 @@ To appear in `npx shadcn search` results:
 {
   "name": "my-form",
   "type": "registry:block",
-  "registryDependencies": ["button", "input", "https://ui.other-registry.com/r/fancy-select.json"]
+  "registryDependencies": [
+    "button",
+    "input",
+    "https://ui.other-registry.com/r/fancy-select.json"
+  ]
 }
 ```
 

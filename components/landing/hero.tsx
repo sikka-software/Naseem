@@ -36,9 +36,11 @@ const HeroTitle = () => {
         </h1>
 
         <p className="text-muted-foreground mb-4 text-lg text-balance md:text-base">
-          <span className="text-foreground font-normal">Copy-paste components </span> and blocks
-          that you can use in your next <span className="text-foreground font-normal">project</span>
-          .
+          <span className="text-foreground font-normal">
+            Copy-paste components{" "}
+          </span>{" "}
+          and blocks that you can use in your next{" "}
+          <span className="text-foreground font-normal">project</span>.
         </p>
 
         <div className="flex flex-row gap-3">
@@ -74,7 +76,11 @@ const HeroTitle = () => {
         <div className="mt-2 w-full text-center">
           <p className="text-xs">
             Tailored for{" "}
-            <a href="https://sikka.io" target="_blank" className="font-semibold">
+            <a
+              href="https://sikka.io"
+              target="_blank"
+              className="font-semibold"
+            >
               Sikka Software
             </a>
           </p>
@@ -94,7 +100,9 @@ export function HeroSection() {
           x={-1}
           y={-1}
           opacity={0.6}
-          className={cn("mask-[linear-gradient(to_bottom,white,transparent,transparent)]")}
+          className={cn(
+            "mask-[linear-gradient(to_bottom,white,transparent,transparent)]"
+          )}
         />
       </div>
       <div className="grid h-full place-items-center gap-4">

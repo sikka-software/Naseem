@@ -24,7 +24,10 @@ export function Reference({ label, link }: LinkItem) {
       href={link}
       target="_blank"
       rel="noreferrer"
-      className={cn(badgeVariants({ variant: "outline" }), "gap-1 px-2 font-medium no-underline")}
+      className={cn(
+        badgeVariants({ variant: "outline" }),
+        "gap-1 px-2 font-medium no-underline"
+      )}
     >
       {label}
       <ExternalLinkIcon className="ml-0.5" />

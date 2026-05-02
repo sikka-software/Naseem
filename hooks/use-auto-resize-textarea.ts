@@ -5,7 +5,10 @@ interface UseAutoResizeTextareaProps {
   maxHeight?: number;
 }
 
-export function useAutoResizeTextarea({ minHeight, maxHeight }: UseAutoResizeTextareaProps) {
+export function useAutoResizeTextarea({
+  minHeight,
+  maxHeight,
+}: UseAutoResizeTextareaProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const adjustHeight = useCallback(
@@ -24,12 +27,12 @@ export function useAutoResizeTextarea({ minHeight, maxHeight }: UseAutoResizeTex
       // Calculate new height
       const newHeight = Math.max(
         minHeight,
-        Math.min(textarea.scrollHeight, maxHeight ?? Number.POSITIVE_INFINITY),
+        Math.min(textarea.scrollHeight, maxHeight ?? Number.POSITIVE_INFINITY)
       );
 
       textarea.style.height = `${newHeight}px`;
     },
-    [minHeight, maxHeight],
+    [minHeight, maxHeight]
   );
 
   useEffect(() => {

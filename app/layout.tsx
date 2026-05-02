@@ -28,7 +28,7 @@ export default async function Layout({ children }: LayoutProps) {
       <body
         className={cn(
           GeistSans.variable,
-          geistSans.className,
+          geistSans.className
           // "bg-background relative flex min-h-screen flex-col antialiased"
         )}
       >

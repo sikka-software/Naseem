@@ -1,4 +1,8 @@
-import { BlogTitle, BlogTOC, Control } from "@/app/(home)/blog/[slug]/page.client";
+import {
+  BlogTitle,
+  BlogTOC,
+  Control,
+} from "@/app/(home)/blog/[slug]/page.client";
 import { getBlogMDXComponents } from "@/components/docs/mdx-components";
 import { ScrollProgress } from "@/components/docs/scroll-progress";
 import { siteConfig } from "@/config/site";

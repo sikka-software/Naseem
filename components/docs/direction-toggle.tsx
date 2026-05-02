@@ -7,7 +7,9 @@ interface DirectionToggleProps {
   onDirectionChange?: (direction: "rtl" | "ltr") => void;
 }
 
-export default function DirectionToggle({ onDirectionChange }: DirectionToggleProps) {
+export default function DirectionToggle({
+  onDirectionChange,
+}: DirectionToggleProps) {
   const [direction, setDirection] = useState<"rtl" | "ltr">("ltr");
 
   const toggleDirection = () => {
@@ -17,7 +19,12 @@ export default function DirectionToggle({ onDirectionChange }: DirectionTogglePr
   };
 
   return (
-    <Button variant="outline" size="sm" onClick={toggleDirection} className="mb-4">
+    <Button
+      variant="outline"
+      size="sm"
+      onClick={toggleDirection}
+      className="mb-4"
+    >
       {direction === "rtl" ? "LTR" : "RTL"}
     </Button>
   );

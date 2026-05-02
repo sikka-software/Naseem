@@ -24,7 +24,8 @@ const features = [
   {
     icon: Shield,
     title: "SOC2 Compliant",
-    description: "Enterprise-grade security baked in from day one. Your data stays yours, always.",
+    description:
+      "Enterprise-grade security baked in from day one. Your data stays yours, always.",
   },
   {
     icon: BarChart2,
@@ -115,8 +116,10 @@ export default function ExpandableGridCells() {
     return getRow(i) === getRow(open) ? EXPANDED : COLLAPSED;
   };
 
-  const isColExpanded = (i: number) => open !== null && getCol(i) === getCol(open);
-  const isRowExpanded = (i: number) => open !== null && getRow(i) === getRow(open);
+  const isColExpanded = (i: number) =>
+    open !== null && getCol(i) === getCol(open);
+  const isRowExpanded = (i: number) =>
+    open !== null && getRow(i) === getRow(open);
   const isFullyExpanded = (i: number) => isColExpanded(i) && isRowExpanded(i);
 
   return (
@@ -186,7 +189,11 @@ export default function ExpandableGridCells() {
                 width: w,
                 height: h,
                 borderRadius: fullExp ? RADIUS_EXPANDED : RADIUS_BASE,
-                background: fullExp ? "#1a1a1a" : colExp || rowExp ? "#ebebeb" : "#e4e4e2",
+                background: fullExp
+                  ? "#1a1a1a"
+                  : colExp || rowExp
+                    ? "#ebebeb"
+                    : "#e4e4e2",
               }}
               transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
               style={{
@@ -281,7 +288,12 @@ export default function ExpandableGridCells() {
                   paddingInline: 20,
                 }}
               >
-                <Icon size={30} strokeWidth={1.5} color="#666" style={{ flexShrink: 0 }} />
+                <Icon
+                  size={30}
+                  strokeWidth={1.5}
+                  color="#666"
+                  style={{ flexShrink: 0 }}
+                />
                 {/* <span
                   style={{
                     fontSize: 10,

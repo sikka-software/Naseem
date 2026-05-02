@@ -41,8 +41,10 @@ export function RootToggle({
   const selected = useMemo(() => {
     return options.findLast((item) =>
       item.urls
-        ? item.urls.has(pathname.endsWith("/") ? pathname.slice(0, -1) : pathname)
-        : isActive(item.url, pathname, true),
+        ? item.urls.has(
+            pathname.endsWith("/") ? pathname.slice(0, -1) : pathname
+          )
+        : isActive(item.url, pathname, true)
     );
   }, [options, pathname]);
 
@@ -60,11 +62,11 @@ export function RootToggle({
           {...props}
           className={cn(
             "flex flex-row items-center gap-2 rounded-lg px-2 py-1.5 hover:bg-fd-accent/50 hover:text-fd-accent-foreground",
-            props.className,
+            props.className
           )}
         >
           {item}
-          <ChevronDown className="me-2 size-4 text-fd-muted-foreground" />
+          <ChevronDown className="text-fd-muted-foreground me-2 size-4" />
         </PopoverTrigger>
       ) : null}
       <PopoverContent className="w-[var(--radix-popover-trigger-width)] overflow-hidden p-0">
@@ -79,7 +81,7 @@ export function RootToggle({
               selected === item
                 ? "bg-fd-accent text-fd-accent-foreground"
                 : "hover:bg-fd-accent/50",
-              item.props?.className,
+              item.props?.className
             )}
           >
             <Item {...item} />
@@ -97,7 +99,9 @@ function Item(props: Option) {
       <div className="flex-1 text-start">
         <p className="text-sm font-medium">{props.title}</p>
         {props.description ? (
-          <p className="text-xs text-fd-muted-foreground">{props.description}</p>
+          <p className="text-fd-muted-foreground text-xs">
+            {props.description}
+          </p>
         ) : null}
       </div>
     </>

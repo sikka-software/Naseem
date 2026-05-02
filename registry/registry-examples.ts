@@ -13,7 +13,9 @@ export const examples: Registry = [
         type: "registry:example",
       },
     ],
-    component: React.lazy(() => import("../components/demos/theme-switcher-demo")),
+    component: React.lazy(
+      () => import("../components/demos/theme-switcher-demo")
+    ),
   },
   {
     name: "language-switcher-demo",
@@ -26,7 +28,9 @@ export const examples: Registry = [
         type: "registry:example",
       },
     ],
-    component: React.lazy(() => import("../components/demos/language-switcher-demo")),
+    component: React.lazy(
+      () => import("../components/demos/language-switcher-demo")
+    ),
   },
   {
     name: "multilang-input-demo",
@@ -39,7 +43,9 @@ export const examples: Registry = [
         type: "registry:example",
       },
     ],
-    component: React.lazy(() => import("../components/demos/multilang-input-demo")),
+    component: React.lazy(
+      () => import("../components/demos/multilang-input-demo")
+    ),
   },
   {
     name: "multilang-textarea-demo",
@@ -52,7 +58,9 @@ export const examples: Registry = [
         type: "registry:example",
       },
     ],
-    component: React.lazy(() => import("../components/demos/multilang-textarea-demo")),
+    component: React.lazy(
+      () => import("../components/demos/multilang-textarea-demo")
+    ),
   },
   {
     name: "currency-input-demo",
@@ -65,7 +73,9 @@ export const examples: Registry = [
         type: "registry:example",
       },
     ],
-    component: React.lazy(() => import("../components/demos/currency-input-demo")),
+    component: React.lazy(
+      () => import("../components/demos/currency-input-demo")
+    ),
   },
   {
     name: "app-stores-demo",
@@ -91,7 +101,9 @@ export const examples: Registry = [
         type: "registry:example",
       },
     ],
-    component: React.lazy(() => import("../components/demos/auth-buttons-demo")),
+    component: React.lazy(
+      () => import("../components/demos/auth-buttons-demo")
+    ),
   },
   {
     name: "sikka-popover-demo",
@@ -104,7 +116,9 @@ export const examples: Registry = [
         type: "registry:example",
       },
     ],
-    component: React.lazy(() => import("../components/demos/sikka-popover-demo")),
+    component: React.lazy(
+      () => import("../components/demos/sikka-popover-demo")
+    ),
   },
   {
     name: "sikka-icons-demo",
@@ -130,7 +144,9 @@ export const examples: Registry = [
         type: "registry:example",
       },
     ],
-    component: React.lazy(() => import("../components/demos/feedback-survey-demo")),
+    component: React.lazy(
+      () => import("../components/demos/feedback-survey-demo")
+    ),
   },
   {
     name: "accordion-demo",
@@ -156,7 +172,9 @@ export const examples: Registry = [
         type: "registry:example",
       },
     ],
-    component: React.lazy(() => import("../components/demos/strips-horizontal-demo")),
+    component: React.lazy(
+      () => import("../components/demos/strips-horizontal-demo")
+    ),
   },
   {
     name: "strips-vertical-demo",
@@ -169,7 +187,9 @@ export const examples: Registry = [
         type: "registry:example",
       },
     ],
-    component: React.lazy(() => import("../components/demos/strips-vertical-demo")),
+    component: React.lazy(
+      () => import("../components/demos/strips-vertical-demo")
+    ),
   },
   {
     name: "expandable-grid-demo",
@@ -182,7 +202,9 @@ export const examples: Registry = [
         type: "registry:example",
       },
     ],
-    component: React.lazy(() => import("../components/demos/expandable-grid-demo")),
+    component: React.lazy(
+      () => import("../components/demos/expandable-grid-demo")
+    ),
   },
   {
     name: "image-grid-demo",

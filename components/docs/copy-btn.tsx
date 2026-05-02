@@ -2,7 +2,12 @@
 
 import { cn } from "@/lib/utils";
 
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { type Transition, motion, useAnimation } from "motion/react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -23,7 +28,7 @@ function CopyIcon() {
 
   return (
     <div
-      className="flex cursor-pointer select-none items-center justify-center rounded-md p-2 transition-colors duration-200 hover:bg-accent"
+      className="hover:bg-accent flex cursor-pointer items-center justify-center rounded-md p-2 transition-colors duration-200 select-none"
       onMouseEnter={() => controls.start("animate")}
       onMouseLeave={() => controls.start("normal")}
     >
@@ -84,7 +89,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({ componentSource }) => {
       className={cn(
         "absolute right-2 top-2 z-10 transition-opacity",
         !copied &&
-          "lg:opacity-0 lg:group-focus-within/item:opacity-100 lg:group-hover/item:opacity-100",
+          "lg:opacity-0 lg:group-focus-within/item:opacity-100 lg:group-hover/item:opacity-100"
       )}
     >
       <TooltipProvider delayDuration={0}>
@@ -93,7 +98,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({ componentSource }) => {
             <Button
               variant="ghost"
               size="icon"
-              className="text-muted-foreground/80 hover:bg-transparent hover:text-foreground disabled:opacity-100"
+              className="text-muted-foreground/80 hover:text-foreground hover:bg-transparent disabled:opacity-100"
               onClick={handleCopy}
               aria-label={copied ? "Copied" : "Copy component source"}
               disabled={copied}
@@ -120,7 +125,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({ componentSource }) => {
               )}
             </Button>
           </TooltipTrigger>
-          <TooltipContent className="bg-muted px-2 py-1 text-xs text-muted-foreground">
+          <TooltipContent className="bg-muted text-muted-foreground px-2 py-1 text-xs">
             {copied ? "Copied!" : "Copy"}
           </TooltipContent>
         </Tooltip>

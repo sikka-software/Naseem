@@ -1,7 +1,10 @@
 "use client";
 
 import { Label } from "@/components/ui/label";
-import { MultilangInput, MultiLangValue } from "@/components/naseem-ui/elements/multilang-input";
+import {
+  MultilangInput,
+  MultiLangValue,
+} from "@/components/naseem-ui/elements/multilang-input";
 import { useState } from "react";
 
 const MultiLangInputDemo = () => {
