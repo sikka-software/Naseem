@@ -53,8 +53,8 @@ export const ComponentPropsTable: React.FC<PropsTableProps> = ({ types }) => {
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-200">
-          {Object.keys(types).map((typeName) => (
-            <tr key={typeName}>
+          {Object.keys(types).map((typeName, i) => (
+            <tr key={i}>
               <td className="px-6 py-4 text-sm whitespace-nowrap text-gray-500">
                 <div className="flex flex-row items-start gap-1 align-middle">
                   <code className="bg-fd-primary/10 text-fd-primary rounded-md p-1">

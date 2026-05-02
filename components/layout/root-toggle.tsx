@@ -42,8 +42,8 @@ export function RootToggle({
     return options.findLast((item) =>
       item.urls
         ? item.urls.has(
-            pathname.endsWith("/") ? pathname.slice(0, -1) : pathname
-          )
+          pathname.endsWith("/") ? pathname.slice(0, -1) : pathname
+        )
         : isActive(item.url, pathname, true)
     );
   }, [options, pathname]);
@@ -70,9 +70,9 @@ export function RootToggle({
         </PopoverTrigger>
       ) : null}
       <PopoverContent className="w-[var(--radix-popover-trigger-width)] overflow-hidden p-0">
-        {options.map((item) => (
+        {options.map((item, i) => (
           <Link
-            key={item.url}
+            key={i}
             href={item.url}
             onClick={onClick}
             {...item.props}

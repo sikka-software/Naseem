@@ -11,9 +11,9 @@ export default function Page(): React.ReactElement {
   return (
     <main className="container py-2 max-sm:px-2 md:py-12">
       <div className="grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-4">
-        {posts.map((post) => (
+        {posts.map((post, i) => (
           <Link
-            key={post.url}
+            key={i}
             href={post.url}
             className="bg-fd-card hover:bg-fd-accent hover:text-fd-accent-foreground flex flex-col rounded-xl border p-4 transition-colors"
           >

@@ -91,9 +91,9 @@ const MultilangInput = ({
             onValueChange={handleLocaleChange}
             className="w-fit"
           >
-            {locales.map((locale) => (
+            {locales.map((locale, i) => (
               <DropdownMenuRadioItem
-                key={locale.code}
+                key={i}
                 value={locale.code}
                 className="!text-xs"
               >

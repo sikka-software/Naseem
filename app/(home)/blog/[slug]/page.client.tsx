@@ -239,7 +239,7 @@ export const BlogTOC = () => {
   });
 
   const headings = data.map((heading, index) => (
-    <div key={heading.id} className="relative hidden lg:block">
+    <div key={index} className="relative hidden lg:block">
       <div
         className={`bg-primary absolute h-full w-[2px] transition-all duration-500 ${index === active ? "opacity-100" : "opacity-0"}`}
       ></div>

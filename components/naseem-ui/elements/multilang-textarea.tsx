@@ -87,8 +87,8 @@ const MultilangTextarea = ({
             value={selectedLocale}
             onValueChange={handleLocaleChange}
           >
-            {locales.map((locale) => (
-              <DropdownMenuRadioItem key={locale.code} value={locale.code}>
+            {locales.map((locale, i) => (
+              <DropdownMenuRadioItem key={i} value={locale.code}>
                 {locale.name}
               </DropdownMenuRadioItem>
             ))}

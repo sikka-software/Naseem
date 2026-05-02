@@ -115,9 +115,9 @@ export default function CompanyCard() {
       />
 
       <div className="flex flex-col gap-2">
-        {links.map((link) => (
+        {links.map((link, i) => (
           <motion.a
-            key={link.href}
+            key={i}
             href={link.href}
             className="group flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-[13px] font-normal text-black no-underline transition-colors duration-150 hover:bg-gray-100 hover:text-[#111] dark:text-white hover:dark:bg-gray-800"
             target={link.href.startsWith("http") ? "_blank" : undefined}

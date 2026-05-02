@@ -30,9 +30,9 @@ export function LanguageToggle(props: LanguageSelectProps): React.ReactElement {
         <p className="text-fd-muted-foreground mb-1 p-2 text-xs font-medium">
           {context.text.chooseLanguage}
         </p>
-        {context.locales.map((item) => (
+        {context.locales.map((item, i) => (
           <button
-            key={item.locale}
+            key={i}
             type="button"
             className={cn(
               "p-2 text-start text-sm",
