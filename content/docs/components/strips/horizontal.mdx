@@ -1,0 +1,110 @@
+---
+title: Horizontal Strips
+description: An interactive horizontal image strips component with smooth spring animations
+---
+
+<ComponentPreview
+  name="strips-horizontal-demo"
+  classNameComponentContainer='min-h-[600px]'
+/>
+
+## Usage
+
+The Horizontal Strips component displays a stack of image strips that expand horizontally when clicked. It creates an engaging gallery experience with smooth spring animations.
+
+```tsx
+import ImageStripsHorizontal from "@/components/elements/strips-horizontal"
+
+export default function Example() {
+  return <ImageStripsHorizontal />
+}
+```
+
+## Features
+
+- Smooth spring animations powered by Motion
+- Responsive design (adapts to mobile and desktop)
+- Click to expand/collapse strips
+- Image scale animation on expand
+- Dark overlay with gradient
+- Label reveal with blur animation
+- Index counter display
+- Custom DM Mono typography
+
+## Implementation
+
+The component uses:
+- `motion` from Motion for smooth spring animations
+- `useState` and `useEffect` for state management and responsive behavior
+- CSS-in-JS for dynamic styling
+- Google Fonts (DM Mono) for typography
+
+## Code Structure
+
+```tsx
+"use client";
+
+import { motion } from "motion/react";
+import { useState, useEffect } from "react";
+
+const images = [
+  {
+    url: "https://example.com/image.jpg",
+    label: "Image Label",
+  },
+  // Add more images...
+];
+
+export default function ImageStripsHorizontal() {
+  const [open, setOpen] = useState<null | number>(null);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+
+  // Responsive dimension handling
+  // Render motion strips...
+}
+```
+
+## Props
+
+The Horizontal Strips component is self-contained and manages its own state internally. It doesn't accept any props as the content is defined within the component.
+
+## Customization
+
+To customize the images, modify the `images` array at the top of the component file:
+
+```tsx
+const images = [
+  {
+    url: "https://your-image-url.jpg",
+    label: "Your Label",
+  },
+  // Add more images...
+];
+```
+
+## Configuration Values
+
+The component uses responsive configuration values:
+
+| Property | Mobile | Desktop |
+|----------|--------|---------|
+| Strip Height | 40px | 60px |
+| Container Size | 320px | 420px |
+| Outer Radius | 20px | 40px |
+| Gap Between Strips | 0px | 0px |
+
+## Dependencies
+
+```json
+{
+  "motion": "latest"
+}
+```
+
+## Styling
+
+The component uses inline styles for dynamic values and includes:
+- Spring animations with bounce and stiffness
+- Gradient overlays for text readability
+- Blur transitions for label reveals
+- Scale animations for images

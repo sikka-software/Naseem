@@ -1,0 +1,16 @@
+{
+  "name": "button-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "import { Button } from \"@/components/ui/button\";\n\nconst ButtonDemo = () => {\n  return (\n    <div className=\"flex flex-wrap gap-4\">\n      <Button variant=\"default\">Default</Button>\n      <Button variant=\"destructive\">Destructive</Button>\n      <Button variant=\"outline\">Outline</Button>\n      <Button variant=\"secondary\">Secondary</Button>\n      <Button variant=\"ghost\">Ghost</Button>\n      <Button variant=\"link\">Link</Button>\n    </div>\n  );\n};\n\nexport default ButtonDemo;\n",
+      "path": "components/demos/button-demo.tsx",
+      "target": "components/ui/button-demo.tsx"
+    }
+  ]
+}

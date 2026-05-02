@@ -1,0 +1,143 @@
+---
+title: Sikka Popover
+description: A branded company card popover component with Sikka branding, contact links, and social media connections
+---
+
+<ComponentPreview
+  name="sikka-popover-demo"
+  classNameComponentContainer='min-h-[450px] flex items-center justify-center'
+/>
+
+## Usage
+
+The Sikka Popover is a branded company card component that displays company information with contact links and social media connections.
+
+```tsx
+import SikkaPopover from "@/components/naseem-ui/elements/sikka-popover"
+
+export default function Example() {
+  return <SikkaPopover />
+}
+```
+
+## Features
+
+- Animated entrance with Framer Motion
+- Sikka branding with dual logo display
+- Company description with localized text support
+- Contact links (email, website, social media)
+- RTL support for Arabic language
+- Hover effects on links
+- External link indicators
+
+## Structure
+
+The popover includes:
+
+1. **Header** - Dual Sikka logo with company name and establishment year
+2. **Description** - Localized company description (supports i18n)
+3. **Links Section** - Contact and social media links:
+   - Email (contact@sikka.io)
+   - GitHub (github.com/sikka-software)
+   - X/Twitter (@sikka_sa)
+   - Website (sikka.io)
+
+## Localization
+
+The component uses `next-intl` for internationalization. Add translations to your locale files:
+
+```json
+{
+  "sikka": {
+    "name": "Sikka Software",
+    "est": "EST. 2015",
+    "description": "Building software for the future"
+  }
+}
+```
+
+## Examples
+
+### Basic Usage
+
+```tsx
+import SikkaPopover from "@/components/naseem-ui/elements/sikka-popover"
+
+export function BasicExample() {
+  return (
+    <div className="flex items-center justify-center">
+      <SikkaPopover />
+    </div>
+  )
+}
+```
+
+### With Custom Container
+
+```tsx
+import SikkaPopover from "@/components/naseem-ui/elements/sikka-popover"
+
+export function CardContainer() {
+  return (
+    <div className="p-4 bg-gray-50 rounded-lg">
+      <SikkaPopover />
+    </div>
+  )
+}
+```
+
+## Customization
+
+### Modifying Links
+
+To customize the links, edit the `links` array in the component:
+
+```tsx
+const links = [
+  {
+    label: "your@email.com",
+    href: "mailto:your@email.com",
+    icon: <EmailIcon />,
+  },
+  // Add more links...
+]
+```
+
+### Styling
+
+The component uses Tailwind CSS classes. Key customization points:
+
+- `text-[#111]` - Main text color
+- `bg-[#111]` - Logo background color
+- `hover:bg-gray-100` - Link hover state
+
+## Dependencies
+
+```json
+{
+  "motion": "latest",
+  "next-intl": "latest"
+}
+```
+
+## Animation
+
+The component uses Framer Motion for smooth animations:
+
+- **Initial state**: Opacity 0, offset by 8px
+- **Animate state**: Full opacity, original position
+- **Stagger**: 0.05s delay between child elements
+- **Easing**: Custom cubic-bezier `[0.21, 0.47, 0.32, 0.98]`
+
+## Accessibility
+
+- External links open in new tabs with `rel="noopener noreferrer"`
+- Proper semantic HTML structure
+- Keyboard navigation support
+- Screen reader friendly link labels
+
+## Related Components
+
+- [Sikka Icons](/docs/components/sikka-icons)
+- [Theme Switcher](/docs/components/theme-switcher)
+- [Language Switcher](/docs/components/language-switcher)

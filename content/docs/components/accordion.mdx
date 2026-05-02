@@ -1,0 +1,92 @@
+---
+title: Accordion
+description: An animated accordion component with smooth transitions and RTL support
+---
+
+<ComponentPreview
+  name="accordion-demo"
+  classNameComponentContainer='min-h-[500px]'
+/>
+
+## Usage
+
+The Accordion component provides an elegant way to display collapsible content sections with smooth animations. It features a unique connected border design that adapts based on the open state of items.
+
+```tsx
+import Accordion from "@/components/elements/accordion"
+
+export default function Example() {
+  return <Accordion />
+}
+```
+
+## Features
+
+- Smooth spring animations powered by Motion
+- Connected border design that adapts to open/closed states
+- RTL (Right-to-Left) support for Arabic language
+- Single item expansion (only one item open at a time)
+- Dynamic border radius transitions
+- Icon rotation animation on expand/collapse
+
+## Implementation
+
+The component uses:
+- `motion` from Motion for smooth spring animations
+- `lucide-react` for icons
+- Tailwind CSS for styling
+- CSS HSL variables for theming support
+
+## Code Structure
+
+```tsx
+import { cn } from "@/lib/utils";
+import { ChevronDown, Globe } from "lucide-react";
+import { motion } from "motion/react";
+import { useState } from "react";
+
+const Accordion = () => {
+  const [open, setOpen] = useState<number | null>(null);
+
+  return (
+    <div className="w-full max-w-md" dir="rtl">
+      {/* Accordion items with motion animations */}
+    </div>
+  );
+};
+```
+
+## Props
+
+The Accordion component is self-contained and manages its own state internally. It doesn't accept any props as the content is defined within the component.
+
+## Customization
+
+To customize the accordion items, modify the `items` array at the bottom of the component file:
+
+```tsx
+const items = [
+  {
+    title: "Your Question",
+    content: "Your answer content here",
+    icon: <YourIcon className="h-4 w-4" />,
+  },
+  // Add more items...
+];
+```
+
+## Dependencies
+
+```json
+{
+  "motion": "latest",
+  "lucide-react": "latest"
+}
+```
+
+## Styling
+
+The component uses Tailwind CSS classes and CSS variables for theming:
+- `--border` variable for border colors
+- `rounded-3xl` for large border radius
+- Spring animations with custom bounce and stiffness values

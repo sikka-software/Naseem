@@ -1,0 +1,228 @@
+import type { Registry } from "@/registry/schema";
+import * as React from "react";
+
+export const examples: Registry = [
+  {
+    name: "theme-switcher-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/theme-switcher-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/theme-switcher-demo")
+    ),
+  },
+  {
+    name: "language-switcher-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/language-switcher-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/language-switcher-demo")
+    ),
+  },
+  {
+    name: "multilang-input-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/multilang-input-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/multilang-input-demo")
+    ),
+  },
+  {
+    name: "multilang-textarea-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/multilang-textarea-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/multilang-textarea-demo")
+    ),
+  },
+  {
+    name: "currency-input-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/currency-input-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/currency-input-demo")
+    ),
+  },
+  {
+    name: "app-stores-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/app-stores-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(() => import("../components/demos/app-stores-demo")),
+  },
+  {
+    name: "auth-buttons-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/auth-buttons-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/auth-buttons-demo")
+    ),
+  },
+  {
+    name: "sikka-popover-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/sikka-popover-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/sikka-popover-demo")
+    ),
+  },
+  {
+    name: "sikka-icons-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/icons-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/icons-demo")
+    ),
+  },
+  {
+    name: "feedback-survey-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/feedback-survey-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/feedback-survey-demo")
+    ),
+  },
+  {
+    name: "accordion-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/accordion-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/accordion-demo")
+    ),
+  },
+  {
+    name: "strips-horizontal-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/strips-horizontal-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/strips-horizontal-demo")
+    ),
+  },
+  {
+    name: "strips-vertical-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/strips-vertical-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/strips-vertical-demo")
+    ),
+  },
+  {
+    name: "expandable-grid-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/expandable-grid-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/expandable-grid-demo")
+    ),
+  },
+  {
+    name: "image-grid-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/image-grid-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/image-grid-demo")
+    ),
+  },
+];

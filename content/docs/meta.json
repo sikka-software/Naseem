@@ -1,0 +1,13 @@
+{
+  "title": "ui",
+  "root": true,
+  "pages": [
+    "---Getting Started---",
+    "index",
+    "cli",
+    "---Components---",
+    "...components",
+    "---Blocks---",
+    "...blocks"
+  ]
+}
