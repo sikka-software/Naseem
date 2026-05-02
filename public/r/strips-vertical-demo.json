@@ -1,0 +1,14 @@
+{
+  "name": "strips-vertical-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "import VerticalImageStrips from \"@/components/naseem-ui/elements/strips-vertical\";\r\n\r\nconst StripsVerticalDemo = () => {\r\n  return <VerticalImageStrips />;\r\n};\r\n\r\nexport default StripsVerticalDemo;\r\n",
+      "path": "components/demos/strips-vertical-demo.tsx",
+      "target": "components/ui/strips-vertical-demo.tsx"
+    }
+  ]
+}

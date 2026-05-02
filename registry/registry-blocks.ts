@@ -169,4 +169,29 @@ export const blocks: Registry = [
   //     () => import("../components/commerce-ui/blocks/reviews/review-04")
   //   ),
   // },
+  {
+    name: "auth-buttons",
+    type: "registry:block",
+    dependencies: [],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "@/components/naseem-ui/blocks/auth/auth-buttons.tsx",
+        type: "registry:block",
+      },
+      {
+        path: "@/components/naseem-ui/elements/loading.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "@/components/naseem-ui/elements/logos.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/blocks/auth/auth-buttons").then((mod) => ({
+        default: mod.AuthButtons,
+      }))
+    ),
+  },
 ];

@@ -1,0 +1,14 @@
+{
+  "name": "expandable-grid-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "import ExpandableGridCells from \"@/components/naseem-ui/elements/expandable-grid\";\r\n\r\nconst ExpandableGridDemo = () => {\r\n  return <ExpandableGridCells />;\r\n};\r\n\r\nexport default ExpandableGridDemo;\r\n",
+      "path": "components/demos/expandable-grid-demo.tsx",
+      "target": "components/ui/expandable-grid-demo.tsx"
+    }
+  ]
+}

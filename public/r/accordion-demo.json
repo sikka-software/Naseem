@@ -1,0 +1,14 @@
+{
+  "name": "accordion-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "import Accordion from \"@/components/naseem-ui/elements/accordion\";\r\n\r\nconst AccordionDemo = () => {\r\n  return <Accordion />;\r\n};\r\n\r\nexport default AccordionDemo;\r\n",
+      "path": "components/demos/accordion-demo.tsx",
+      "target": "components/ui/accordion-demo.tsx"
+    }
+  ]
+}

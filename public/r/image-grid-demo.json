@@ -1,0 +1,14 @@
+{
+  "name": "image-grid-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "import ImageGrid from \"@/components/naseem-ui/elements/image-grid\";\r\n\r\nconst ImageGridDemo = () => {\r\n  return <ImageGrid />;\r\n};\r\n\r\nexport default ImageGridDemo;\r\n",
+      "path": "components/demos/image-grid-demo.tsx",
+      "target": "components/ui/image-grid-demo.tsx"
+    }
+  ]
+}

@@ -373,4 +373,21 @@ export const components: Registry = [
       }))
     ),
   },
+  {
+    name: "app-stores",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/app-stores.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/app-stores").then((mod) => ({
+        default: mod.AppStores,
+      }))
+    ),
+  },
 ];

@@ -8,7 +8,7 @@
   "files": [
     {
       "type": "registry:example",
-      "content": "import { LanguageSwitcher } from \"@/components/naseem-ui/elements/language-switcher\";\nimport { useTranslations } from \"next-intl\";\n\nconst LanguageSwitcherDemo = () => {\n  const t = useTranslations();\n  return (\n    <LanguageSwitcher\n    // local=\"en\"\n    // locales={[\n    //   { code: \"en\", label: t(\"en\"), isRTL: false },\n    //   { code: \"ar\", label: t(\"ar\"), isRTL: true },\n    // ]}\n    // onChange={(value) => {\n    //   console.log(value);\n    // }}\n    />\n  );\n};\n\nexport default LanguageSwitcherDemo;\n",
+      "content": "import { LanguageSwitcher } from \"@/components/naseem-ui/elements/language-switcher\";\r\nimport { useTranslations } from \"next-intl\";\r\n\r\nconst LanguageSwitcherDemo = () => {\r\n  const t = useTranslations();\r\n  return (\r\n    <LanguageSwitcher\r\n    // local=\"en\"\r\n    // locales={[\r\n    //   { code: \"en\", label: t(\"en\"), isRTL: false },\r\n    //   { code: \"ar\", label: t(\"ar\"), isRTL: true },\r\n    // ]}\r\n    // onChange={(value) => {\r\n    //   console.log(value);\r\n    // }}\r\n    />\r\n  );\r\n};\r\n\r\nexport default LanguageSwitcherDemo;\r\n",
       "path": "components/demos/language-switcher-demo.tsx",
       "target": "components/ui/language-switcher-demo.tsx"
     }

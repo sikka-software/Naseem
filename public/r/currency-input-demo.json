@@ -8,7 +8,7 @@
   "files": [
     {
       "type": "registry:example",
-      "content": "\"use client\";\n\nimport { Label } from \"@/components/ui/label\";\nimport { CurrencyInput } from \"@/components/naseem-ui/elements/currency-input\";\n\nconst CurrencyInputDemo = () => {\n  return (\n    <div className=\"w-full max-w-[400px] space-y-4\">\n      <div>\n        <Label>Currency Input</Label>\n        <CurrencyInput className=\"w-full\" value={1234.56} />\n      </div>\n    </div>\n  );\n};\n\nexport default CurrencyInputDemo;\n",
+      "content": "\"use client\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { CurrencyInput } from \"@/components/naseem-ui/elements/currency-input\";\r\n\r\nconst CurrencyInputDemo = () => {\r\n  return (\r\n    <div className=\"w-full max-w-[400px] space-y-4\">\r\n      <div>\r\n        <Label>Currency Input</Label>\r\n        <CurrencyInput className=\"w-full\" value={1234.56} />\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CurrencyInputDemo;\r\n",
       "path": "components/demos/currency-input-demo.tsx",
       "target": "components/ui/currency-input-demo.tsx"
     }

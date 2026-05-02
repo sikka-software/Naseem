@@ -6,7 +6,7 @@
   "files": [
     {
       "type": "registry:example",
-      "content": "\"use client\";\n\nimport FeedbackSurvey from \"@/components/naseem-ui/elements/feedback-survey\";\n\nconst FeedbackSurveyDemo = () => {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <FeedbackSurvey />\n    </div>\n  );\n};\n\nexport default FeedbackSurveyDemo;\n",
+      "content": "\"use client\";\r\n\r\nimport FeedbackSurvey from \"@/components/naseem-ui/elements/feedback-survey\";\r\n\r\nconst FeedbackSurveyDemo = () => {\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <FeedbackSurvey />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default FeedbackSurveyDemo;\r\n",
       "path": "components/demos/feedback-survey-demo.tsx",
       "target": "components/ui/feedback-survey-demo.tsx"
     }
