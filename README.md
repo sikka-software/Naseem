@@ -77,7 +77,6 @@ Since this project is a collection of components, you can just copy and paste th
 
 You can use the components in your project by copying and pasting the components from the [official documentation](https://ui.sikka.io).
 
-
 <!-- CONTRIBUTING -->
 
 ## Contributing

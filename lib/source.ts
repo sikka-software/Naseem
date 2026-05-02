@@ -8,8 +8,7 @@ import { i18n } from "./i18n";
 export const source = loader({
   baseUrl: "/docs",
   icon(icon) {
-    if (icon && icon in icons)
-      return create({ icon: icons[icon as keyof typeof icons] });
+    if (icon && icon in icons) return create({ icon: icons[icon as keyof typeof icons] });
   },
   source: toFumadocsSource(docs, meta),
 });

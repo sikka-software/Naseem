@@ -1,13 +1,8 @@
-'use client';
-import Link from 'fumadocs-core/link';
-import { usePathname } from 'next/navigation';
-import {
-  type AnchorHTMLAttributes,
-  forwardRef,
-  type HTMLAttributes,
-  type ReactNode,
-} from 'react';
-import { isActive } from '../lib/is-active';
+"use client";
+import Link from "fumadocs-core/link";
+import { usePathname } from "next/navigation";
+import { type AnchorHTMLAttributes, forwardRef, type HTMLAttributes, type ReactNode } from "react";
+import { isActive } from "../lib/is-active";
 
 interface BaseItem {
   /**
@@ -15,7 +10,7 @@ interface BaseItem {
    *
    * @defaultValue 'all'
    */
-  on?: 'menu' | 'nav' | 'all';
+  on?: "menu" | "nav" | "all";
 }
 
 export interface BaseLinkType extends BaseItem {
@@ -25,19 +20,19 @@ export interface BaseLinkType extends BaseItem {
    *
    * @defaultValue 'url'
    */
-  active?: 'url' | 'nested-url' | 'none';
+  active?: "url" | "nested-url" | "none";
   external?: boolean;
 }
 
 export interface MainItemType extends BaseLinkType {
-  type?: 'main';
+  type?: "main";
   icon?: ReactNode;
   text: ReactNode;
   description?: ReactNode;
 }
 
 export interface IconItemType extends BaseLinkType {
-  type: 'icon';
+  type: "icon";
   /**
    * `aria-label` of icon button
    */
@@ -51,7 +46,7 @@ export interface IconItemType extends BaseLinkType {
 }
 
 interface ButtonItem extends BaseLinkType {
-  type: 'button';
+  type: "button";
   icon?: ReactNode;
   text: ReactNode;
   /**
@@ -61,7 +56,7 @@ interface ButtonItem extends BaseLinkType {
 }
 
 export interface MenuItemType extends BaseItem {
-  type: 'menu';
+  type: "menu";
   icon?: ReactNode;
   text: ReactNode;
 
@@ -86,7 +81,7 @@ export interface MenuItemType extends BaseItem {
 }
 
 interface CustomItem extends BaseItem {
-  type: 'custom';
+  type: "custom";
   /**
    * @defaultValue false
    */
@@ -94,34 +89,21 @@ interface CustomItem extends BaseItem {
   children: ReactNode;
 }
 
-export type LinkItemType =
-  | MainItemType
-  | IconItemType
-  | ButtonItem
-  | MenuItemType
-  | CustomItem;
+export type LinkItemType = MainItemType | IconItemType | ButtonItem | MenuItemType | CustomItem;
 
 export const BaseLinkItem = forwardRef<
   HTMLAnchorElement,
-  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> & { item: BaseLinkType }
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & { item: BaseLinkType }
 >(({ item, ...props }, ref) => {
   const pathname = usePathname();
-  const activeType = item.active ?? 'url';
-  const active =
-    activeType !== 'none' &&
-    isActive(item.url, pathname, activeType === 'nested-url');
+  const activeType = item.active ?? "url";
+  const active = activeType !== "none" && isActive(item.url, pathname, activeType === "nested-url");
 
   return (
-    <Link
-      ref={ref}
-      href={item.url}
-      external={item.external}
-      {...props}
-      data-active={active}
-    >
+    <Link ref={ref} href={item.url} external={item.external} {...props} data-active={active}>
       {props.children}
     </Link>
   );
 });
 
-BaseLinkItem.displayName = 'BaseLinkItem';
+BaseLinkItem.displayName = "BaseLinkItem";

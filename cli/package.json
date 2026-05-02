@@ -2,10 +2,10 @@
   "name": "@sikka/naseem",
   "version": "0.0.1",
   "description": "Sikka's component registry CLI",
-  "main": "dist/index.js",
   "bin": {
     "naseem": "./dist/index.js"
   },
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "dev": "tsx src/index.ts"
@@ -14,7 +14,7 @@
     "commander": "^12.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "tsx": "^4.0.0"
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
   }
 }

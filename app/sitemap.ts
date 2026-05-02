@@ -5,8 +5,7 @@ import type { MetadataRoute } from "next";
 export const revalidate = false;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const url = (path: string): string =>
-    new URL(path, siteConfig.url).toString();
+  const url = (path: string): string => new URL(path, siteConfig.url).toString();
 
   return [
     {

@@ -17,11 +17,10 @@ const convertArabicToEnglishNumerals = (value: string): string => {
     .join("");
 };
 
-interface CurrencyInputProps
-  extends Omit<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    "onChange" | "value"
-  > {
+interface CurrencyInputProps extends Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  "onChange" | "value"
+> {
   value?: number;
   onChange?: (value: number | undefined) => void;
   showCurrencySymbol?: boolean;

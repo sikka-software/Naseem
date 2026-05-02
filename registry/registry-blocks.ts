@@ -2,7 +2,6 @@ import type { Registry } from "@/registry/schema";
 import * as React from "react";
 
 export const blocks: Registry = [
-
   // {
   //   name: "product-card-01-block",
   //   type: "registry:block",
@@ -191,7 +190,7 @@ export const blocks: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/blocks/auth/auth-buttons").then((mod) => ({
         default: mod.AuthButtons,
-      }))
+      })),
     ),
   },
 ];

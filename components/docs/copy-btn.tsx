@@ -2,12 +2,7 @@
 
 import { cn } from "@/lib/utils";
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { type Transition, motion, useAnimation } from "motion/react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -89,7 +84,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({ componentSource }) => {
       className={cn(
         "absolute right-2 top-2 z-10 transition-opacity",
         !copied &&
-          "lg:opacity-0 lg:group-focus-within/item:opacity-100 lg:group-hover/item:opacity-100"
+          "lg:opacity-0 lg:group-focus-within/item:opacity-100 lg:group-hover/item:opacity-100",
       )}
     >
       <TooltipProvider delayDuration={0}>

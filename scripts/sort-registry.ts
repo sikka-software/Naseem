@@ -1,11 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
-const REGISTRY_FILE = path.join(
-  process.cwd(),
-  "registry",
-  "registry-components.ts"
-);
+const REGISTRY_FILE = path.join(process.cwd(), "registry", "registry-components.ts");
 
 async function sortRegistry() {
   try {

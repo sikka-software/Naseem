@@ -2,11 +2,7 @@
 
 import { MessageCircleQuestion } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Loader2, Check, Globe } from "lucide-react";
@@ -48,7 +44,7 @@ function CustomSurvey({ open, onOpenChange }: CustomSurveyProps) {
   const handleFeedbackSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const feedback = (e.target as HTMLFormElement).elements.namedItem(
-      "feedback"
+      "feedback",
     ) as HTMLTextAreaElement;
 
     setIsSubmitting(true);
@@ -83,10 +79,7 @@ function CustomSurvey({ open, onOpenChange }: CustomSurveyProps) {
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent
-        className="flex flex-col sm:max-w-106.25"
-        dir={isRTL ? "rtl" : "ltr"}
-      >
+      <DialogContent className="flex flex-col sm:max-w-106.25" dir={isRTL ? "rtl" : "ltr"}>
         {showSuccess ? (
           <div className="flex flex-col items-center justify-center gap-4 pb-0 text-center">
             <div className="bg--400 flex w-full flex-row items-start justify-start gap-2">
@@ -114,10 +107,7 @@ function CustomSurvey({ open, onOpenChange }: CustomSurveyProps) {
                     <GitHub className="size-5! text-black!" />
                   </Button>
                 </a>
-                <a
-                  href="https://www.linkedin.com/company/80940262"
-                  target="_blank"
-                >
+                <a href="https://www.linkedin.com/company/80940262" target="_blank">
                   <Button size={"icon"} variant={"outline"}>
                     <LinkedIn className="size-4! text-black!" />
                   </Button>
@@ -139,11 +129,7 @@ function CustomSurvey({ open, onOpenChange }: CustomSurveyProps) {
                 </a>
               </div>
             </div>
-            <Button
-              onClick={() => onOpenChange(false)}
-              variant="default"
-              className="w-full"
-            >
+            <Button onClick={() => onOpenChange(false)} variant="default" className="w-full">
               {t("close")}
             </Button>
           </div>
@@ -152,10 +138,7 @@ function CustomSurvey({ open, onOpenChange }: CustomSurveyProps) {
             <DialogHeader dir={isRTL ? "rtl" : "ltr"}>
               <DialogTitle>{t("feedback-title")}</DialogTitle>
             </DialogHeader>
-            <form
-              onSubmit={handleFeedbackSubmit}
-              className="flex flex-col gap-4"
-            >
+            <form onSubmit={handleFeedbackSubmit} className="flex flex-col gap-4">
               <textarea
                 id="feedbackInput"
                 name="feedback"
@@ -165,15 +148,8 @@ function CustomSurvey({ open, onOpenChange }: CustomSurveyProps) {
                 className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-30 w-full rounded-md border px-3 py-2 text-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
                 dir={isRTL ? "rtl" : "ltr"}
               />
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                variant="default"
-                className="w-full"
-              >
-                {isSubmitting ? (
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                ) : null}
+              <Button type="submit" disabled={isSubmitting} variant="default" className="w-full">
+                {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
                 {t("submit")}
               </Button>
             </form>
@@ -201,11 +177,7 @@ const FeedbackToggle = ({ inApp }: { inApp?: boolean }) => {
             <MessageCircleQuestion className="h-4 w-4" />
           </Button>
         </TooltipTrigger>
-        <TooltipContent
-          className="px-2 py-1 text-xs"
-          side="bottom"
-          align="start"
-        >
+        <TooltipContent className="px-2 py-1 text-xs" side="bottom" align="start">
           <p>{t("feedback")}</p>
         </TooltipContent>
       </Tooltip>

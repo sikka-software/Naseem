@@ -10,11 +10,7 @@ const SikkaPopoverDemo = () => {
     <div className="flex items-center justify-center">
       <Popover>
         <PopoverTrigger asChild>
-          <Button
-            size="icon"
-            variant="outline"
-            onClick={() => console.log("show sikka popup")}
-          >
+          <Button size="icon" variant="outline" onClick={() => console.log("show sikka popup")}>
             <SikkaLogo className="size-3.5" />
           </Button>
         </PopoverTrigger>

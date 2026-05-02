@@ -61,10 +61,7 @@ function ComponentDisplay({
 }: ComponentDisplayProps) {
   return (
     <div
-      className={cn(
-        "flex min-h-[350px] w-full items-center justify-center rounded-md",
-        className
-      )}
+      className={cn("flex min-h-[350px] w-full items-center justify-center rounded-md", className)}
     >
       {hasReTrigger && (
         <Button
@@ -77,9 +74,7 @@ function ComponentDisplay({
           <RotateCw className="h-4 w-4" />
         </Button>
       )}
-      {hasReTrigger
-        ? React.cloneElement(component, { key: reTriggerKey })
-        : component}
+      {hasReTrigger ? React.cloneElement(component, { key: reTriggerKey }) : component}
     </div>
   );
 }

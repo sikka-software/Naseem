@@ -33,22 +33,14 @@ export interface SidebarComponents {
 
 export function checkPageTree(passed: unknown) {
   if (!passed) notFound();
-  if (
-    typeof passed === "object" &&
-    "children" in passed &&
-    Array.isArray(passed.children)
-  )
-    return;
+  if (typeof passed === "object" && "children" in passed && Array.isArray(passed.children)) return;
 
   throw new Error(
-    "You passed an invalid page tree to `<DocsLayout />`. Check your usage in layout.tsx if you have enabled i18n."
+    "You passed an invalid page tree to `<DocsLayout />`. Check your usage in layout.tsx if you have enabled i18n.",
   );
 }
 
-export function getSidebarTabsFromOptions(
-  options: SidebarOptions["tabs"],
-  tree: Root
-) {
+export function getSidebarTabsFromOptions(options: SidebarOptions["tabs"], tree: Root) {
   if (Array.isArray(options)) {
     return options;
   } else if (typeof options === "object") {
@@ -74,7 +66,7 @@ const defaultTransform: TabOptions["transform"] = (_option, node) => {
 
 function getSidebarTabs(
   pageTree: Root,
-  { transform = defaultTransform }: TabOptions = {}
+  { transform = defaultTransform }: TabOptions = {},
 ): unknown[] {
   function findOptions(node: Folder): unknown[] {
     const results: unknown[] = [];
@@ -107,10 +99,7 @@ function getSidebarTabs(
   return findOptions(pageTree as Folder);
 }
 
-function getFolderUrls(
-  folder: Folder,
-  output: Set<string>
-): Set<string> {
+function getFolderUrls(folder: Folder, output: Set<string>): Set<string> {
   if (folder.index) output.add(folder.index.url);
 
   for (const child of folder.children) {

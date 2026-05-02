@@ -17,11 +17,7 @@ import { ComponentBase } from "./preview/component-base";
 import { ComponentCollapse } from "./preview/component-collapse";
 import { ComponentPreview } from "./preview/component-preview";
 import { ComponentPropsTable } from "./component-props-table";
-import {
-  ComponentInstall,
-  CLIInstall,
-  ManualInstall,
-} from "./preview/components-install";
+import { ComponentInstall, CLIInstall, ManualInstall } from "./preview/components-install";
 import { ComponentSource } from "./preview/component-source";
 import { ComponentLoader } from "./component-loader";
 
@@ -38,61 +34,32 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
     CLIInstall,
     ComponentBase: async ({ name, ...props }: { name: string }) => {
       const { code, highlightedCode } = await extractSourceCode(name);
-      return (
-        <ComponentBase
-          name={name}
-          code={code}
-          highlightedCode={highlightedCode}
-          {...props}
-        />
-      );
+      return <ComponentBase name={name} code={code} highlightedCode={highlightedCode} {...props} />;
     },
     ComponentCollapse: async ({ name, ...props }: { name: string }) => {
       const { code, highlightedCode } = await extractSourceCode(name);
       return (
-        <ComponentCollapse
-          name={name}
-          code={code}
-          highlightedCode={highlightedCode}
-          {...props}
-        />
+        <ComponentCollapse name={name} code={code} highlightedCode={highlightedCode} {...props} />
       );
     },
     ComponentInstall,
     ComponentPreview: async ({ name, ...props }: { name: string }) => {
       const { code, highlightedCode } = await extractSourceCode(name);
       return (
-        <ComponentPreview
-          name={name}
-          code={code}
-          highlightedCode={highlightedCode}
-          {...props}
-        />
+        <ComponentPreview name={name} code={code} highlightedCode={highlightedCode} {...props} />
       );
     },
     ComponentPropsTable,
     ComponentSource: async ({ name, ...props }: { name: string }) => {
       const { code, highlightedCode } = await extractSourceCode(name);
-      return (
-        <ComponentSource
-          code={code}
-          highlightedCode={highlightedCode}
-          {...props}
-        />
-      );
+      return <ComponentSource code={code} highlightedCode={highlightedCode} {...props} />;
     },
     File,
     Files,
     Folder,
     ImageZoom,
 
-    InstallTabs: ({
-      children,
-      items,
-    }: {
-      items: string[];
-      children: ReactNode;
-    }) => (
+    InstallTabs: ({ children, items }: { items: string[]; children: ReactNode }) => (
       <Tabs items={items} id="package-manager" className="cursor-pointer">
         {children}
       </Tabs>

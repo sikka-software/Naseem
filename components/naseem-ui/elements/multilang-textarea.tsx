@@ -16,8 +16,10 @@ export type MultiLangValue = {
   [key: string]: string;
 };
 
-interface MultilangTextareaProps
-  extends Omit<React.ComponentProps<"textarea">, "onChange" | "value"> {
+interface MultilangTextareaProps extends Omit<
+  React.ComponentProps<"textarea">,
+  "onChange" | "value"
+> {
   onChange: (values: MultiLangValue) => void;
   value?: MultiLangValue;
   texts?: {
@@ -35,15 +37,8 @@ interface MultilangTextareaProps
   }[];
 }
 
-const MultilangTextarea = ({
-  locales,
-  value = {},
-  onChange,
-  ...props
-}: MultilangTextareaProps) => {
-  const [selectedLocale, setSelectedLocale] = React.useState(
-    locales[0]?.code || ""
-  );
+const MultilangTextarea = ({ locales, value = {}, onChange, ...props }: MultilangTextareaProps) => {
+  const [selectedLocale, setSelectedLocale] = React.useState(locales[0]?.code || "");
 
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newValues = {
@@ -76,15 +71,11 @@ const MultilangTextarea = ({
             className="absolute end-1 top-1 h-fit p-1 text-xs"
             style={{ insetInlineEnd: "4px" }}
           >
-            {locales.find((locale) => locale.code === selectedLocale)?.name ||
-              "Select Language"}
+            {locales.find((locale) => locale.code === selectedLocale)?.name || "Select Language"}
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuRadioGroup
-            value={selectedLocale}
-            onValueChange={handleLocaleChange}
-          >
+          <DropdownMenuRadioGroup value={selectedLocale} onValueChange={handleLocaleChange}>
             {locales.map((locale) => (
               <DropdownMenuRadioItem key={locale.code} value={locale.code}>
                 {locale.name}

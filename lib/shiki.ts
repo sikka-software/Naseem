@@ -1,8 +1,4 @@
-import {
-  type Highlighter,
-  bundledLanguages,
-  createHighlighter,
-} from "shiki/bundle/web";
+import { type Highlighter, bundledLanguages, createHighlighter } from "shiki/bundle/web";
 
 // Global highlighter promise to prevent race conditions
 let highlighterPromise: Promise<Highlighter> | null = null;
@@ -17,13 +13,7 @@ async function getHighlighter() {
   return highlighterPromise;
 }
 
-export async function codeToHtml({
-  code,
-  lang,
-}: {
-  code: string;
-  lang: string;
-}) {
+export async function codeToHtml({ code, lang }: { code: string; lang: string }) {
   try {
     const highlighter = await getHighlighter();
 

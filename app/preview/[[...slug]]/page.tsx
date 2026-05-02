@@ -6,11 +6,7 @@ import { notFound } from "next/navigation";
 // Arrays to categorize components
 const NOT_CENTERED_COMPONENTS: string[] = [];
 
-export default async function PreviewPage({
-  params,
-}: {
-  params: Promise<{ slug: string[] }>;
-}) {
+export default async function PreviewPage({ params }: { params: Promise<{ slug: string[] }> }) {
   const { slug } = await params;
   if (!slug.length) return notFound();
   const componentName = slug.join("/");
@@ -26,7 +22,7 @@ export default async function PreviewPage({
 
     // Check if component should not be centered
     const shouldNotCenter = NOT_CENTERED_COMPONENTS.some((component) =>
-      componentName.startsWith(component)
+      componentName.startsWith(component),
     );
 
     return shouldNotCenter ? (

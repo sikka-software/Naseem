@@ -1,12 +1,7 @@
 import { getMDXComponents } from "@/components/docs/mdx-components";
 // import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import { source } from "@/lib/source";
-import {
-  DocsBody,
-  DocsDescription,
-  DocsPage,
-  DocsTitle,
-} from "fumadocs-ui/page";
+import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
 // import { ArrowUpRight } from "lucide-react";
 // import Link from "next/link";
 
@@ -39,9 +34,7 @@ import { notFound } from "next/navigation";
 //   );
 // };
 
-export default async function Page(props: {
-  params: Promise<{ slug?: string[] }>;
-}) {
+export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
   const params = await props.params;
   const page = source.getPage(params.slug);
 
@@ -75,9 +68,7 @@ export async function generateStaticParams() {
   return source.generateParams();
 }
 
-export async function generateMetadata(props: {
-  params: Promise<{ slug?: string[] }>;
-}) {
+export async function generateMetadata(props: { params: Promise<{ slug?: string[] }> }) {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();

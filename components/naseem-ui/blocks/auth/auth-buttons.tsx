@@ -62,11 +62,7 @@ export const AuthButtons: React.FC<AuthButtonsType> = (props) => {
           variant="outline"
           onClick={props.handleMetamask}
         >
-          {props.isMetamaskLoading ? (
-            <Loading size="button" />
-          ) : (
-            <Logos.metamask className="h-6" />
-          )}
+          {props.isMetamaskLoading ? <Loading size="button" /> : <Logos.metamask className="h-6" />}
           {props.texts?.continueWithMetamask ?? "Connect Metamask"}
         </Button>
       )}
@@ -78,11 +74,7 @@ export const AuthButtons: React.FC<AuthButtonsType> = (props) => {
           variant="outline"
           onClick={props.handleNafath}
         >
-          {props.isNafathLoading ? (
-            <Loading size="button" />
-          ) : (
-            <Logos.nafath className="h-4" />
-          )}
+          {props.isNafathLoading ? <Loading size="button" /> : <Logos.nafath className="h-4" />}
           {props.texts?.continueWithNafath ?? "Continue With Nafath"}
         </Button>
       )}
@@ -95,11 +87,7 @@ export const AuthButtons: React.FC<AuthButtonsType> = (props) => {
           variant="outline"
           onClick={props.handleGoogle}
         >
-          {props.isGoogleLoading ? (
-            <Loading size="button" />
-          ) : (
-            <Logos.google className="icon" />
-          )}
+          {props.isGoogleLoading ? <Loading size="button" /> : <Logos.google className="icon" />}
           {props.texts?.continueWithGoogle ?? "Continue With Google"}
         </Button>
       )}
@@ -112,11 +100,7 @@ export const AuthButtons: React.FC<AuthButtonsType> = (props) => {
           variant="outline"
           onClick={props.handleGithub}
         >
-          {props.isGithubLoading ? (
-            <Loading size="button" />
-          ) : (
-            <Logos.github className="icon" />
-          )}
+          {props.isGithubLoading ? <Loading size="button" /> : <Logos.github className="icon" />}
           {props.texts?.continueWithGithub ?? "Continue With Github"}
         </Button>
       )}
@@ -129,11 +113,7 @@ export const AuthButtons: React.FC<AuthButtonsType> = (props) => {
           variant="outline"
           onClick={props.handleTwitter}
         >
-          {props.isTwitterLoading ? (
-            <Loading size="button" />
-          ) : (
-            <Logos.twitter className="icon" />
-          )}
+          {props.isTwitterLoading ? <Loading size="button" /> : <Logos.twitter className="icon" />}
           {props.texts?.continueWithTwitter ?? "Continue With Twitter"}
         </Button>
       )}
@@ -146,11 +126,7 @@ export const AuthButtons: React.FC<AuthButtonsType> = (props) => {
           variant="outline"
           onClick={props.handleApple}
         >
-          {props.isAppleLoading ? (
-            <Loading size="button" />
-          ) : (
-            <Logos.apple className="icon" />
-          )}
+          {props.isAppleLoading ? <Loading size="button" /> : <Logos.apple className="icon" />}
 
           {props.texts?.continueWithApple ?? "Continue With Apple"}
         </Button>
@@ -181,11 +157,7 @@ export const AuthButtons: React.FC<AuthButtonsType> = (props) => {
           variant="outline"
           onClick={props.handleEmail}
         >
-          {props.isEmailLoading ? (
-            <Loading size="button" />
-          ) : (
-            <Logos.mail className="icon" />
-          )}
+          {props.isEmailLoading ? <Loading size="button" /> : <Logos.mail className="icon" />}
           {props.texts?.continueWithEmail ?? "Continue With Email"}
         </Button>
       )}
@@ -198,11 +170,7 @@ export const AuthButtons: React.FC<AuthButtonsType> = (props) => {
           variant="outline"
           onClick={props.handlePhone}
         >
-          {props.isPhoneLoading ? (
-            <Loading size="button" />
-          ) : (
-            <Logos.phone className="icon" />
-          )}
+          {props.isPhoneLoading ? <Loading size="button" /> : <Logos.phone className="icon" />}
           {props.texts?.continueWithPhone ?? "Continue With Phone"}
         </Button>
       )}

@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
@@ -38,10 +34,7 @@ export function ComponentCollapse({
         <CollapsibleTrigger asChild>
           <div className="bg-secondary text-muted-foreground hover:text-foreground flex cursor-pointer items-center gap-2 rounded-b-md border-t px-4 py-2 text-sm">
             <ChevronDown
-              className={cn(
-                "h-4 w-4 transition-transform duration-200",
-                isOpen && "rotate-180"
-              )}
+              className={cn("h-4 w-4 transition-transform duration-200", isOpen && "rotate-180")}
             />
             {isOpen ? "Hide" : "Show"} code
           </div>

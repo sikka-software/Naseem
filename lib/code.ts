@@ -4,7 +4,7 @@ import { codeToHtml } from "@/lib/shiki";
 import { getComponentByName } from "@/registry";
 import "../registry/";
 export async function extractSourceCode(
-  componentName: string
+  componentName: string,
 ): Promise<{ code: string; highlightedCode: string }> {
   //   const basePath = path.join(
   //     process.cwd(),

@@ -2,11 +2,7 @@ import type { LucideIcon } from "lucide-react";
 import { TerminalIcon } from "lucide-react";
 
 type IconProps = React.HTMLAttributes<SVGElement>;
-export type Position =
-  | "top-left"
-  | "top-right"
-  | "bottom-left"
-  | "bottom-right";
+export type Position = "top-left" | "top-right" | "bottom-left" | "bottom-right";
 
 export const Icons = {
   // Add more custom icons as needed..
@@ -20,13 +16,7 @@ export const Icons = {
       {...props}
     >
       <defs>
-        <linearGradient
-          x1="-2.778%"
-          y1="32%"
-          x2="100%"
-          y2="67.556%"
-          id="gradient"
-        >
+        <linearGradient x1="-2.778%" y1="32%" x2="100%" y2="67.556%" id="gradient">
           <stop stopColor="#2298BD" offset="0%"></stop>
           <stop stopColor="#0ED7B5" offset="100%"></stop>
         </linearGradient>
@@ -39,17 +29,11 @@ export const Icons = {
   ),
 };
 
-export function create({
-  icon: Icon,
-}: {
-  icon?: LucideIcon;
-}): React.ReactElement {
+export function create({ icon: Icon }: { icon?: LucideIcon }): React.ReactElement {
   return <div className="my-1">{Icon ? <Icon /> : <TerminalIcon />}</div>;
 }
 
-export const ExternalLinkIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
-  props
-) => (
+export const ExternalLinkIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg
     data-testid="geist-icon"
     height="16"

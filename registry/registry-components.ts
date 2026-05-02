@@ -59,7 +59,7 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/theme-switcher").then((mod) => ({
         default: mod.ThemeSwitcher,
-      }))
+      })),
     ),
   },
   {
@@ -116,11 +116,9 @@ export const components: Registry = [
       },
     ],
     component: React.lazy(() =>
-      import("@/components/naseem-ui/elements/language-switcher").then(
-        (mod) => ({
-          default: mod.LanguageSwitcher,
-        })
-      )
+      import("@/components/naseem-ui/elements/language-switcher").then((mod) => ({
+        default: mod.LanguageSwitcher,
+      })),
     ),
   },
   {
@@ -137,7 +135,7 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/multilang-input").then((mod) => ({
         default: mod.MultilangInput,
-      }))
+      })),
     ),
   },
   {
@@ -152,11 +150,9 @@ export const components: Registry = [
       },
     ],
     component: React.lazy(() =>
-      import("@/components/naseem-ui/elements/multilang-textarea").then(
-        (mod) => ({
-          default: mod.MultilangTextarea,
-        })
-      )
+      import("@/components/naseem-ui/elements/multilang-textarea").then((mod) => ({
+        default: mod.MultilangTextarea,
+      })),
     ),
   },
   {
@@ -173,7 +169,7 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/sar-symbol").then((mod) => ({
         default: mod.SARSymbol,
-      }))
+      })),
     ),
   },
   {
@@ -190,7 +186,7 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/currency-input").then((mod) => ({
         default: mod.CurrencyInput,
-      }))
+      })),
     ),
   },
   {
@@ -211,7 +207,7 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/sikka-popover").then((mod) => ({
         default: mod.default,
-      }))
+      })),
     ),
   },
   {
@@ -248,7 +244,7 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/icons/sikka").then((mod) => ({
         default: mod.default,
-      }))
+      })),
     ),
   },
   {
@@ -285,7 +281,7 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/feedback-survey").then((mod) => ({
         default: mod.default,
-      }))
+      })),
     ),
   },
   {
@@ -302,7 +298,7 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/accordion").then((mod) => ({
         default: mod.default,
-      }))
+      })),
     ),
   },
   {
@@ -319,7 +315,7 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/strips-horizontal").then((mod) => ({
         default: mod.default,
-      }))
+      })),
     ),
   },
   {
@@ -336,7 +332,7 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/strips-vertical").then((mod) => ({
         default: mod.default,
-      }))
+      })),
     ),
   },
   {
@@ -353,7 +349,7 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/expandable-grid").then((mod) => ({
         default: mod.default,
-      }))
+      })),
     ),
   },
   {
@@ -370,7 +366,7 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/image-grid").then((mod) => ({
         default: mod.default,
-      }))
+      })),
     ),
   },
   {
@@ -387,7 +383,7 @@ export const components: Registry = [
     component: React.lazy(() =>
       import("@/components/naseem-ui/elements/app-stores").then((mod) => ({
         default: mod.AppStores,
-      }))
+      })),
     ),
   },
 ];

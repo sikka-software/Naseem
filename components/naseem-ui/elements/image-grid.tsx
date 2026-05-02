@@ -188,8 +188,7 @@ export default function ImageGrid() {
                 style={{
                   position: "absolute",
                   inset: 0,
-                  background:
-                    "linear-gradient(to top, #000 0%, transparent 65%)",
+                  background: "linear-gradient(to top, #000 0%, transparent 65%)",
                   pointerEvents: "none",
                 }}
               />

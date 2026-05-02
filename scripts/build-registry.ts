@@ -72,15 +72,14 @@ const getComponentFiles = async (files: File[], registryType: string) => {
       }
     };
 
-    const fileType =
-      typeof file === "string" ? registryType : file.type || registryType;
+    const fileType = typeof file === "string" ? registryType : file.type || registryType;
 
     // Modify the import paths in the content
     let modifiedContent = fileContent;
     if (fileContent.includes("@/components/ui/")) {
       modifiedContent = fileContent.replace(
         /@\/components\/ui\/.*?([^/]+)$/gm,
-        "@/components/ui/$1"
+        "@/components/ui/$1",
       );
     }
 
@@ -114,7 +113,7 @@ const main = async () => {
         files: filesArray,
       },
       null,
-      2
+      2,
     );
     const jsonPath = `${PUBLIC_FOLDER_BASE_PATH}/${component.name}.json`;
     await writeFileRecursive(jsonPath, json);

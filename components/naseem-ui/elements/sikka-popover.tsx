@@ -7,12 +7,7 @@ const links = [
     label: "contact@sikka.io",
     href: "mailto:contact@sikka.io",
     icon: (
-      <svg
-        viewBox="0 0 16 16"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      >
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="1" y="3" width="14" height="10" rx="2" />
         <path d="M1 5l7 5 7-5" />
       </svg>
@@ -40,12 +35,7 @@ const links = [
     label: "sikka.io",
     href: "https://sikka.io",
     icon: (
-      <svg
-        viewBox="0 0 16 16"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      >
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="8" cy="8" r="7" />
         <path d="M8 1c0 0-3 3-3 7s3 7 3 7M8 1c0 0 3 3 3 7s-3 7-3 7M1 8h14" />
       </svg>

@@ -1,11 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -20,9 +16,7 @@ import { CodeBlockCommand } from "./code-block-command";
 const prePath =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3000"
-    : process.env.NEXT_PUBLIC_URL ||
-      process.env.NEXT_PUBLIC_SITE_URL ||
-      siteConfig.url;
+    : process.env.NEXT_PUBLIC_URL || process.env.NEXT_PUBLIC_SITE_URL || siteConfig.url;
 
 export function ComponentPreview({
   classNameComponentContainer,
@@ -48,11 +42,7 @@ export function ComponentPreview({
 
   return (
     <div className="not-prose relative z-0 flex flex-col items-center justify-between pb-4">
-      <Tabs
-        value={activeTab}
-        onValueChange={setActiveTab}
-        className="relative mr-auto w-full"
-      >
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="relative mr-auto w-full">
         <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
           <TabsTrigger
             value="preview"
@@ -161,10 +151,7 @@ export function ComponentPreview({
           <div className="absolute end-2 top-2">
             <DirectionToggle onDirectionChange={setDirection} />
           </div>
-          <div
-            className="preview flex min-h-[300px] w-full justify-center p-4"
-            dir={direction}
-          >
+          <div className="preview flex min-h-[300px] w-full justify-center p-4" dir={direction}>
             <ComponentLoader
               name={name}
               hasReTrigger={hasReTrigger}

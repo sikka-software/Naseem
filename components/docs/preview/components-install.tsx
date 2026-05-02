@@ -9,20 +9,14 @@ import { useState } from "react";
 const prePath =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3000"
-    : process.env.NEXT_PUBLIC_URL ||
-      process.env.NEXT_PUBLIC_SITE_URL ||
-      siteConfig.url;
+    : process.env.NEXT_PUBLIC_URL || process.env.NEXT_PUBLIC_SITE_URL || siteConfig.url;
 
 function ComponentInstall({ children }: { children: React.ReactNode }) {
   const [activeTab, setActiveTab] = useState("cli");
 
   return (
     <div className="not-prose relative z-0 flex items-center justify-between pb-4">
-      <Tabs
-        value={activeTab}
-        onValueChange={setActiveTab}
-        className="relative mr-auto w-full"
-      >
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="relative mr-auto w-full">
         <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
           <TabsTrigger
             value="cli"

@@ -19,9 +19,10 @@ metadata:
   category: general
   version: 1.0.0
   public: false
-  created: '2026-03-03'
-  updated: '2026-03-03'
+  created: "2026-03-03"
+  updated: "2026-03-03"
 ---
+
 ## What This Skill Covers
 
 This skill enables you to fully set up, build, and manage a custom shadcn/ui component registry — from scaffolding the project and writing components, to building the JSON output and guiding the user through hosting/deployment. When something requires manual action from the user (e.g. deploying to Vercel, pushing to GitHub), you will clearly call it out with a `🙋 USER ACTION REQUIRED` block.
@@ -31,6 +32,7 @@ This skill enables you to fully set up, build, and manage a custom shadcn/ui com
 ## Mental Model
 
 A shadcn registry is simply:
+
 1. **Source components** living in a `registry/` folder in your project
 2. A **`registry.json`** manifest that lists all items and their metadata
 3. A **build step** (`npx shadcn build`) that reads `registry.json` and emits one JSON file per item into `public/r/[name].json`
@@ -98,6 +100,7 @@ my-registry/
 ```
 
 **Important rules:**
+
 - All registry source files MUST live under `registry/`
 - Imports inside registry files must use `@/registry/...` paths (the build step transforms these)
 - Never manually edit files in `public/r/` — they are generated
@@ -134,12 +137,12 @@ Create `registry.json` at the root of the project:
 
 ### registry.json Top-Level Fields
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| `$schema` | Yes | Always `https://ui.shadcn.com/schema/registry.json` |
-| `name` | Yes | Short slug for your registry (no spaces) |
-| `homepage` | Yes | Public URL of your registry or site |
-| `items` | Yes | Array of registry item definitions |
+| Field      | Required | Description                                         |
+| ---------- | -------- | --------------------------------------------------- |
+| `$schema`  | Yes      | Always `https://ui.shadcn.com/schema/registry.json` |
+| `name`     | Yes      | Short slug for your registry (no spaces)            |
+| `homepage` | Yes      | Public URL of your registry or site                 |
+| `items`    | Yes      | Array of registry item definitions                  |
 
 ---
 
@@ -147,28 +150,28 @@ Create `registry.json` at the root of the project:
 
 ### Item-level `type` (what kind of thing is this item?)
 
-| Type | Use For |
-|------|---------|
-| `registry:ui` | Primitive UI components (buttons, inputs, etc.) |
-| `registry:block` | Composed, multi-file UI blocks (forms, dashboards) |
-| `registry:component` | Standalone app-level components |
-| `registry:hook` | React hooks |
-| `registry:lib` | Utility/helper libraries |
-| `registry:page` | Full page components |
-| `registry:theme` | CSS variable theme definitions |
-| `registry:style` | Full style definition (extends or replaces shadcn defaults) |
-| `registry:item` | Universal/framework-agnostic items (cursor rules, config files, etc.) |
-| `registry:file` | Arbitrary files (env, config, etc.) |
+| Type                 | Use For                                                               |
+| -------------------- | --------------------------------------------------------------------- |
+| `registry:ui`        | Primitive UI components (buttons, inputs, etc.)                       |
+| `registry:block`     | Composed, multi-file UI blocks (forms, dashboards)                    |
+| `registry:component` | Standalone app-level components                                       |
+| `registry:hook`      | React hooks                                                           |
+| `registry:lib`       | Utility/helper libraries                                              |
+| `registry:page`      | Full page components                                                  |
+| `registry:theme`     | CSS variable theme definitions                                        |
+| `registry:style`     | Full style definition (extends or replaces shadcn defaults)           |
+| `registry:item`      | Universal/framework-agnostic items (cursor rules, config files, etc.) |
+| `registry:file`      | Arbitrary files (env, config, etc.)                                   |
 
 ### File-level `type` (what kind of file is this?)
 
-| Type | Use For |
-|------|---------|
-| `registry:component` | `.tsx` / `.jsx` React components |
-| `registry:hook` | Custom React hooks |
-| `registry:lib` | Utility functions |
-| `registry:page` | Next.js / framework page files |
-| `registry:file` | Any other file (env, json, md, cursor rules) |
+| Type                 | Use For                                      |
+| -------------------- | -------------------------------------------- |
+| `registry:component` | `.tsx` / `.jsx` React components             |
+| `registry:hook`      | Custom React hooks                           |
+| `registry:lib`       | Utility functions                            |
+| `registry:page`      | Next.js / framework page files               |
+| `registry:file`      | Any other file (env, json, md, cursor rules) |
 
 ---
 
@@ -184,11 +187,7 @@ Every item in `registry.json` follows this schema:
   "title": "Hello World",
   "description": "A hello world component with a button.",
   "author": "Your Name <you@example.com>",
-  "registryDependencies": [
-    "button",
-    "@acme/other-item",
-    "https://example.com/r/remote-dep.json"
-  ],
+  "registryDependencies": ["button", "@acme/other-item", "https://example.com/r/remote-dep.json"],
   "dependencies": ["zod@^3.20.0", "motion"],
   "devDependencies": ["tw-animate-css"],
   "files": [
@@ -232,6 +231,7 @@ Every item in `registry.json` follows this schema:
 ```
 
 **Key rules:**
+
 - `target` is only required for `registry:page` and `registry:file` types (tells CLI where to place the file)
 - `envVars` are added to `.env.local`. Existing values are NOT overwritten. Only use for dev/example vars, never production secrets.
 - `registryDependencies` can be: a plain shadcn component name (`"button"`), a namespaced name (`"@acme/component"`), or a full URL (`"https://example.com/r/editor.json"`)
@@ -244,27 +244,30 @@ Every item in `registry.json` follows this schema:
 ### Rules for source files
 
 1. **Import other registry items using `@/registry/...` paths:**
+
    ```tsx
    // ✅ correct
-   import { Button } from "@/registry/default/button/button"
-   import { cn } from "@/lib/utils"
-   
+   import { Button } from "@/registry/default/button/button";
+   import { cn } from "@/lib/utils";
+
    // ❌ wrong — don't use relative paths
-   import { Button } from "../button/button"
+   import { Button } from "../button/button";
    ```
 
 2. **Import shadcn/ui primitives using `@/components/ui/...`:**
+
    ```tsx
-   import { Button } from "@/components/ui/button"
+   import { Button } from "@/components/ui/button";
    ```
 
 3. **Export the component and its prop types:**
+
    ```tsx
    export type MyComponentProps = {
-     label: string
-     variant?: "default" | "outline"
-   }
-   
+     label: string;
+     variant?: "default" | "outline";
+   };
+
    export function MyComponent({ label, variant = "default" }: MyComponentProps) {
      // ...
    }
@@ -278,16 +281,16 @@ Every item in `registry.json` follows this schema:
 
 ```tsx
 // registry/default/metric-card/metric-card.tsx
-import { cn } from "@/lib/utils"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { cn } from "@/lib/utils";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export type MetricCardProps = {
-  title: string
-  value: string | number
-  trend?: "up" | "down" | "neutral"
-  className?: string
-}
+  title: string;
+  value: string | number;
+  trend?: "up" | "down" | "neutral";
+  className?: string;
+};
 
 export function MetricCard({ title, value, trend = "neutral", className }: MetricCardProps) {
   return (
@@ -306,7 +309,7 @@ export function MetricCard({ title, value, trend = "neutral", className }: Metri
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
 ```
 
@@ -321,6 +324,7 @@ npx shadcn build
 ```
 
 **Options:**
+
 ```bash
 # Custom input manifest
 npx shadcn build ./path/to/registry.json
@@ -333,12 +337,14 @@ npx shadcn build --watch
 ```
 
 **What this does:**
+
 - Reads `registry.json`
 - Parses and transforms each source file (rewrites import paths)
 - Emits `public/r/[name].json` for each item, with file contents inlined
 - Emits `public/r/registry.json` (the index)
 
 After building, verify the output:
+
 ```bash
 cat public/r/my-button.json  # Should contain the full JSON with file content
 ```
@@ -348,15 +354,18 @@ cat public/r/my-button.json  # Should contain the full JSON with file content
 ## Step 8 — Local Development & Testing
 
 Start the dev server:
+
 ```bash
 npm run dev
 ```
 
 Your registry is now available at:
+
 - Index: `http://localhost:3000/r/registry.json`
 - Items: `http://localhost:3000/r/[name].json`
 
 **Test installing locally from another project:**
+
 ```bash
 # In a different project that has shadcn initialized
 npx shadcn@latest add http://localhost:3000/r/my-button.json
@@ -377,6 +386,7 @@ Namespaces let users install with `@yourname/component-name` syntax instead of f
 ```
 
 Then users can install with:
+
 ```bash
 npx shadcn@latest add @acme/my-button
 npx shadcn@latest add @acme/my-button @acme/metric-card
@@ -407,6 +417,7 @@ For private/internal registries, add auth config in `components.json` on the con
 The `${ENV_VAR}` syntax reads from the user's environment variables at install time.
 
 **Auth methods supported:**
+
 - Bearer token (`Authorization: Bearer ${TOKEN}`)
 - API key (`X-API-Key: ${KEY}`)
 - Basic auth (`Authorization: Basic ${BASE64_CREDENTIALS}`)
@@ -421,6 +432,7 @@ The `${ENV_VAR}` syntax reads from the user's environment variables at install t
 The agent can scaffold everything, write all the code, and build the registry. But **you must deploy it yourself**. Here's what to do:
 
 **Option A: Deploy to Vercel (easiest, recommended)**
+
 1. Push your registry project to a GitHub repository
 2. Go to [vercel.com](https://vercel.com) → "Add New Project"
 3. Import your GitHub repo
@@ -428,6 +440,7 @@ The agent can scaffold everything, write all the code, and build the registry. B
 5. Your registry will be live at `https://your-project.vercel.app/r/[name].json`
 
 **Option B: Deploy to Netlify**
+
 1. Push to GitHub
 2. Go to [netlify.com](https://netlify.com) → "Add new site" → "Import from Git"
 3. Set build command: `npm run registry:build && npm run build`
@@ -435,11 +448,13 @@ The agent can scaffold everything, write all the code, and build the registry. B
 5. Deploy
 
 **Option C: GitHub Pages (static only, no Next.js SSR)**
+
 1. Run `npm run registry:build` locally
 2. Copy the `public/r/` folder to your GitHub Pages branch
 3. Items will be at `https://username.github.io/repo-name/r/[name].json`
 
 **Option D: Any static host (Cloudflare Pages, S3, etc.)**
+
 - Build locally, then upload the `public/r/` directory
 - Make sure the server sets `Content-Type: application/json` for `.json` files
 - Enable CORS headers if needed: `Access-Control-Allow-Origin: *`
@@ -447,6 +462,7 @@ The agent can scaffold everything, write all the code, and build the registry. B
 ### After deploying
 
 Update `registry.json` with your real production URL:
+
 ```json
 {
   "name": "acme",
@@ -470,6 +486,7 @@ To appear in `npx shadcn search` results:
 4. Open a Pull Request
 
 **Requirements for acceptance:**
+
 - Registry must be open source and publicly accessible
 - Must serve valid JSON conforming to the registry schema
 - Must be a flat registry: items at `/r/[name].json`, index at `/r/registry.json` (or `/registry.json`)
@@ -574,11 +591,7 @@ To appear in `npx shadcn search` results:
 {
   "name": "my-form",
   "type": "registry:block",
-  "registryDependencies": [
-    "button",
-    "input",
-    "https://ui.other-registry.com/r/fancy-select.json"
-  ]
+  "registryDependencies": ["button", "input", "https://ui.other-registry.com/r/fancy-select.json"]
 }
 ```
 
@@ -586,15 +599,15 @@ To appear in `npx shadcn search` results:
 
 ## Troubleshooting
 
-| Problem | Solution |
-|---------|----------|
-| `public/r/` output is empty | Make sure `registry.json` `items` are not empty; run `npx shadcn build` |
-| Install fails with "not found" | Verify the URL is publicly accessible, returns valid JSON, has correct CORS headers |
-| Import paths break after install | Ensure source files use `@/registry/...` not relative paths |
+| Problem                               | Solution                                                                            |
+| ------------------------------------- | ----------------------------------------------------------------------------------- |
+| `public/r/` output is empty           | Make sure `registry.json` `items` are not empty; run `npx shadcn build`             |
+| Install fails with "not found"        | Verify the URL is publicly accessible, returns valid JSON, has correct CORS headers |
+| Import paths break after install      | Ensure source files use `@/registry/...` not relative paths                         |
 | `registryDependencies` not installing | Use exact shadcn component names (lowercase-hyphenated: `"button"`, `"data-table"`) |
-| CLI can't detect framework | Add explicit `target` to all files to make the item universal |
-| Version conflicts | Pin versions in `dependencies`: `"zod@^3.20.0"` |
-| `.env` vars already set | `envVars` never overwrites existing values — this is by design |
+| CLI can't detect framework            | Add explicit `target` to all files to make the item universal                       |
+| Version conflicts                     | Pin versions in `dependencies`: `"zod@^3.20.0"`                                     |
+| `.env` vars already set               | `envVars` never overwrites existing values — this is by design                      |
 
 ---
 

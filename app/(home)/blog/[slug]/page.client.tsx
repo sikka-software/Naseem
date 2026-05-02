@@ -3,12 +3,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
-import {
-  useHeadroom,
-  useInViewport,
-  useScrollSpy,
-  useWindowScroll,
-} from "@mantine/hooks";
+import { useHeadroom, useInViewport, useScrollSpy, useWindowScroll } from "@mantine/hooks";
 import { ArrowLeft, Check, ChevronUp, Share } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -29,16 +24,10 @@ export function Control({ url }: { url: string }): React.ReactElement {
 
   return (
     <button
-      className={cn(
-        buttonVariants({ className: "gap-2", variant: "secondary" })
-      )}
+      className={cn(buttonVariants({ className: "gap-2", variant: "secondary" }))}
       onClick={onClick}
     >
-      {text === "Share Post" ? (
-        <Share className="size-4" />
-      ) : (
-        <Check className="size-4" />
-      )}
+      {text === "Share Post" ? <Share className="size-4" /> : <Check className="size-4" />}
       <p>{text}</p>
     </button>
   );
@@ -89,11 +78,7 @@ export function BlogTitle({
                 <ArrowLeft /> Back to Blog
               </Link>
             </Button>
-            <h1
-              className={`text-md mb-2 text-xl font-bold text-white md:text-3xl`}
-            >
-              {title}
-            </h1>
+            <h1 className={`text-md mb-2 text-xl font-bold text-white md:text-3xl`}>{title}</h1>
             <motion.p
               className="mb-2 text-white md:text-xl"
               animate={{
@@ -112,9 +97,7 @@ export function BlogTitle({
               </div>
               <div className="flex gap-2">
                 <p className="mb-1">At:</p>
-                <p className="font-medium">
-                  {new Date(date ?? name).toDateString()}
-                </p>
+                <p className="font-medium">{new Date(date ?? name).toDateString()}</p>
               </div>
             </div>
           </div>
@@ -146,11 +129,7 @@ export function BlogTitle({
                 <ArrowLeft /> Back to Blog
               </Link>
             </Button>
-            <h1
-              className={`text-md text-md md:text-md mb-0 font-semibold text-white`}
-            >
-              {title}
-            </h1>
+            <h1 className={`text-md text-md md:text-md mb-0 font-semibold text-white`}>{title}</h1>
             <motion.p
               className="text-white md:text-base"
               animate={{

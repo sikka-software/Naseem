@@ -49,8 +49,7 @@ export default function ImageStripsHorizontal() {
 
   const isMobile = window.innerWidth < 768;
   const STRIP_HEIGHT = isMobile ? 40 : 60;
-  const EXPANDED_HEIGHT =
-    dimensions.height - (images.length - 1) * (isMobile ? 4 : 0);
+  const EXPANDED_HEIGHT = dimensions.height - (images.length - 1) * (isMobile ? 4 : 0);
   const WIDTH = dimensions.width;
   const GAP_BETWEEN_STRIPS = 0;
   const OUTTER_RADIUS = isMobile ? 20 : 40;
@@ -160,8 +159,7 @@ export default function ImageStripsHorizontal() {
                 style={{
                   position: "absolute",
                   inset: 0,
-                  background:
-                    "linear-gradient(to top, #000 0%, transparent 60%)",
+                  background: "linear-gradient(to top, #000 0%, transparent 60%)",
                   pointerEvents: "none",
                 }}
               />
