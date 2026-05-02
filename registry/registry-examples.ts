@@ -234,4 +234,19 @@ export const examples: Registry = [
       () => import("../components/demos/back-to-top-demo")
     ),
   },
+  {
+    name: "color-picker-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/color-picker-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/color-picker-demo")
+    ),
+  },
 ];

@@ -1,0 +1,14 @@
+{
+  "name": "color-picker-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { ColorPicker } from \"../naseem-ui/elements/color-picker\";\n\nconst ColorPickerDemo = () => {\n  const [color, setColor] = useState(\"#3b82f6\");\n\n  return (\n    <div className=\"flex flex-col gap-6\">\n      <ColorPicker\n        label=\"Pick a color\"\n        color={color}\n        handleChange={(e) => setColor(e.target.value)}\n      />\n\n      <ColorPicker\n        label=\"Preview mode\"\n        color=\"#10b981\"\n        preview\n      />\n\n      <ColorPicker\n        label=\"Loading state\"\n        color=\"#ef4444\"\n        isLoading\n      />\n    </div>\n  );\n};\n\nexport default ColorPickerDemo;\n",
+      "path": "components/demos/color-picker-demo.tsx",
+      "target": "components/ui/color-picker-demo.tsx"
+    }
+  ]
+}

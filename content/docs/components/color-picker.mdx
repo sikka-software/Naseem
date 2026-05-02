@@ -1,0 +1,116 @@
+---
+title: Color Picker
+description: A color input component with hex text field, preview mode, and automatic contrast text color
+---
+
+<ComponentPreview
+  name="color-picker-demo"
+  componentName="color-picker"
+  classNameComponentContainer='min-h-[350px] flex items-center justify-center'
+  showCommand={true}
+/>
+
+## Usage
+
+The `ColorPicker` component combines a native color input with a hex text field for precise color selection.
+
+### Import
+
+```tsx
+import { ColorPicker } from "@/components/naseem-ui/elements/color-picker";
+```
+
+### Basic Example
+
+```tsx
+import { useState } from "react";
+import { ColorPicker } from "@/components/naseem-ui/elements/color-picker";
+
+export function Example() {
+  const [color, setColor] = useState("#3b82f6");
+
+  return (
+    <ColorPicker
+      label="Pick a color"
+      color={color}
+      handleChange={(e) => setColor(e.target.value)}
+    />
+  );
+}
+```
+
+## Props
+
+| Prop | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| label | `string` | No | - | Label text displayed above the picker |
+| id | `string` | No | - | HTML id attribute |
+| color | `string` | No | `"#000000"` | The hex color value |
+| preview | `boolean` | No | `false` | When true, disables editing and shows the color as a preview |
+| isLoading | `boolean` | No | `false` | Shows a skeleton loader instead of the picker |
+| handleChange | `(e: ChangeEvent<HTMLInputElement>) => void` | No | - | Callback fired when the color changes |
+| labelProps | `LabelProps` | No | - | Props passed to the Label component |
+| colorPickerClassNames | `string` | No | - | Additional classes for the color input |
+| colorTextClassNames | `string` | No | - | Additional classes for the hex text input |
+| colorPickerProps | `InputHTMLAttributes<HTMLInputElement>` | No | - | Props passed to the native color input |
+| textInputProps | `InputHTMLAttributes<HTMLInputElement>` | No | - | Props passed to the hex text input |
+| containerProps | `InputHTMLAttributes<HTMLDivElement>` | No | - | Props passed to the container div |
+
+## Examples
+
+### Preview Mode
+
+```tsx
+<ColorPicker
+  label="Brand Color"
+  color="#10b981"
+  preview
+/>
+```
+
+### Loading State
+
+```tsx
+<ColorPicker
+  label="Accent Color"
+  color="#ef4444"
+  isLoading
+/>
+```
+
+### Controlled Input
+
+```tsx
+const [color, setColor] = useState("#6366f1");
+
+<ColorPicker
+  label="Theme Color"
+  color={color}
+  handleChange={(e) => setColor(e.target.value)}
+/>
+```
+
+## How It Works
+
+The component renders a native `<input type="color">` overlaid on a colored preview box, paired with a text input for the hex value. The hex input automatically sanitizes non-hex characters and ensures the `#` prefix is present.
+
+In **preview mode**, the text input's background becomes the selected color and its text color automatically adjusts to black or white based on the color's luminance for optimal contrast.
+
+## Dependencies
+
+```json
+{
+  "react": "latest"
+}
+```
+
+## Registry Dependencies
+
+- `skeleton` - For the loading state
+- `label` - For the form label
+
+## Accessibility
+
+- Native color input provides built-in accessibility
+- Text input allows keyboard-only hex entry
+- Disabled state in preview mode prevents accidental changes

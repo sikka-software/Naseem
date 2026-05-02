@@ -8,7 +8,7 @@
   "files": [
     {
       "type": "registry:lib",
-      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n\n/**\n * Calculate relative luminance from a hex color string.\n * Returns a value between 0 (black) and 1 (white).\n */\nexport function calculateLuminance(hex: string): number {\n  const sanitized = hex.replace(\"#\", \"\");\n  const r = parseInt(sanitized.substring(0, 2), 16) / 255;\n  const g = parseInt(sanitized.substring(2, 4), 16) / 255;\n  const b = parseInt(sanitized.substring(4, 6), 16) / 255;\n\n  const toLinear = (c: number) =>\n    c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n\n  return 0.2126 * toLinear(r) + 0.7152 * toLinear(g) + 0.0722 * toLinear(b);\n}\n",
       "path": "lib/utils.ts",
       "target": "lib/utils.ts"
     }

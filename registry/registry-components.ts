@@ -409,4 +409,21 @@ export const components: Registry = [
       }))
     ),
   },
+  {
+    name: "color-picker",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: ["skeleton", "label"],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/color-picker.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/color-picker").then((mod) => ({
+        default: mod.ColorPicker,
+      }))
+    ),
+  },
 ];
