@@ -1,0 +1,100 @@
+---
+title: Back to Top
+description: A scroll-aware button that appears when scrolling past a threshold and smoothly scrolls back to the top of a container
+---
+
+<ComponentPreview
+  name="back-to-top-demo"
+  componentName="back-to-top"
+  classNameComponentContainer='min-h-[350px] flex items-center justify-center'
+  showCommand={true}
+/>
+
+## Usage
+
+The `BackToTop` component attaches to a scrollable container and appears when the user scrolls past a configurable threshold.
+
+### Import
+
+```tsx
+import { BackToTop } from "@/components/naseem-ui/elements/back-to-top";
+```
+
+### Basic Example
+
+```tsx
+import { useRef } from "react";
+import { BackToTop } from "@/components/naseem-ui/elements/back-to-top";
+
+export function ScrollableContainer() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <div ref={containerRef} className="h-[500px] overflow-y-auto">
+      <div className="space-y-4">
+        {/* Your content here */}
+        {Array.from({ length: 50 }).map((_, i) => (
+          <p key={i}>Content item {i + 1}</p>
+        ))}
+      </div>
+      <BackToTop anchor={containerRef} />
+    </div>
+  );
+}
+```
+
+## Props
+
+| Prop | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| anchor | `RefObject<HTMLElement \| null>` | Yes | - | Ref to the scrollable container element |
+| corner | `"top-left" \| "top-right" \| "bottom-left" \| "bottom-right"` | No | `"bottom-right"` | Which corner of the container to attach the button to |
+| paddingX | `number` | No | `25` | Horizontal padding from the attached corner (in pixels) |
+| paddingY | `number` | No | `10` | Vertical padding from the attached corner (in pixels) |
+| paddingThreshold | `number` | No | `100` | Extra scroll distance past the container height before the button appears |
+
+## Examples
+
+### Different Corners
+
+```tsx
+<BackToTop anchor={containerRef} corner="bottom-left" />
+<BackToTop anchor={containerRef} corner="top-right" />
+<BackToTop anchor={containerRef} corner="top-left" />
+```
+
+### Custom Padding
+
+```tsx
+<BackToTop
+  anchor={containerRef}
+  corner="bottom-right"
+  paddingX={40}
+  paddingY={20}
+  paddingThreshold={200}
+/>
+```
+
+## How It Works
+
+The component monitors the scroll position of the provided `anchor` container. When `scrollTop` exceeds the container's height plus the `paddingThreshold`, the button fades in. Clicking the button smoothly scrolls the container back to the top.
+
+The button is positioned using fixed positioning relative to the container's bounding rect, so it stays in place even as the container moves or resizes. The component also polls for container rect changes to handle window resizes and layout shifts.
+
+## Dependencies
+
+```json
+{
+  "react": "latest"
+}
+```
+
+## Registry Dependencies
+
+- `button` - For the icon button styling
+
+## Accessibility
+
+- Smooth scrolling behavior for better user experience
+- Visual transition when showing/hiding
+- Clear arrow icon indicating upward action

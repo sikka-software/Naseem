@@ -6,7 +6,7 @@
   "files": [
     {
       "type": "registry:example",
-      "content": "import { AppStores } from \"../naseem-ui/elements/app-stores\";\r\n\r\nconst AppStoresDemo = () => {\r\n  return (\r\n    <div className=\"flex flex-col gap-4\">\r\n      <AppStores store=\"apple\" />\r\n      <AppStores store=\"google\" />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default AppStoresDemo;\r\n",
+      "content": "import { AppStores } from \"../naseem-ui/elements/app-stores\";\n\nconst AppStoresDemo = () => {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <AppStores store=\"apple\" />\n      <AppStores store=\"google\" />\n    </div>\n  );\n};\n\nexport default AppStoresDemo;\n",
       "path": "components/demos/app-stores-demo.tsx",
       "target": "components/ui/app-stores-demo.tsx"
     }

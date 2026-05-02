@@ -6,7 +6,7 @@
   "files": [
     {
       "type": "registry:example",
-      "content": "import Accordion from \"@/components/naseem-ui/elements/accordion\";\r\n\r\nconst AccordionDemo = () => {\r\n  return <Accordion />;\r\n};\r\n\r\nexport default AccordionDemo;\r\n",
+      "content": "import Accordion from \"@/components/naseem-ui/elements/accordion\";\n\nconst AccordionDemo = () => {\n  return <Accordion />;\n};\n\nexport default AccordionDemo;\n",
       "path": "components/demos/accordion-demo.tsx",
       "target": "components/ui/accordion-demo.tsx"
     }

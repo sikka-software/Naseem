@@ -6,7 +6,7 @@
   "files": [
     {
       "type": "registry:example",
-      "content": "import ImageStripsHorizontal from \"@/components/naseem-ui/elements/strips-horizontal\";\r\n\r\nconst StripsHorizontalDemo = () => {\r\n  return <ImageStripsHorizontal />;\r\n};\r\n\r\nexport default StripsHorizontalDemo;\r\n",
+      "content": "import ImageStripsHorizontal from \"@/components/naseem-ui/elements/strips-horizontal\";\n\nconst StripsHorizontalDemo = () => {\n  return <ImageStripsHorizontal />;\n};\n\nexport default StripsHorizontalDemo;\n",
       "path": "components/demos/strips-horizontal-demo.tsx",
       "target": "components/ui/strips-horizontal-demo.tsx"
     }

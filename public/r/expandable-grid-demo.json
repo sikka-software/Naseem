@@ -6,7 +6,7 @@
   "files": [
     {
       "type": "registry:example",
-      "content": "import ExpandableGridCells from \"@/components/naseem-ui/elements/expandable-grid\";\r\n\r\nconst ExpandableGridDemo = () => {\r\n  return <ExpandableGridCells />;\r\n};\r\n\r\nexport default ExpandableGridDemo;\r\n",
+      "content": "import ExpandableGridCells from \"@/components/naseem-ui/elements/expandable-grid\";\n\nconst ExpandableGridDemo = () => {\n  return <ExpandableGridCells />;\n};\n\nexport default ExpandableGridDemo;\n",
       "path": "components/demos/expandable-grid-demo.tsx",
       "target": "components/ui/expandable-grid-demo.tsx"
     }

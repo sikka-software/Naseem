@@ -392,4 +392,21 @@ export const components: Registry = [
       }))
     ),
   },
+  {
+    name: "back-to-top",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/back-to-top.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/back-to-top").then((mod) => ({
+        default: mod.BackToTop,
+      }))
+    ),
+  },
 ];

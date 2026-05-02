@@ -1,0 +1,14 @@
+{
+  "name": "back-to-top-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { BackToTop } from \"../naseem-ui/elements/back-to-top\";\n\nconst BackToTopDemo = () => {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div className=\"relative w-full\">\n      <div\n        ref={containerRef}\n        className=\"h-[300px] w-full overflow-y-auto rounded border border-dashed border-border bg-muted/30 p-4\"\n      >\n        <div className=\"space-y-4\">\n          {Array.from({ length: 20 }).map((_, i) => (\n            <p key={i} className=\"text-sm text-muted-foreground\">\n              Scroll down to see the Back to Top button appear... (Item {i + 1})\n            </p>\n          ))}\n        </div>\n        <BackToTop anchor={containerRef} corner=\"bottom-right\" />\n      </div>\n    </div>\n  );\n};\n\nexport default BackToTopDemo;\n",
+      "path": "components/demos/back-to-top-demo.tsx",
+      "target": "components/ui/back-to-top-demo.tsx"
+    }
+  ]
+}
