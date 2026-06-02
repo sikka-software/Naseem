@@ -426,4 +426,16 @@ export const components: Registry = [
       }))
     ),
   },
+  {
+    name: "hit-area",
+    type: "registry:file",
+    description: "Tailwind CSS v4 utilities for expanding click/touch hit areas without affecting layout.",
+    files: [
+      {
+        path: "@/components/naseem-ui/styles/hit-area.css",
+        type: "registry:file",
+        target: "app/globals.css",
+      },
+    ],
+  },
 ];
