@@ -101,24 +101,22 @@ const getComponentFiles = async (files: File[], registryType: string) => {
 
 const main = async () => {
   for (let i = 0; i < registry.length; i++) {
-    const component = registry[i];
+    const component = { ...registry[i] };
     const files = component.files;
-    delete component.component; // Delete `component` property since not needed in the public registry
-    if (!files) throw new Error("No files found for component");
+    delete component.component;
 
-    const filesArray = await getComponentFiles(files, component.type);
+    if (files) {
+      const filesArray = await getComponentFiles(files, component.type);
+      component.files = filesArray;
+    }
 
-    const json = JSON.stringify(
-      {
-        ...component,
-        files: filesArray,
-      },
-      null,
-      2
-    );
+    if (!files && !component.css) {
+      throw new Error("No files or css found for component");
+    }
+
+    const json = JSON.stringify(component, null, 2);
     const jsonPath = `${PUBLIC_FOLDER_BASE_PATH}/${component.name}.json`;
     await writeFileRecursive(jsonPath, json);
-    // console.log(json);
   }
 };
 

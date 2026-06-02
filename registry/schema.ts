@@ -48,6 +48,7 @@ export const registryItemSchema = z.object({
   component: z.function().optional(),
   tailwind: registryItemTailwindSchema.optional(),
   cssVars: registryItemCssVarsSchema.optional(),
+  css: z.record(z.string(), z.any()).optional(),
   meta: z.record(z.string(), z.any()).optional(),
   docs: z.string().optional(),
   categories: z.array(z.string()).optional(),
