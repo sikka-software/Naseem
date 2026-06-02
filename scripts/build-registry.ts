@@ -105,16 +105,15 @@ const main = async () => {
     const files = component.files;
     delete component.component;
 
-    if (files) {
-      const filesArray = await getComponentFiles(files, component.type);
-      component.files = filesArray;
-    }
-
     if (!files && !component.css) {
       throw new Error("No files or css found for component");
     }
 
-    const json = JSON.stringify(component, null, 2);
+    const output = files
+      ? { ...component, files: await getComponentFiles(files, component.type) }
+      : component;
+
+    const json = JSON.stringify(output, null, 2);
     const jsonPath = `${PUBLIC_FOLDER_BASE_PATH}/${component.name}.json`;
     await writeFileRecursive(jsonPath, json);
   }
