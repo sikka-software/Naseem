@@ -1,0 +1,14 @@
+{
+  "name": "text-skeleton-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "import { TextSkeleton } from \"@/components/naseem-ui/elements/text-skeleton\";\n\nconst TextSkeletonDemo = () => {\n  return (\n    <div className=\"space-y-1.5\">\n      <TextSkeleton className=\"w-3/4 text-sm\" />\n      <TextSkeleton className=\"w-full text-sm\" />\n      <TextSkeleton className=\"w-1/2 text-sm\" />\n    </div>\n  );\n};\n\nexport default TextSkeletonDemo;\n",
+      "path": "components/demos/text-skeleton-demo.tsx",
+      "target": "components/ui/text-skeleton-demo.tsx"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+---
+title: Text Skeleton
+description: A skeleton placeholder component designed to mimic text lines during loading states
+---
+
+<ComponentPreview
+  name="text-skeleton-demo"
+  componentName="text-skeleton"
+  showCommand={true}
+/>
+
+## Usage
+
+The Text Skeleton component provides a loading placeholder that matches the line-height of surrounding text, making it ideal for content-loading states.
+
+```tsx
+import { TextSkeleton } from "@/components/ui/text-skeleton"
+
+export default function Loading() {
+  return (
+    <div className="space-y-1.5">
+      <TextSkeleton className="w-3/4 text-sm" />
+      <TextSkeleton className="w-full text-sm" />
+      <TextSkeleton className="w-1/2 text-sm" />
+    </div>
+  )
+}
+```
+
+## Props
+
+The TextSkeleton component accepts all native `span` element props. Use `className` to control width, text size, and other styling.
+
+<TypeTable type={{
+  className: {
+    type: "string",
+    description: "Use Tailwind classes like `w-1/2`, `text-sm`, `text-lg` to control width and text size.",
+  },
+}} />
+
+## Dependencies
+
+```json
+{
+  "@radix-ui/react-skeleton": "latest"
+}
+```

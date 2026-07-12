@@ -192,6 +192,21 @@ export const examples: Registry = [
     ),
   },
   {
+    name: "text-skeleton-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/text-skeleton-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/text-skeleton-demo")
+    ),
+  },
+  {
     name: "expandable-grid-demo",
     type: "registry:example",
     dependencies: [],

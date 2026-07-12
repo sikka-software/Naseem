@@ -342,6 +342,23 @@ export const components: Registry = [
     ),
   },
   {
+    name: "text-skeleton",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: ["skeleton", "utils"],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/text-skeleton.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/text-skeleton").then((mod) => ({
+        default: mod.TextSkeleton,
+      }))
+    ),
+  },
+  {
     name: "expandable-grid",
     type: "registry:component",
     dependencies: ["motion", "lucide-react"],

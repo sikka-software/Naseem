@@ -1,0 +1,17 @@
+{
+  "name": "text-skeleton",
+  "type": "registry:component",
+  "dependencies": [],
+  "registryDependencies": [
+    "skeleton",
+    "utils"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { Skeleton } from \"@/components/ui/skeleton\";\n\nfunction TextSkeleton(props: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      {...props}\n      className={cn(\"flex h-[1lh] items-center\", props.className)}\n    >\n      <Skeleton className=\"h-[1em] w-full rounded-sm\" />\n    </span>\n  );\n}\n\nexport { TextSkeleton };\n",
+      "path": "components/naseem-ui/elements/text-skeleton.tsx",
+      "target": "components/ui/text-skeleton.tsx"
+    }
+  ]
+}
