@@ -5,7 +5,7 @@ function TextSkeleton(props: React.ComponentProps<"span">) {
   return (
     <span
       {...props}
-      className={cn("flex h-[1lh] items-center", props.className)}
+      className={cn("flex h-lh items-center", props.className)}
     >
       <Skeleton className="h-[1em] w-full rounded-sm" />
     </span>
