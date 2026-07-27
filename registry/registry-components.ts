@@ -497,7 +497,7 @@ export const components: Registry = [
     type: "registry:file",
     files: [
       {
-        path: "sikka-favicon.ico",
+        path: "public/sikka-favicon.ico",
         type: "registry:file",
         target: "public/sikka-favicon.ico",
       },
