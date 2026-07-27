@@ -444,6 +444,25 @@ export const components: Registry = [
     ),
   },
   {
+    name: "cursor-driven-particle-typography",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "@/components/ui/cursor-driven-particle-typography.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/ui/cursor-driven-particle-typography").then(
+        (mod) => ({
+          default: mod.CursorDrivenParticleTypography,
+        })
+      )
+    ),
+  },
+  {
     name: "hit-area",
     type: "registry:component",
     description: "Tailwind CSS v4 utilities for expanding click/touch hit areas without affecting layout.",

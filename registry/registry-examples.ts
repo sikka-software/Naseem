@@ -250,6 +250,21 @@ export const examples: Registry = [
     ),
   },
   {
+    name: "cursor-driven-particle-typography-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/demos/cursor-driven-particle-typography-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/cursor-driven-particle-typography-demo")
+    ),
+  },
+  {
     name: "color-picker-demo",
     type: "registry:example",
     dependencies: [],

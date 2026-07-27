@@ -1,0 +1,101 @@
+---
+title: Cursor-Driven Particle Typography
+description: A canvas-based particle typography component where text dissolves into interactive particles that respond to cursor movement
+---
+
+<ComponentPreview
+  name="cursor-driven-particle-typography-demo"
+  componentName="cursor-driven-particle-typography"
+  classNameComponentContainer='min-h-[450px]'
+  showCommand={true}
+/>
+
+## Usage
+
+The `CursorDrivenParticleTypography` component renders text as a field of particles on a canvas. Each particle behaves with spring physics — pushing away from the cursor and gently returning to its origin, with a subtle idle jitter.
+
+```tsx
+import { CursorDrivenParticleTypography } from "@/components/ui/cursor-driven-particle-typography"
+
+export default function Hero() {
+  return (
+    <div className="h-[400px] w-full bg-black">
+      <CursorDrivenParticleTypography
+        text="Hello World"
+        color="#fafafa"
+      />
+    </div>
+  )
+}
+```
+
+## Props
+
+<TypeTable type={{
+  className: {
+    type: "string",
+    default: "undefined",
+    description: "Additional CSS classes to apply to the container.",
+  },
+  text: {
+    type: "string",
+    required: true,
+    description: "The text string to render as particles.",
+  },
+  fontSize: {
+    type: "number",
+    default: "120",
+    description: "Font size in pixels. Auto-scaled to 15% of container width if text would overflow.",
+  },
+  fontFamily: {
+    type: "string",
+    default: '"Inter, sans-serif"',
+    description: "Font family for the text layout.",
+  },
+  particleSize: {
+    type: "number",
+    default: "1.5",
+    description: "Radius of each particle in pixels.",
+  },
+  particleDensity: {
+    type: "number",
+    default: "6",
+    description: "Sampling step — lower values produce denser particle fields. Minimum 1.",
+  },
+  dispersionStrength: {
+    type: "number",
+    default: "15",
+    description: "Force intensity applied when the cursor pushes particles away.",
+  },
+  returnSpeed: {
+    type: "number",
+    default: "0.08",
+    description: "Spring return speed — how quickly particles return to their original positions.",
+  },
+  color: {
+    type: "string",
+    default: "inherited text color",
+    description: "Explicit particle color. Falls back to the container's computed text color if not set.",
+  },
+}} />
+
+## Features
+
+- **Spring physics** — particles repel from cursor and return with damped spring motion
+- **Idle animation** — subtle random jitter keeps particles alive when the cursor is away
+- **Responsive** — font size auto-scales to container width
+- **Theme-aware** — re-initializes when the `<html>` class changes (e.g. dark/light mode toggle)
+- **Touch support** — works with touch drag on mobile devices
+- **High-DPI** — renders at device pixel ratio for sharp text
+
+## Implementation
+
+The component renders text onto a hidden canvas pass, reads the pixel alpha data to generate a particle map, then animates each particle's position each frame using a custom physics loop with repulsion, spring return, and friction.
+
+## Dependencies
+
+```json
+{
+  "react": "latest"
+}
+```
