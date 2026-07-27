@@ -2,7 +2,9 @@
   "name": "social-icons-demo",
   "type": "registry:example",
   "dependencies": [],
-  "registryDependencies": ["social-icons"],
+  "registryDependencies": [
+    "social-icons"
+  ],
   "files": [
     {
       "type": "registry:example",

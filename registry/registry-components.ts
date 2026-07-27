@@ -493,6 +493,17 @@ export const components: Registry = [
     ),
   },
   {
+    name: "sikka-favicon",
+    type: "registry:file",
+    files: [
+      {
+        path: "sikka-favicon.ico",
+        type: "registry:file",
+        target: "public/sikka-favicon.ico",
+      },
+    ],
+  },
+  {
     name: "hit-area",
     type: "registry:component",
     description: "Tailwind CSS v4 utilities for expanding click/touch hit areas without affecting layout.",

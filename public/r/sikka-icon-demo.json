@@ -2,7 +2,9 @@
   "name": "sikka-icon-demo",
   "type": "registry:example",
   "dependencies": [],
-  "registryDependencies": ["sikka-icon"],
+  "registryDependencies": [
+    "sikka-icon"
+  ],
   "files": [
     {
       "type": "registry:example",

@@ -2,7 +2,9 @@
   "name": "dev-icons-demo",
   "type": "registry:example",
   "dependencies": [],
-  "registryDependencies": ["dev-icons"],
+  "registryDependencies": [
+    "dev-icons"
+  ],
   "files": [
     {
       "type": "registry:example",
