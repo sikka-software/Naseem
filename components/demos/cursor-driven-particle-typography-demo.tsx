@@ -7,11 +7,11 @@ const texts = [
 	"Sikka",
 	"السلام عليكم",
 	"Naseem",
-	"Particles",
-	"Design",
+	"تواصل معنا",
+	"お問い合わせ",
 ];
 
-const fontSizes = [120, 100, 140, 90];
+const fontSizes = [120, 100, 140, 90, 110];
 
 const CursorDrivenParticleTypographyDemo = () => {
 	const [index, setIndex] = useState(0);
@@ -23,13 +23,18 @@ const CursorDrivenParticleTypographyDemo = () => {
 					key={index}
 					text={texts[index]}
 					fontSize={fontSizes[index]}
+					fontFamily='"IBM Plex Sans", "IBM Plex Sans Arabic"'
 					color="#fafafa"
 				/>
+			</div>
+			<div className="flex items-center gap-2 text-xs text-muted-foreground">
+				<span>Font:</span>
+				<span className="font-mono font-semibold text-foreground">IBM Plex Sans + IBM Plex Sans Arabic</span>
 			</div>
 			<div className="flex flex-wrap gap-2">
 				{texts.map((text, i) => (
 					<button
-						key={text}
+						key={i}
 						type="button"
 						onClick={() => setIndex(i)}
 						className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${

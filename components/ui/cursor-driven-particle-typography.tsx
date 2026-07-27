@@ -112,9 +112,9 @@ export function CursorDrivenParticleTypography({
     text,
     fontSize = 120,
     fontFamily = "Inter, sans-serif",
-    particleSize = 1.5,
-    particleDensity = 6,
-    dispersionStrength = 15,
+    particleSize = 1,
+    particleDensity = 4,
+    dispersionStrength = 1,
     returnSpeed = 0.08,
     color,
 }: CursorDrivenParticleTypographyProps) {
@@ -136,7 +136,7 @@ export function CursorDrivenParticleTypography({
         let containerWidth = 0;
         let containerHeight = 0;
 
-        const init = () => {
+        const init = async () => {
             const container = containerRef.current;
             if (!container) return;
 
@@ -157,11 +157,18 @@ export function CursorDrivenParticleTypography({
 
             ctx.clearRect(0, 0, containerWidth, containerHeight);
 
-            // Draw text to generate pixel map
-            ctx.fillStyle = textColor;
             // Responsive font size based on container width if text is large
             const effectiveFontSize = Math.min(fontSize, containerWidth * 0.15);
-            ctx.font = `bold ${effectiveFontSize}px ${fontFamily}`;
+            const fontFamilyValue = fontFamily.includes(",")
+                ? fontFamily
+                : `"${fontFamily}", sans-serif`;
+            const fontStr = `bold ${effectiveFontSize}px ${fontFamilyValue}`;
+
+            // Wait for document fonts to be ready
+            await document.fonts.ready;
+
+            ctx.fillStyle = textColor;
+            ctx.font = fontStr;
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
 
@@ -221,11 +228,9 @@ export function CursorDrivenParticleTypography({
             init();
         };
 
-        // Initialize with a short delay to ensure fonts/layout are ready
-        const timeoutId = setTimeout(() => {
-            init();
+        init().then(() => {
             animate();
-        }, 100);
+        });
 
         const resizeObserver = new ResizeObserver(() => {
             handleResize();
@@ -261,7 +266,6 @@ export function CursorDrivenParticleTypography({
         canvas.addEventListener("touchend", handleMouseLeave);
 
         return () => {
-            clearTimeout(timeoutId);
             resizeObserver.disconnect();
             themeObserver.disconnect();
             canvas.removeEventListener("mousemove", handleMouseMove);
