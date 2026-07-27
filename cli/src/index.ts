@@ -8,32 +8,58 @@ import * as https from "https";
 
 const REGISTRY_URL = "https://naseem.sikka.io/r";
 
+const pkg = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "..", "package.json"), "utf-8")
+);
+
 const program = new Command();
 
 program
   .name("naseem")
   .description("Sikka's component registry")
-  .version("1.0.0");
+  .version(pkg.version);
 
 const downloadFile = (url: string, dest: string): Promise<void> =>
   new Promise((resolve, reject) => {
-    fs.mkdirSync(path.dirname(dest), { recursive: true });
-    const file = fs.createWriteStream(dest);
-    https
-      .get(url, (res) => {
-        if (res.statusCode !== 200) {
-          reject(new Error(`HTTP ${res.statusCode} from ${url}`));
-          return;
-        }
-        res.pipe(file);
-        file.on("finish", () => {
-          file.close(() => resolve());
-        });
-      })
-      .on("error", (err) => {
-        try { fs.unlinkSync(dest); } catch {}
-        reject(err);
-      });
+    const doRequest = (targetUrl: string) => {
+      const options = new URL(targetUrl);
+      https
+        .get(
+          {
+            hostname: options.hostname,
+            port: options.port,
+            path: options.pathname + options.search,
+            headers: {
+              "User-Agent":
+                "Mozilla/5.0 (compatible; SikkaCLI/1.0)",
+            },
+          },
+          (res) => {
+          if (
+            res.statusCode &&
+            res.statusCode >= 300 &&
+            res.statusCode < 400 &&
+            res.headers.location
+          ) {
+            doRequest(new URL(res.headers.location, targetUrl).href);
+            return;
+          }
+          if (res.statusCode !== 200) {
+            reject(new Error(`HTTP ${res.statusCode} from ${targetUrl}`));
+            return;
+          }
+          const chunks: Buffer[] = [];
+          res.on("data", (chunk: Buffer) => chunks.push(chunk));
+          res.on("end", () => {
+            fs.mkdirSync(path.dirname(dest), { recursive: true });
+            fs.writeFileSync(dest, Buffer.concat(chunks));
+            resolve();
+          });
+          res.on("error", reject);
+        })
+        .on("error", reject);
+    };
+    doRequest(url);
   });
 
 program
@@ -44,8 +70,13 @@ program
       const faviconUrl = "https://naseem.sikka.io/sikka-favicon.ico";
       const dest = path.join(process.cwd(), "public", "sikka-favicon.ico");
       console.log(`Adding sikka-favicon...`);
-      await downloadFile(faviconUrl, dest);
-      console.log(`✓ Added sikka-favicon.ico to public/`);
+      try {
+        await downloadFile(faviconUrl, dest);
+        console.log(`✓ Added sikka-favicon.ico to public/`);
+      } catch (error) {
+        console.error(`Failed to download favicon:`, error);
+        process.exit(1);
+      }
       return;
     }
 
