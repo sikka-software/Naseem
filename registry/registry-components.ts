@@ -215,17 +215,13 @@ export const components: Registry = [
     ),
   },
   {
-    name: "sikka-icons",
+    name: "social-icons",
     type: "registry:component",
     dependencies: [],
     registryDependencies: [],
     files: [
       {
-        path: "@/components/naseem-ui/icons/sikka.tsx",
-        type: "registry:component",
-      },
-      {
-        path: "@/components/naseem-ui/icons/github.tsx",
+        path: "@/components/naseem-ui/icons/social-icons.tsx",
         type: "registry:component",
       },
       {
@@ -246,8 +242,42 @@ export const components: Registry = [
       },
     ],
     component: React.lazy(() =>
-      import("@/components/naseem-ui/icons/sikka").then((mod) => ({
-        default: mod.default,
+      import("@/components/naseem-ui/icons/social-icons").then((mod) => ({
+        default: mod.XformerlyTwitter,
+      }))
+    ),
+  },
+  {
+    name: "dev-icons",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/naseem-ui/icons/dev-icons.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/icons/dev-icons").then((mod) => ({
+        default: mod.GitHub,
+      }))
+    ),
+  },
+  {
+    name: "sikka-icon",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/naseem-ui/icons/sikka-icon.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/icons/sikka-icon").then((mod) => ({
+        default: mod.SikkaLogo,
       }))
     ),
   },

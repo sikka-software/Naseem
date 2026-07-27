@@ -1,0 +1,62 @@
+---
+title: Sikka Icon
+description: The official Sikka logo SVG component
+---
+
+<ComponentPreview
+  name="sikka-icon-demo"
+  componentName="sikka-icon"
+  classNameComponentContainer='min-h-[400px]'
+  showCommand={true}
+/>
+
+## Usage
+
+```tsx
+import { SikkaLogo } from "@/components/naseem-ui/icons/sikka-icon"
+
+export default function Example() {
+  return (
+    <SikkaLogo className="h-12 w-12" />
+  )
+}
+```
+
+You can also import directly:
+
+```tsx
+import SikkaLogo from "@/components/naseem-ui/icons/sikka"
+```
+
+## Examples
+
+### Icon Sizes
+
+```tsx
+<div className="flex items-center gap-4">
+  <SikkaLogo className="h-4 w-4" />  {/* Small */}
+  <SikkaLogo className="h-6 w-6" />  {/* Default */}
+  <SikkaLogo className="h-8 w-8" />  {/* Medium */}
+  <SikkaLogo className="h-12 w-12" /> {/* Large */}
+  <SikkaLogo className="h-16 w-16" /> {/* Extra Large */}
+</div>
+```
+
+## Props
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `className` | `string` | CSS classes for styling (size, color, etc.) |
+
+## File Structure
+
+```
+components/naseem-ui/icons/
+├── sikka-icon.tsx      # Sikka logo component
+├── sikka.tsx            # Re-exports from sikka-icon
+```
+
+## Related Components
+
+- [Social Icons](/docs/components/icons/social-icons)
+- [Dev Icons](/docs/components/icons/dev-icons)

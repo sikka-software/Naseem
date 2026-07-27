@@ -1,0 +1,154 @@
+---
+title: Social Icons
+description: Social media brand icons for X/Twitter, LinkedIn, Instagram, and WhatsApp
+---
+
+<ComponentPreview
+  name="social-icons-demo"
+  componentName="social-icons"
+  classNameComponentContainer='min-h-[400px]'
+  showCommand={true}
+/>
+
+## Usage
+
+Import social icons from the social-icons barrel:
+
+```tsx
+import { XformerlyTwitter, LinkedIn, Instagram, WhatsApp } from "@/components/naseem-ui/icons/social-icons"
+
+export default function Example() {
+  return (
+    <div className="flex gap-4">
+      <XformerlyTwitter className="h-6 w-6" />
+      <LinkedIn className="h-6 w-6" />
+      <Instagram className="h-6 w-6" />
+      <WhatsApp className="h-6 w-6" />
+    </div>
+  )
+}
+```
+
+## Available Social Icons
+
+| Icon | Component | Import |
+|------|-----------|--------|
+| X / Twitter | `XformerlyTwitter` | `@/components/naseem-ui/icons/social-icons` |
+| LinkedIn | `LinkedIn` | `@/components/naseem-ui/icons/social-icons` |
+| Instagram | `Instagram` | `@/components/naseem-ui/icons/social-icons` |
+| WhatsApp | `WhatsApp` | `@/components/naseem-ui/icons/social-icons` |
+
+You can also import individual icons directly:
+
+```tsx
+import { XformerlyTwitter } from "@/components/naseem-ui/icons/x"
+```
+
+## Examples
+
+### Social Links Bar
+
+```tsx
+import { XformerlyTwitter, LinkedIn } from "@/components/naseem-ui/icons/social-icons"
+
+export function SocialLinks() {
+  return (
+    <div className="flex items-center gap-4">
+      <a href="https://twitter.com" aria-label="X / Twitter">
+        <XformerlyTwitter className="h-5 w-5 hover:text-primary transition-colors" />
+      </a>
+      <a href="https://linkedin.com" aria-label="LinkedIn">
+        <LinkedIn className="h-5 w-5 hover:text-primary transition-colors" />
+      </a>
+    </div>
+  )
+}
+```
+
+### Colored Icons
+
+```tsx
+<div className="flex items-center gap-4">
+  <XformerlyTwitter className="h-8 w-8 text-black dark:text-white" />
+  <LinkedIn className="h-8 w-8 text-blue-600" />
+  <Instagram className="h-8 w-8 text-pink-600" />
+  <WhatsApp className="h-8 w-8 text-green-500" />
+</div>
+```
+
+### Button with Icon
+
+```tsx
+import { Button } from "@/components/ui/button"
+import { XformerlyTwitter } from "@/components/naseem-ui/icons/social-icons"
+
+<Button variant="outline" size="icon">
+  <XformerlyTwitter className="h-5 w-5" />
+</Button>
+```
+
+## Props
+
+All icon components accept standard SVG props:
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `className` | `string` | CSS classes for styling (size, color, etc.) |
+| `style` | `React.CSSProperties` | Inline styles |
+| `width` | `string \| number` | SVG width attribute |
+| `height` | `string \| number` | SVG height attribute |
+| `fill` | `string` | SVG fill color |
+| `stroke` | `string` | SVG stroke color |
+
+## Best Practices
+
+### Accessibility
+
+Always provide accessible labels when using icons as links or buttons:
+
+```tsx
+<button aria-label="Share on Twitter">
+  <XformerlyTwitter className="h-5 w-5" />
+</button>
+
+<a href="https://linkedin.com" aria-label="Visit our LinkedIn">
+  <LinkedIn className="h-6 w-6" />
+</a>
+```
+
+### Sizing
+
+Use Tailwind's utility classes for consistent sizing:
+
+```tsx
+<XformerlyTwitter className="h-5 w-5" />
+<XformerlyTwitter className="h-6 w-6" />
+```
+
+### Color
+
+Icons inherit the current text color by default. Use `text-*` classes to customize:
+
+```tsx
+<div className="text-primary">
+  <XformerlyTwitter className="h-6 w-6" />
+</div>
+
+<XformerlyTwitter className="h-6 w-6 text-blue-500" />
+```
+
+## File Structure
+
+```
+components/naseem-ui/icons/
+├── social-icons.tsx   # Barrel re-exports (X, LinkedIn, Instagram, WhatsApp)
+├── x.tsx              # X (formerly Twitter) icon
+├── linkedin.tsx       # LinkedIn icon
+├── instagram.tsx      # Instagram icon
+└── whatsapp.tsx       # WhatsApp icon
+```
+
+## Related Components
+
+- [Dev Icons](/docs/components/icons/dev-icons)
+- [Sikka Icon](/docs/components/icons/sikka-icon)

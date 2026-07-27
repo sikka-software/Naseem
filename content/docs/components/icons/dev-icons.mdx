@@ -1,0 +1,57 @@
+---
+title: Dev Icons
+description: Development and technology brand icons including GitHub and Tailwind CSS
+---
+
+<ComponentPreview
+  name="dev-icons-demo"
+  componentName="dev-icons"
+  classNameComponentContainer='min-h-[400px]'
+  showCommand={true}
+/>
+
+## Usage
+
+Import dev icons from the dev-icons barrel:
+
+```tsx
+import { GitHub, Tailwind } from "@/components/naseem-ui/icons/dev-icons"
+
+export default function Example() {
+  return (
+    <div className="flex gap-4">
+      <GitHub className="h-8 w-8" />
+      <Tailwind className="h-8 w-8" />
+    </div>
+  )
+}
+```
+
+## Available Dev Icons
+
+| Icon | Component | Import |
+|------|-----------|--------|
+| GitHub | `GitHub` | `@/components/naseem-ui/icons/dev-icons` |
+| Tailwind CSS | `Tailwind` | `@/components/naseem-ui/icons/dev-icons` |
+
+## Props
+
+All icon components accept standard SVG props:
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `className` | `string` | CSS classes for styling (size, color, etc.) |
+| `style` | `React.CSSProperties` | Inline styles |
+
+## File Structure
+
+```
+components/naseem-ui/icons/
+├── dev-icons.tsx       # Dev icons barrel (GitHub, Tailwind)
+├── github.tsx          # Re-exports from dev-icons
+```
+
+## Related Components
+
+- [Social Icons](/docs/components/icons/social-icons)
+- [Sikka Icon](/docs/components/icons/sikka-icon)

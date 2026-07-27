@@ -1,0 +1,14 @@
+{
+  "name": "sikka-icon-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": ["sikka-icon"],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { SikkaLogo } from \"@/components/naseem-ui/icons/sikka-icon\";\n\nconst SikkaIconDemo = () => {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <SikkaLogo className=\"size-8\" />\n    </div>\n  );\n};\n\nexport default SikkaIconDemo;\n",
+      "path": "components/demos/sikka-icon-demo.tsx",
+      "target": "components/ui/sikka-icon-demo.tsx"
+    }
+  ]
+}

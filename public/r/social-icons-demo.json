@@ -1,0 +1,14 @@
+{
+  "name": "social-icons-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": ["social-icons"],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { XformerlyTwitter, LinkedIn, Instagram, WhatsApp } from \"@/components/naseem-ui/icons/social-icons\";\n\nconst SocialIconsDemo = () => {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <div className=\"flex flex-col items-center gap-2\">\n        <XformerlyTwitter className=\"h-8 w-8\" />\n        <span className=\"text-muted-foreground text-xs\">X / Twitter</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <LinkedIn className=\"h-8 w-8\" />\n        <span className=\"text-muted-foreground text-xs\">LinkedIn</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <Instagram className=\"h-8 w-8\" />\n        <span className=\"text-muted-foreground text-xs\">Instagram</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <WhatsApp className=\"h-8 w-8\" />\n        <span className=\"text-muted-foreground text-xs\">WhatsApp</span>\n      </div>\n    </div>\n  );\n};\n\nexport default SocialIconsDemo;\n",
+      "path": "components/demos/social-icons-demo.tsx",
+      "target": "components/ui/social-icons-demo.tsx"
+    }
+  ]
+}

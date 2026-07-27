@@ -1,0 +1,14 @@
+{
+  "name": "dev-icons-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": ["dev-icons"],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { GitHub, Tailwind } from \"@/components/naseem-ui/icons/dev-icons\";\n\nconst DevIconsDemo = () => {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <div className=\"flex flex-col items-center gap-2\">\n        <GitHub className=\"h-8 w-8\" />\n        <span className=\"text-muted-foreground text-xs\">GitHub</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <Tailwind className=\"h-8 w-8\" />\n        <span className=\"text-muted-foreground text-xs\">Tailwind</span>\n      </div>\n    </div>\n  );\n};\n\nexport default DevIconsDemo;\n",
+      "path": "components/demos/dev-icons-demo.tsx",
+      "target": "components/ui/dev-icons-demo.tsx"
+    }
+  ]
+}

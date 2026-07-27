@@ -121,17 +121,43 @@ export const examples: Registry = [
     ),
   },
   {
-    name: "sikka-icons-demo",
+    name: "social-icons-demo",
     type: "registry:example",
     dependencies: [],
-    registryDependencies: [],
+    registryDependencies: ["social-icons"],
     files: [
       {
-        path: "@/components/demos/icons-demo.tsx",
+        path: "@/components/demos/social-icons-demo.tsx",
         type: "registry:example",
       },
     ],
-    component: React.lazy(() => import("../components/demos/icons-demo")),
+    component: React.lazy(() => import("../components/demos/social-icons-demo")),
+  },
+  {
+    name: "dev-icons-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: ["dev-icons"],
+    files: [
+      {
+        path: "@/components/demos/dev-icons-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(() => import("../components/demos/dev-icons-demo")),
+  },
+  {
+    name: "sikka-icon-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: ["sikka-icon"],
+    files: [
+      {
+        path: "@/components/demos/sikka-icon-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(() => import("../components/demos/sikka-icon-demo")),
   },
   {
     name: "feedback-survey-demo",
