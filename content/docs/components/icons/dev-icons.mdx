@@ -1,6 +1,6 @@
 ---
 title: Dev Icons
-description: Development and technology brand icons including GitHub and Tailwind CSS
+description: Development and technology brand icons including GitHub, Tailwind CSS, App Store, and Google Play
 ---
 
 <ComponentPreview
@@ -15,13 +15,15 @@ description: Development and technology brand icons including GitHub and Tailwin
 Import dev icons from the dev-icons barrel:
 
 ```tsx
-import { GitHub, Tailwind } from "@/components/naseem-ui/icons/dev-icons"
+import { GitHub, Tailwind, AppStore, GooglePlay } from "@/components/naseem-ui/icons/dev-icons"
 
 export default function Example() {
   return (
     <div className="flex gap-4">
       <GitHub className="h-8 w-8" />
       <Tailwind className="h-8 w-8" />
+      <AppStore className="h-8 w-8" />
+      <GooglePlay className="h-8 w-8" />
     </div>
   )
 }
@@ -33,6 +35,8 @@ export default function Example() {
 |------|-----------|--------|
 | GitHub | `GitHub` | `@/components/naseem-ui/icons/dev-icons` |
 | Tailwind CSS | `Tailwind` | `@/components/naseem-ui/icons/dev-icons` |
+| App Store | `AppStore` | `@/components/naseem-ui/icons/dev-icons` |
+| Google Play | `GooglePlay` | `@/components/naseem-ui/icons/dev-icons` |
 
 ## Props
 
@@ -47,8 +51,10 @@ All icon components accept standard SVG props:
 
 ```
 components/naseem-ui/icons/
-├── dev-icons.tsx       # Dev icons barrel (GitHub, Tailwind)
+├── dev-icons.tsx       # Dev icons barrel (GitHub, Tailwind, App Store, Google Play)
 ├── github.tsx          # Re-exports from dev-icons
+├── app-store.tsx       # Re-exports from dev-icons
+├── google-play.tsx     # Re-exports from dev-icons
 ```
 
 ## Related Components
