@@ -11,34 +11,6 @@ const GitHub = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-const Tailwind = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    viewBox="0 0 256 154"
-    width="256"
-    height="154"
-    xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="xMidYMid"
-    {...props}
-  >
-    <defs>
-      <linearGradient
-        x1="-2.778%"
-        y1="32%"
-        x2="100%"
-        y2="67.556%"
-        id="gradient"
-      >
-        <stop stopColor="#2298BD" offset="0%" />
-        <stop stopColor="#0ED7B5" offset="100%" />
-      </linearGradient>
-    </defs>
-    <path
-      d="M128 0C93.867 0 72.533 17.067 64 51.2 76.8 34.133 91.733 27.733 108.8 32c9.737 2.434 16.697 9.499 24.401 17.318C145.751 62.057 160.275 76.8 192 76.8c34.133 0 55.467-17.067 64-51.2-12.8 17.067-27.733 23.467-44.8 19.2-9.737-2.434-16.697-9.499-24.401-17.318C174.249 14.743 159.725 0 128 0ZM64 76.8C29.867 76.8 8.533 93.867 0 128c12.8-17.067 27.733-23.467 44.8-19.2 9.737 2.434 16.697 9.499 24.401 17.318C81.751 138.857 96.275 153.6 128 153.6c34.133 0 55.467-17.067 64-51.2-12.8 17.067-27.733 23.467-44.8 19.2-9.737-2.434-16.697-9.499-24.401-17.318C110.249 91.543 95.725 76.8 64 76.8Z"
-      fill="url(#gradient)"
-    />
-  </svg>
-);
-
 const AppStore = (props: SVGProps<SVGSVGElement>) => (
   <svg {...props} xmlSpace="preserve" viewBox="0 0 800 800">
     <linearGradient
@@ -95,4 +67,13 @@ const GooglePlay = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export { GitHub, Tailwind, AppStore, GooglePlay };
+const Microsoft = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 256 256" preserveAspectRatio="xMidYMid">
+    <path fill="#F1511B" d="M121.666 121.666H0V0h121.666z" />
+    <path fill="#80CC28" d="M256 121.666H134.335V0H256z" />
+    <path fill="#00ADEF" d="M121.663 256.002H0V134.336h121.663z" />
+    <path fill="#FBBC09" d="M256 256.002H134.335V134.336H256z" />
+  </svg>
+);
+
+export { GitHub, Tailwind, AppStore, GooglePlay, Microsoft };
