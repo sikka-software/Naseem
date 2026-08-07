@@ -5,7 +5,7 @@ import {
   GitHub,
   GooglePlay,
   Microsoft,
-  Tailwind,
+  NPM,
 } from "@/components/naseem-ui/icons/dev-icons";
 
 const DevIconsDemo = () => {
@@ -26,6 +26,10 @@ const DevIconsDemo = () => {
       <div className="flex flex-col items-center gap-2">
         <Microsoft className="h-8 w-8" />
         <span className="text-muted-foreground text-xs">Microsoft Store</span>
+      </div>
+      <div className="flex flex-col items-center gap-2">
+        <NPM className="h-8 w-8" />
+        <span className="text-muted-foreground text-xs">NPM</span>
       </div>
     </div>
   );
