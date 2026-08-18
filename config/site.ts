@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "naseem",
+  name: "Naseem",
   creator: "@sikka_sa",
   url: process.env.NEXT_PUBLIC_APP_URL ?? "https://ui.sikka.io",
   ogImage: "https://ui.sikka.io/opengraph-image.png",
   description:
-    "naseem is a set of components and hooks that can be used to build a custom storefront for your commerce site.",
+    "Naseem is a set of components and hooks that can be used to build a custom storefront for your commerce site.",
   keywords: [
     "Next.js",
     "React",

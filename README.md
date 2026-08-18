@@ -7,7 +7,7 @@
     <img src="public/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">sikka/naseem (beta)</h3>
+  <h3 align="center">Naseem (beta)</h3>
 
   <p align="center">
     Collection of components to build e-commerce sites and commerce apps. Built for React, Next.js, Tailwind CSS and shadcn/ui.

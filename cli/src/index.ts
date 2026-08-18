@@ -6,7 +6,7 @@ import * as fs from "fs";
 import * as path from "path";
 import * as https from "https";
 
-const REGISTRY_URL = "https://naseem.sikka.io/r";
+const REGISTRY_URL = "https://ui.sikka.io/r";
 
 const pkg = JSON.parse(
   fs.readFileSync(path.join(__dirname, "..", "package.json"), "utf-8")
@@ -67,7 +67,7 @@ program
   .description("Add a component from the Sikka registry")
   .action(async (component: string) => {
     if (component === "sikka-favicon") {
-      const faviconUrl = "https://naseem.sikka.io/sikka-favicon.ico";
+      const faviconUrl = "https://ui.sikka.io/sikka-favicon.ico";
       const dest = path.join(process.cwd(), "public", "sikka-favicon.ico");
       console.log(`Adding sikka-favicon...`);
       try {
