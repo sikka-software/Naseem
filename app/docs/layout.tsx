@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { baseOptions, linkItems } from "@/app/layout.config";
 import { source } from "@/lib/source";
 import { DocsLayout, DocsLayoutProps } from "fumadocs-ui/layouts/notebook";
@@ -10,6 +10,9 @@ const docsOptions: DocsLayoutProps = {
   i18n: false,
   links: linkItems,
   tree: source.pageTree,
+  containerProps: {
+    style: { "--fd-layout-width": "100%" } as CSSProperties,
+  },
   nav: {
     ...baseOptions.nav,
     title: (

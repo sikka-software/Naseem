@@ -52,6 +52,7 @@ export default async function Page(props: {
 
   return (
     <DocsPage
+      className="*:max-w-none"
       tableOfContent={{
         // footer: <NaseemApiCta />,
         single: false,
