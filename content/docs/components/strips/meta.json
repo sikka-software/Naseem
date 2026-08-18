@@ -1,4 +1,8 @@
 {
   "title": "Strips",
-  "pages": ["horizontal", "vertical"]
+  "pages": [
+    "horizontal",
+    "vertical"
+  ],
+  "icon": "Columns4"
 }
