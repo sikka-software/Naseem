@@ -3,7 +3,7 @@
 import SikkaPopover from "@/components/naseem-ui/elements/sikka-popover";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Button } from "../ui/button";
-import SikkaLogo from "../naseem-ui/icons/sikka";
+import { SikkaLogo } from "../naseem-ui/icons/sikka-icon";
 
 const SikkaPopoverDemo = () => {
   return (

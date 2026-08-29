@@ -282,6 +282,23 @@ export const components: Registry = [
     ),
   },
   {
+    name: "riyal-icon",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: [],
+    files: [
+      {
+        path: "@/components/naseem-ui/icons/riyal.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/icons/riyal").then((mod) => ({
+        default: mod.RiyalIcon,
+      }))
+    ),
+  },
+  {
     name: "feedback-survey",
     type: "registry:component",
     dependencies: ["lucide-react", "next-intl", "posthog-js"],

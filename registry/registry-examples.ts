@@ -160,6 +160,19 @@ export const examples: Registry = [
     component: React.lazy(() => import("../components/demos/sikka-icon-demo")),
   },
   {
+    name: "riyal-icon-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: ["riyal-icon"],
+    files: [
+      {
+        path: "@/components/demos/riyal-icon-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(() => import("../components/demos/riyal-icon-demo")),
+  },
+  {
     name: "feedback-survey-demo",
     type: "registry:example",
     dependencies: [],

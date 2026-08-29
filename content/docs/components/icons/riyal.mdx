@@ -1,0 +1,61 @@
+---
+title: Riyal Icon
+description: The Saudi Riyal currency SVG icon component
+---
+
+<ComponentPreview
+  name="riyal-icon-demo"
+  componentName="riyal-icon"
+  classNameComponentContainer='min-h-[400px]'
+  showCommand={true}
+/>
+
+## Usage
+
+```tsx
+import { RiyalIcon } from "@/components/naseem-ui/icons/riyal"
+
+export default function Example() {
+  return (
+    <RiyalIcon className="h-12 w-12" />
+  )
+}
+```
+
+You can also import directly:
+
+```tsx
+import { RiyalIcon } from "@/components/naseem-ui/icons/riyal"
+```
+
+## Examples
+
+### Icon Sizes
+
+```tsx
+<div className="flex items-center gap-4">
+  <RiyalIcon className="h-4 w-4" />  {/* Small */}
+  <RiyalIcon className="h-6 w-6" />  {/* Default */}
+  <RiyalIcon className="h-8 w-8" />  {/* Medium */}
+  <RiyalIcon className="h-12 w-12" /> {/* Large */}
+  <RiyalIcon className="h-16 w-16" /> {/* Extra Large */}
+</div>
+```
+
+## Props
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `className` | `string` | CSS classes for styling (size, color, etc.) |
+
+## File Structure
+
+```
+components/naseem-ui/icons/
+├── riyal.tsx            # Saudi Riyal icon component
+```
+
+## Related Components
+
+- [Sikka Icon](/docs/components/icons/sikka-icon)
+- [Social Icons](/docs/components/icons/social-icons)
