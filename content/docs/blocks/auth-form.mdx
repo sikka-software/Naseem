@@ -1,0 +1,149 @@
+---
+title: Auth Form
+description: A complete authentication form block with sign-in, sign-up, forgot password, Google sign-in, and passkey support
+---
+
+<ComponentPreview
+  name="auth-form-demo"
+  componentName="auth-form"
+  classNameComponentContainer="min-h-[600px]"
+  showCommand={true}
+/>
+
+## Usage
+
+```tsx
+import { AuthForm } from "@/components/naseem-ui/blocks/auth/auth-form";
+
+export default function Example() {
+  return (
+    <AuthForm
+      showGoogle
+      showPasskey
+      onSignIn={async ({ email, password }) => {
+        // handle sign in
+      }}
+      onSignUp={async ({ name, email, password, confirmPassword }) => {
+        // handle sign up
+      }}
+      onGoogleSignIn={async () => {
+        // handle Google sign in
+      }}
+      onPasskeySignIn={async () => {
+        // handle passkey sign in
+      }}
+      onForgotPassword={async ({ email }) => {
+        // handle forgot password
+      }}
+    />
+  );
+}
+```
+
+## Features
+
+- **Sign in / Sign up** — Toggle between sign-in and sign-up modes
+- **Google sign-in** — Optional Google OAuth button
+- **Passkey sign-in** — Optional WebAuthn passkey button
+- **Forgot password** — Built-in forgot password flow with confirmation screen
+- **Password visibility toggle** — Show/hide password with eye icon
+- **RTL support** — Pass `dir="rtl"` for right-to-left layouts
+- **i18n ready** — All text strings are customizable via the `texts` prop
+- **Loading states** — Individual loading states for email, Google, and passkey actions
+- **Customizable** — Logo, footer, and class names for all inner elements
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `onSignIn` | `(data: { email, password }) => void` | `undefined` | Callback when sign-in form is submitted |
+| `onSignUp` | `(data: { name, email, password, confirmPassword }) => void` | `undefined` | Callback when sign-up form is submitted |
+| `onGoogleSignIn` | `() => void` | `undefined` | Callback when Google button is clicked |
+| `onPasskeySignIn` | `() => void` | `undefined` | Callback when passkey button is clicked |
+| `onForgotPassword` | `(data: { email }) => void` | `undefined` | Callback when forgot password is submitted |
+| `showGoogle` | `boolean` | `false` | Show the Google sign-in button |
+| `showPasskey` | `boolean` | `false` | Show the passkey sign-in button |
+| `showForgotPassword` | `boolean` | `true` | Show the forgot password link |
+| `isLoading` | `boolean` | `false` | Loading state for email/password submit |
+| `isGoogleLoading` | `boolean` | `false` | Loading state for Google button |
+| `isPasskeyLoading` | `boolean` | `false` | Loading state for passkey button |
+| `texts` | `AuthFormTexts` | `{}` | Customizable text strings for i18n |
+| `dir` | `"ltr" \| "rtl"` | `"ltr"` | Text direction for RTL support |
+| `logo` | `ReactNode` | `undefined` | Logo element displayed above the card |
+| `footer` | `ReactNode` | `undefined` | Footer element displayed below the card |
+| `className` | `string` | `undefined` | Additional class name for root container |
+| `classNames` | `{ container?, card?, logo?, footer? }` | `undefined` | Class names for inner elements |
+
+## Texts (i18n)
+
+All visible text can be customized via the `texts` prop:
+
+```tsx
+<AuthForm
+  texts={{
+    signInTitle: "تسجيل الدخول",
+    signUpTitle: "إنشاء حساب",
+    nameLabel: "الاسم",
+    emailLabel: "البريد الإلكتروني",
+    passwordLabel: "كلمة المرور",
+    confirmPasswordLabel: "تأكيد كلمة المرور",
+    signIn: "تسجيل الدخول",
+    signUp: "إنشاء حساب",
+    forgotPassword: "نسيت كلمة المرور؟",
+    resetPassword: "إعادة تعيين كلمة المرور",
+    continueWithGoogle: "المتابعة باستخدام Google",
+    signInWithPasskey: "تسجيل الدخول باستخدام مفتاح المرور",
+    dontHaveAccount: "ليس لديك حساب؟",
+    alreadyHaveAccount: "لديك حساب بالفعل؟",
+    orContinueWith: "أو المتابعة باستخدام البريد الإلكتروني",
+  }}
+  dir="rtl"
+/>
+```
+
+## Examples
+
+### With Logo and Footer
+
+```tsx
+<AuthForm
+  showGoogle
+  logo={<img src="/logo.svg" alt="Logo" className="h-10" />}
+  footer={<p className="text-muted-foreground text-xs">v1.0.0</p>}
+  onSignIn={async ({ email, password }) => {
+    const { error } = await authClient.signIn.email({ email, password });
+    if (error) toast.error(error.message);
+  }}
+/>
+```
+
+### RTL with Arabic Text
+
+```tsx
+<AuthForm
+  dir="rtl"
+  showGoogle
+  texts={{
+    signInTitle: "تسجيل الدخول إلى حسابك",
+    signIn: "تسجيل الدخول",
+    signUp: "إنشاء حساب",
+    emailLabel: "البريد الإلكتروني",
+    passwordLabel: "كلمة المرور",
+  }}
+/>
+```
+
+## File Structure
+
+```
+components/naseem-ui/blocks/auth/
+├── auth-form.tsx       # Auth form block
+├── auth-buttons.tsx    # Auth buttons block
+└── login-form.tsx      # Legacy login form (WIP)
+```
+
+## Related Components
+
+- [Auth Buttons](/docs/blocks/auth-buttons)
+- [Theme Switcher](/docs/components/theme-switcher)
+- [Language Switcher](/docs/components/language-switcher)

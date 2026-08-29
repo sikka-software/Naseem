@@ -1,0 +1,17 @@
+{
+  "name": "auth-form-demo",
+  "type": "registry:example",
+  "dependencies": [],
+  "registryDependencies": [
+    "auth-form",
+    "sikka-icon"
+  ],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { AuthForm } from \"@/components/naseem-ui/blocks/auth/auth-form\";\nimport { SikkaLogo } from \"@/components/naseem-ui/icons/sikka-icon\";\n\nconst AuthFormDemo = () => {\n  const [isLoading, setIsLoading] = useState(false);\n  const [isGoogleLoading, setIsGoogleLoading] = useState(false);\n  const [isPasskeyLoading, setIsPasskeyLoading] = useState(false);\n\n  const simulateLoading = (\n    setter: (v: boolean) => void,\n    ms = 1500\n  ) => {\n    setter(true);\n    setTimeout(() => setter(false), ms);\n  };\n\n  return (\n    <AuthForm\n      showGoogle\n      showPasskey\n      isLoading={isLoading}\n      isGoogleLoading={isGoogleLoading}\n      isPasskeyLoading={isPasskeyLoading}\n      logo={<SikkaLogo className=\"h-10 w-10\" />}\n      footer={\n        <p className=\"text-muted-foreground text-center text-xs\">\n          v1.0.0\n        </p>\n      }\n      onSignIn={async () => simulateLoading(setIsLoading)}\n      onSignUp={async () => simulateLoading(setIsLoading)}\n      onGoogleSignIn={async () => simulateLoading(setIsGoogleLoading)}\n      onPasskeySignIn={async () => simulateLoading(setIsPasskeyLoading)}\n      onForgotPassword={async () => simulateLoading(setIsLoading)}\n    />\n  );\n};\n\nexport default AuthFormDemo;\n",
+      "path": "components/demos/auth-form-demo.tsx",
+      "target": "components/ui/auth-form-demo.tsx"
+    }
+  ]
+}

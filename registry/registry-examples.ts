@@ -106,6 +106,21 @@ export const examples: Registry = [
     ),
   },
   {
+    name: "auth-form-demo",
+    type: "registry:example",
+    dependencies: [],
+    registryDependencies: ["auth-form", "sikka-icon"],
+    files: [
+      {
+        path: "@/components/demos/auth-form-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/auth-form-demo")
+    ),
+  },
+  {
     name: "sikka-popover-demo",
     type: "registry:example",
     dependencies: [],

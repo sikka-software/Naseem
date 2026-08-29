@@ -193,4 +193,25 @@ export const blocks: Registry = [
       }))
     ),
   },
+  {
+    name: "auth-form",
+    type: "registry:block",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "card", "input", "label"],
+    files: [
+      {
+        path: "@/components/naseem-ui/blocks/auth/auth-form.tsx",
+        type: "registry:block",
+      },
+      {
+        path: "@/components/naseem-ui/elements/loading.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/blocks/auth/auth-form").then((mod) => ({
+        default: mod.AuthForm,
+      }))
+    ),
+  },
 ];
