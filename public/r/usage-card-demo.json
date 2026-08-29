@@ -1,0 +1,18 @@
+{
+  "name": "usage-card-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "usage-card"
+  ],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { UsageCard } from \"@/components/naseem-ui/elements/usage-card\";\nimport { Mail, Database, Users, Zap } from \"lucide-react\";\n\nconst UsageCardDemo = () => {\n  return (\n    <div className=\"grid w-full max-w-2xl gap-4 sm:grid-cols-2\">\n      <UsageCard\n        icon={Mail}\n        title=\"Emails\"\n        used={850}\n        limit={1000}\n        percentage={85}\n      />\n      <UsageCard\n        icon={Database}\n        title=\"Storage\"\n        used={95}\n        limit={100}\n        percentage={95}\n      />\n      <UsageCard\n        icon={Users}\n        title=\"Team members\"\n        used={10}\n        limit={10}\n        percentage={100}\n        limitReached\n      />\n      <UsageCard\n        icon={Zap}\n        title=\"API calls\"\n        used={12400}\n        limit=\"Unlimited\"\n        percentage={0}\n      />\n    </div>\n  );\n};\n\nexport default UsageCardDemo;\n",
+      "path": "components/demos/usage-card-demo.tsx",
+      "target": "components/ui/usage-card-demo.tsx"
+    }
+  ]
+}

@@ -188,6 +188,19 @@ export const examples: Registry = [
     component: React.lazy(() => import("../components/demos/riyal-icon-demo")),
   },
   {
+    name: "usage-card-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["usage-card"],
+    files: [
+      {
+        path: "@/components/demos/usage-card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(() => import("../components/demos/usage-card-demo")),
+  },
+  {
     name: "feedback-survey-demo",
     type: "registry:example",
     dependencies: [],

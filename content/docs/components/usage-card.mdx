@@ -1,0 +1,126 @@
+---
+title: Usage Card
+description: A card component for displaying usage metrics with progress bars, color-coded states, and limit indicators
+---
+
+<ComponentPreview
+  name="usage-card-demo"
+  componentName="usage-card"
+  classNameComponentContainer="min-h-[350px]"
+  showCommand={true}
+/>
+
+## Usage
+
+```tsx
+import { UsageCard } from "@/components/naseem-ui/elements/usage-card";
+import { Mail } from "lucide-react";
+
+export default function Example() {
+  return (
+    <UsageCard
+      icon={Mail}
+      title="Emails"
+      used={850}
+      limit={1000}
+      percentage={85}
+    />
+  );
+}
+```
+
+## Features
+
+- **Color-coded states** — Automatic green, amber, and red coloring based on usage percentage (70% warning, 90% danger)
+- **Limit reached indicator** — Shows a destructive message when the limit is reached
+- **Unlimited support** — Pass a string as `limit` to hide the progress bar and show unlimited mode
+- **Custom icon** — Accepts any React element type as the icon
+- **i18n ready** — The `limitReachedText` prop allows customizing the limit reached message
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `icon` | `React.ElementType` | *required* | Icon component to display |
+| `title` | `string` | *required* | Title of the usage metric |
+| `used` | `number` | *required* | Current usage count |
+| `limit` | `number \| string` | *required* | Usage limit — number for numeric, string (e.g. "Unlimited") for unlimited |
+| `percentage` | `number` | *required* | Usage percentage (0–100) |
+| `limitReached` | `boolean` | `false` | Whether the limit has been reached |
+| `limitReachedText` | `string` | `"Limit reached"` | Text displayed when limit is reached |
+| `className` | `string` | `undefined` | Additional class name for the card |
+
+## Color States
+
+| Condition | Color | Description |
+|-----------|-------|-------------|
+| `percentage >= 90` or `limitReached` | Red (destructive) | Critical usage |
+| `percentage >= 70` | Amber | Warning usage |
+| `percentage < 70` | Primary (default) | Normal usage |
+
+## Examples
+
+### With Limit Reached
+
+```tsx
+<UsageCard
+  icon={Users}
+  title="Team members"
+  used={10}
+  limit={10}
+  percentage={100}
+  limitReached
+  limitReachedText="Upgrade to add more"
+/>
+```
+
+### Unlimited Plan
+
+```tsx
+<UsageCard
+  icon={Zap}
+  title="API calls"
+  used={12400}
+  limit="Unlimited"
+  percentage={0}
+/>
+```
+
+### Grid Layout
+
+```tsx
+<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+  <UsageCard icon={Mail} title="Emails" used={850} limit={1000} percentage={85} />
+  <UsageCard icon={Database} title="Storage" used={95} limit={100} percentage={95} />
+  <UsageCard icon={Users} title="Users" used={10} limit={10} percentage={100} limitReached />
+  <UsageCard icon={Zap} title="API calls" used={12400} limit="Unlimited" percentage={0} />
+</div>
+```
+
+### Custom Limit Text
+
+```tsx
+<UsageCard
+  icon={Mail}
+  title="Emails"
+  used={1000}
+  limit={1000}
+  percentage={100}
+  limitReached
+  limitReachedText="Upgrade your plan to send more emails"
+/>
+```
+
+## File Structure
+
+```
+components/naseem-ui/elements/
+├── usage-card.tsx       # Usage card component
+components/ui/
+├── progress.tsx         # Progress bar component (dependency)
+```
+
+## Related Components
+
+- [Auth Buttons](/docs/blocks/auth-buttons)
+- [Theme Switcher](/docs/components/theme-switcher)

@@ -299,6 +299,27 @@ export const components: Registry = [
     ),
   },
   {
+    name: "usage-card",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: ["card", "progress"],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/usage-card.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "@/components/ui/progress.tsx",
+        type: "registry:ui",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/usage-card").then((mod) => ({
+        default: mod.UsageCard,
+      }))
+    ),
+  },
+  {
     name: "feedback-survey",
     type: "registry:component",
     dependencies: ["lucide-react", "next-intl", "posthog-js"],
