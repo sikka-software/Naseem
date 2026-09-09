@@ -38,7 +38,7 @@ const links = [
   },
   {
     label: "sikka.io",
-    href: "https://sikka.io",
+    href: "https://sikka.io?utm_source=naseem&utm_medium=referral&utm_campaign=cross-promo&utm_content=sikka-popover",
     icon: (
       <svg
         viewBox="0 0 16 16"

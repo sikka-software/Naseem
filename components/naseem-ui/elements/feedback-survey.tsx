@@ -104,7 +104,7 @@ function CustomSurvey({ open, onOpenChange }: CustomSurveyProps) {
             <div className="flex flex-col pt-4">
               <span>{t("in-the-meantime-follow-us")}</span>
               <div className="bg--400 flex w-full flex-row items-center justify-center gap-2 pt-4">
-                <a href="http://sikka.io" target="_blank">
+                <a href="https://sikka.io?utm_source=naseem&utm_medium=referral&utm_campaign=cross-promo&utm_content=survey-follow" target="_blank">
                   <Button size={"icon"} variant={"outline"}>
                     <Globe className="size-5! text-black!" />
                   </Button>

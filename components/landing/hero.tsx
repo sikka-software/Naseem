@@ -77,7 +77,7 @@ const HeroTitle = () => {
           <p className="text-xs">
             Tailored for{" "}
             <a
-              href="https://sikka.io"
+              href="https://sikka.io?utm_source=naseem&utm_medium=referral&utm_campaign=cross-promo&utm_content=hero-credit"
               target="_blank"
               className="font-semibold"
             >

@@ -17,7 +17,7 @@ export const siteConfig = {
     "shadcn/ui",
   ],
   links: {
-    portfolio: "https://sikka.io",
+    portfolio: "https://sikka.io?utm_source=naseem&utm_medium=referral&utm_campaign=cross-promo&utm_content=site-config-portfolio",
     github: "https://github.com/sikka-software/naseem",
   },
 };
