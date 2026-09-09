@@ -48,7 +48,7 @@
     },
     {
       "type": "registry:file",
-      "content": "{\n  \"language\": \"اللغة\",\n  \"en\": \"English\",\n  \"ar\": \"العربية\",\n  \"theme\": \"نمط الموقع\",\n  \"light\": \"فاتح\",\n  \"dark\": \"داكن\",\n  \"system\": \"النظام\",\n  \"sikka\": {\n    \"name\": \"سكة لتقنية المعلومات\",\n    \"est\": \"تأسست في ٢٠١٥\",\n    \"description\": \"استوديو برمجيات مستقل متخصص في بناء منتجات ويب مركزة ومتقنة.\"\n  },\n  \"feedback\": \"رأيك\",\n  \"feedback-title\": \"كيف نقدر نحسن تجربتك؟\",\n  \"feedback-placeholder\": \"اكتب ملاحظاتك هنا…\",\n  \"feedback-success\": \"شكراً لك على ملاحظاتك!\",\n  \"feedback-success-description\": \"نقدر لك ملاحظاتك وسنستخدمها لتحسين خدماتنا.\",\n  \"in-the-meantime-follow-us\": \"تابعنا على وسائل التواصل الاجتماعي:\",\n  \"close\": \"إغلاق\",\n  \"submit\": \"إرسال\"\n}\n",
+      "content": "{\n  \"language\": \"اللغة\",\n  \"en\": \"English\",\n  \"ar\": \"العربية\",\n  \"theme\": \"نمط الموقع\",\n  \"light\": \"فاتح\",\n  \"dark\": \"داكن\",\n  \"system\": \"النظام\",\n  \"sikka\": {\n    \"name\": \"سكة سوفتوير\",\n    \"est\": \"تأسست في ٢٠١٥\",\n    \"description\": \"استوديو برمجيات مستقل متخصص في بناء منتجات ويب مركزة ومتقنة.\"\n  },\n  \"feedback\": \"رأيك\",\n  \"feedback-title\": \"كيف نقدر نحسن تجربتك؟\",\n  \"feedback-placeholder\": \"اكتب ملاحظاتك هنا…\",\n  \"feedback-success\": \"شكراً لك على ملاحظاتك!\",\n  \"feedback-success-description\": \"نقدر لك ملاحظاتك وسنستخدمها لتحسين خدماتنا.\",\n  \"in-the-meantime-follow-us\": \"تابعنا على وسائل التواصل الاجتماعي:\",\n  \"close\": \"إغلاق\",\n  \"submit\": \"إرسال\"\n}\n",
       "path": "messages/ar.json",
       "target": "messages/ar.json"
     },
