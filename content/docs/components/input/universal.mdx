@@ -1,0 +1,103 @@
+---
+title: Universal Input
+description: A field design system — one Root, Field, Inner/Outer slots, expansion boxes and annotations in two shapes
+---
+
+<ComponentPreview
+  name="universal-input-demo"
+  componentName="universal-input"
+  classNameComponentContainer="min-h-[350px]"
+  showCommand={true}
+/>
+
+## Usage
+
+The Universal Input is a field design system built from composable parts: `Root` lays out outer slots around a `Field`, `Inner` slots live inside the border, `Outer` slots sit detached outside it, `Top`/`Bottom` boxes expand the field, and `Above`/`Below` rows dock annotations to the field column.
+
+```tsx
+import { UniversalInput } from "@/components/naseem-ui/elements/universal-input"
+import { Search } from "lucide-react"
+
+export default function Example() {
+  return (
+    <UniversalInput shape="straight" size="md">
+      <UniversalInput.Above>
+        <UniversalInput.Label>Search</UniversalInput.Label>
+      </UniversalInput.Above>
+      <UniversalInput.Field>
+        <UniversalInput.Inner position="leading">
+          <Search />
+        </UniversalInput.Inner>
+        <UniversalInput.Input placeholder="Search…" />
+      </UniversalInput.Field>
+    </UniversalInput>
+  )
+}
+```
+
+## Vocabulary
+
+- `Root` — layout row: outer slots + field, owns the `shape` / `size` / `innerFit` / `innerWidth` / `radius` tokens
+- `Field` — bordered container; single-row or expanded when it carries `Top` / `Bottom` boxes
+- `Row` — fixed-height input row (auto-wrapped if omitted)
+- `Inner` — slot inside the border: `fit="flush"` (full-bleed cell), `"inset"` (bare content + breathing room) or `"padded"` (filled chip following the field radius)
+- `Outer` — detached slot outside the field; stretches to the field on single-row fields
+- `Top` / `Bottom` — expansion boxes inside the border (map, toolbar, attachments…)
+- `Above` / `Below` — annotation rows docked to the field column
+- `Annotation` — floating label text, icon, kbd or button around the field
+- `Label` — large field-label text for `Above` / `Below` rows
+
+## Shapes and sizes
+
+Two shapes — `"straight"` and `"pill"` — and three sizes (`sm` / `md` / `lg`). An explicit `radius` in px overrides the shape default for the field and outers, and `invalid` switches the field shell to the destructive treatment.
+
+## Features
+
+- Every slot is polymorphic: button, text, icon, popover/menu trigger, or tooltip-only
+- Pill corners cap at half the row height, so expanded fields never go elliptical
+- Expanded fields dock outer columns to the input row, never to the boxes
+- Field shell never clips — dropdowns, popovers and menus anchored in slots stay visible
+- Native input inherits `aria-invalid` from the `invalid` state
+
+## Props
+
+<TypeTable type={{
+  shape: {
+    type: '"straight" | "pill"',
+    default: '"straight"',
+    description: 'Field geometry — rectangle or fully rounded'
+  },
+  size: {
+    type: '"sm" | "md" | "lg"',
+    default: '"md"',
+    description: 'Row height token (h-9 / h-11 / h-14)'
+  },
+  innerFit: {
+    type: '"flush" | "inset" | "padded"',
+    default: '"flush"',
+    description: 'Default Inner-slot fit, overridable per Inner'
+  },
+  innerWidth: {
+    type: '"square" | "auto"',
+    default: '"square"',
+    description: 'Default Inner-slot width, overridable per Inner'
+  },
+  radius: {
+    type: 'number',
+    default: 'undefined',
+    description: 'Explicit corner radius in px — overrides the shape default'
+  },
+  invalid: {
+    type: 'boolean',
+    default: 'false',
+    description: 'Error state — Field shell goes destructive, input gets aria-invalid'
+  }
+}} />
+
+## Dependencies
+
+```json
+{
+  "react": "latest"
+}
+```

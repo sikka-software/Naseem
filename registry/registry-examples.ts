@@ -116,9 +116,7 @@ export const examples: Registry = [
         type: "registry:example",
       },
     ],
-    component: React.lazy(
-      () => import("../components/demos/auth-form-demo")
-    ),
+    component: React.lazy(() => import("../components/demos/auth-form-demo")),
   },
   {
     name: "sikka-popover-demo",
@@ -146,7 +144,9 @@ export const examples: Registry = [
         type: "registry:example",
       },
     ],
-    component: React.lazy(() => import("../components/demos/social-icons-demo")),
+    component: React.lazy(
+      () => import("../components/demos/social-icons-demo")
+    ),
   },
   {
     name: "dev-icons-demo",
@@ -312,9 +312,7 @@ export const examples: Registry = [
         type: "registry:example",
       },
     ],
-    component: React.lazy(
-      () => import("../components/demos/back-to-top-demo")
-    ),
+    component: React.lazy(() => import("../components/demos/back-to-top-demo")),
   },
   {
     name: "cursor-driven-particle-typography-demo",
@@ -344,6 +342,21 @@ export const examples: Registry = [
     ],
     component: React.lazy(
       () => import("../components/demos/color-picker-demo")
+    ),
+  },
+  {
+    name: "universal-input-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["universal-input"],
+    files: [
+      {
+        path: "@/components/demos/universal-input-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    component: React.lazy(
+      () => import("../components/demos/universal-input-demo")
     ),
   },
 ];

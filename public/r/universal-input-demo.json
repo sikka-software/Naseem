@@ -1,0 +1,18 @@
+{
+  "name": "universal-input-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "universal-input"
+  ],
+  "files": [
+    {
+      "type": "registry:example",
+      "content": "\"use client\";\n\nimport { Search, Plus, MapPin, X } from \"lucide-react\";\n\nimport { UniversalInput } from \"@/components/naseem-ui/elements/universal-input\";\n\nconst UniversalInputDemo = () => {\n  return (\n    <div className=\"w-full max-w-[440px] space-y-6\">\n      <UniversalInput shape=\"straight\" size=\"md\">\n        <UniversalInput.Above>\n          <UniversalInput.Label>Search</UniversalInput.Label>\n          <UniversalInput.Annotation>\n            <kbd>⌘</kbd>\n            <kbd>K</kbd>\n          </UniversalInput.Annotation>\n        </UniversalInput.Above>\n        <UniversalInput.Field>\n          <UniversalInput.Inner position=\"leading\">\n            <Search />\n          </UniversalInput.Inner>\n          <UniversalInput.Input placeholder=\"Search…\" />\n          <UniversalInput.Inner\n            position=\"trailing\"\n            fit=\"inset\"\n            onClick={() => {}}\n            label=\"Clear\"\n          >\n            <X />\n          </UniversalInput.Inner>\n        </UniversalInput.Field>\n        <UniversalInput.Below>\n          <UniversalInput.Annotation>Try “invoices”</UniversalInput.Annotation>\n        </UniversalInput.Below>\n      </UniversalInput>\n\n      <UniversalInput shape=\"pill\" size=\"md\">\n        <UniversalInput.Outer onClick={() => {}} label=\"Locate\">\n          <MapPin />\n        </UniversalInput.Outer>\n        <UniversalInput.Field>\n          <UniversalInput.Inner position=\"leading\" fit=\"padded\">\n            <MapPin />\n          </UniversalInput.Inner>\n          <UniversalInput.Input placeholder=\"Where to?\" />\n        </UniversalInput.Field>\n        <UniversalInput.Outer onClick={() => {}} label=\"Add\">\n          <Plus />\n        </UniversalInput.Outer>\n      </UniversalInput>\n\n      <UniversalInput shape=\"straight\" size=\"sm\" invalid>\n        <UniversalInput.Above>\n          <UniversalInput.Label>Postal code</UniversalInput.Label>\n        </UniversalInput.Above>\n        <UniversalInput.Field>\n          <UniversalInput.Inner position=\"leading\" width=\"auto\">\n            SA\n          </UniversalInput.Inner>\n          <UniversalInput.Input placeholder=\"12213\" />\n        </UniversalInput.Field>\n        <UniversalInput.Below>\n          <UniversalInput.Annotation>\n            Must be 5 digits\n          </UniversalInput.Annotation>\n        </UniversalInput.Below>\n      </UniversalInput>\n    </div>\n  );\n};\n\nexport default UniversalInputDemo;\n",
+      "path": "components/demos/universal-input-demo.tsx",
+      "target": "components/ui/universal-input-demo.tsx"
+    }
+  ]
+}

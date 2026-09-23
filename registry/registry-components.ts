@@ -544,7 +544,8 @@ export const components: Registry = [
   {
     name: "hit-area",
     type: "registry:component",
-    description: "Tailwind CSS v4 utilities for expanding click/touch hit areas without affecting layout.",
+    description:
+      "Tailwind CSS v4 utilities for expanding click/touch hit areas without affecting layout.",
     css: {
       "@utility hit-area-debug": {
         position: "relative",
@@ -671,5 +672,22 @@ export const components: Registry = [
         },
       },
     },
+  },
+  {
+    name: "universal-input",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: ["tooltip", "utils"],
+    files: [
+      {
+        path: "@/components/naseem-ui/elements/universal-input.tsx",
+        type: "registry:component",
+      },
+    ],
+    component: React.lazy(() =>
+      import("@/components/naseem-ui/elements/universal-input").then((mod) => ({
+        default: mod.UniversalInput,
+      }))
+    ),
   },
 ];
