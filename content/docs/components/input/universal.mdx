@@ -12,24 +12,39 @@ description: A field design system — one Root, Field, Inner/Outer slots, expan
 
 ## Usage
 
-The Universal Input is a field design system built from composable parts: `Root` lays out outer slots around a `Field`, `Inner` slots live inside the border, `Outer` slots sit detached outside it, `Top`/`Bottom` boxes expand the field, and `Above`/`Below` rows dock annotations to the field column.
+The Universal Input is a field design system built from composable parts. Set `shape`, `size`, `innerFit`, `innerWidth` and `radius` on the Root only — every part derives its corners, heights and fits from context. Compose slots instead of hand-rolling field chrome with divs.
 
 ```tsx
 import { UniversalInput } from "@/components/naseem-ui/elements/universal-input"
-import { Search } from "lucide-react"
+import { Search, X } from "lucide-react"
 
 export default function Example() {
   return (
     <UniversalInput shape="straight" size="md">
       <UniversalInput.Above>
         <UniversalInput.Label>Search</UniversalInput.Label>
+        <UniversalInput.Annotation>
+          <kbd>⌘</kbd>
+          <kbd>K</kbd>
+        </UniversalInput.Annotation>
       </UniversalInput.Above>
       <UniversalInput.Field>
         <UniversalInput.Inner position="leading">
           <Search />
         </UniversalInput.Inner>
-        <UniversalInput.Input placeholder="Search…" />
+        <UniversalInput.Input placeholder="Search…" aria-label="Search" />
+        <UniversalInput.Inner
+          position="trailing"
+          fit="inset"
+          onClick={() => {}}
+          label="Clear"
+        >
+          <X />
+        </UniversalInput.Inner>
       </UniversalInput.Field>
+      <UniversalInput.Below>
+        <UniversalInput.Annotation>Try “invoices”</UniversalInput.Annotation>
+      </UniversalInput.Below>
     </UniversalInput>
   )
 }
@@ -37,35 +52,193 @@ export default function Example() {
 
 ## Vocabulary
 
-- `Root` — layout row: outer slots + field, owns the `shape` / `size` / `innerFit` / `innerWidth` / `radius` tokens
-- `Field` — bordered container; single-row or expanded when it carries `Top` / `Bottom` boxes
-- `Row` — fixed-height input row (auto-wrapped if omitted)
-- `Inner` — slot inside the border: `fit="flush"` (full-bleed cell), `"inset"` (bare content + breathing room) or `"padded"` (filled chip following the field radius)
-- `Outer` — detached slot outside the field; stretches to the field on single-row fields
-- `Top` / `Bottom` — expansion boxes inside the border (map, toolbar, attachments…)
-- `Above` / `Below` — annotation rows docked to the field column
-- `Annotation` — floating label text, icon, kbd or button around the field
-- `Label` — large field-label text for `Above` / `Below` rows
+Every field composes from the same parts — learn them once, build any field (search, currency, password, AI prompt, location picker, command palette, URL/handle inputs).
 
-## Shapes and sizes
+| Part | Lives | Role |
+| ---- | ----- | ---- |
+| `Root` (`<UniversalInput>`) | — | Layout row: outer slots + field. Owns the `shape` / `size` / `innerFit` / `innerWidth` / `radius` / `invalid` tokens. JSX order doesn't matter — Root partitions children by type (`Above` → header row, `Below` → footer row, `Field` → center, everything else → leading/trailing outer columns). |
+| `Field` | center column | Bordered container. Single-row by default; becomes expanded when it carries `Top` / `Bottom` boxes. Partitions its own children by type too (`Top` → above, `Bottom` → below, loose `Inner`/`Input` → auto-wrapped in a `Row`). Conditionals (`{open && <Top>}`) are safe. |
+| `Row` | inside `Field` | Fixed-height input row (`h-9` / `h-11` / `h-14` by size). Optional — `Field` auto-wraps loose children in one. Use explicitly to document structure. |
+| `Input` | inside `Row` | The native `<input>`. Absorbs free space (`flex-1`) and pushes trailing slots to the edge — **always include one in a row**, a row without it collapses. Inherits `aria-invalid` from the Root `invalid` state. |
+| `Inner` | inside the border | Slot inside the field (`position="leading" \| "trailing"`). Three fits: `flush` (full-bleed 1:1 cell with divider), `inset` (bare content + breathing room, shadcn-style), `padded` (filled chip that follows the field radius). `width="auto"` hugs text (codes, units, suffixes). |
+| `Outer` | outside the field | Detached slot outside the border (icon buttons, `https://` prefixes). Stretches to the field height itself on single-row fields; docks to the input-row height (measured live) on expanded fields — never grows with `Top`/`Bottom` boxes. |
+| `Top` / `Bottom` | inside `Field`, around `Row` | Expansion boxes inside the border (map, attachments, toolbar). Unpadded by design — add your own `p-2` / `px-3`. Height comes from content; pin with `h-*`, cap with `max-h-*` + overflow. |
+| `Above` / `Below` | header / footer rows | Annotation rows docked to the field column via the Root grid — aligned whether outer slots exist or not. No spacer math needed. Fill with `Label` / `Annotation`. |
+| `Label` | inside `Above` / `Below` | Large field-label text (`text-lg font-semibold`). First child takes the leading corner, second the trailing (rows are `justify-between`). |
+| `Annotation` | inside `Above` / `Below` | Floating micro-copy: text, icon, `kbd` or button. `variant="plain"` (default, muted text) or `variant="pill"` (dashed ring). Bare (no children) renders the dotted sketch marker. |
 
-Two shapes — `"straight"` and `"pill"` — and three sizes (`sm` / `md` / `lg`). An explicit `radius` in px overrides the shape default for the field and outers, and `invalid` switches the field shell to the destructive treatment.
+## Shapes, sizes, radius
 
-## Features
+Two shapes — `"straight"` (rectangle, `8px` like `rounded-lg`) and `"pill"` (fully rounded) — and three sizes (`sm` / `md` / `lg` → rows `h-9` / `h-11` / `h-14`, i.e. 36 / 44 / 56 px).
 
-- Every slot is polymorphic: button, text, icon, popover/menu trigger, or tooltip-only
-- Pill corners cap at half the row height, so expanded fields never go elliptical
-- Expanded fields dock outer columns to the input row, never to the boxes
-- Field shell never clips — dropdowns, popovers and menus anchored in slots stay visible
-- Native input inherits `aria-invalid` from the `invalid` state
+Corner radius is a token, not per-part CSS:
+
+- Explicit `radius` (px) on Root overrides the shape default for the field, `Top`/`Bottom` boxes and outers.
+- Pill = half the **row** height (`18` / `22` / `28` px) — never a percentage of the whole field, so an expanded (tall) field keeps pill-like corners instead of going elliptical.
+- The token is capped at half the row height (never rounder than pill), so toggling boxes never changes the corners.
+- Nested parts stay concentric automatically: flush cells own their outer corner (the field never clips, see below), padded chips use `field − 4px`.
+- `Outer` geometry defaults to the Root shape (`straight` → `square`, `pill` → `circle`); override per-slot with `fit="square" | "circle"`.
+
+```tsx
+// Rectangle field, default 8px corners
+<UniversalInput shape="straight" size="md">…</UniversalInput>
+
+// Fully rounded field
+<UniversalInput shape="pill" size="md">…</UniversalInput>
+
+// Custom radius — applies to field, boxes and outers at once
+<UniversalInput shape="straight" size="md" radius={16}>…</UniversalInput>
+
+// Circle outer on a straight field (or square outer on a pill field)
+<UniversalInput shape="straight" size="md">
+  <UniversalInput.Outer fit="circle" onClick={() => {}} label="Locate">
+    <MapPin />
+  </UniversalInput.Outer>
+  <UniversalInput.Field>…</UniversalInput.Field>
+</UniversalInput>
+```
+
+## Fit & width cheatsheet
+
+| Need | Use |
+| ---- | --- |
+| Full-bleed section with divider (search icon cell, `$`, kbd) | `fit="flush"` (default) |
+| Bare icon/text floating in the row (eye, mic, clear) | `fit="inset"` |
+| Filled avatar/status/count chip | `fit="padded"` (radius follows `field − 4px` automatically) |
+| Text wider than a square (codes, units, `/msg`, `USD`) | `width="auto"` on any Inner fit |
+| Detached icon button outside | `Outer` (stretches to field height itself) |
+| Detached text prefix (`https://`, `site.com/@`) | `Outer width="auto"` |
+| Circle outer on a straight field (or vice versa) | `Outer fit="circle"` / `"square"` |
+
+`innerFit` / `innerWidth` on Root set the default for all `Inner` slots; override per-slot with `fit` / `width` only where a slot differs.
+
+## Patterns
+
+### Minimal field: leading icon + input + action
+
+```tsx
+<UniversalInput shape="straight" size="md" innerFit="flush">
+  <UniversalInput.Field>
+    <UniversalInput.Inner position="leading">
+      <Search />
+    </UniversalInput.Inner>
+    <UniversalInput.Input placeholder="Search…" aria-label="Search" />
+    <UniversalInput.Inner position="trailing" onClick={send} label="Send">
+      <Send />
+    </UniversalInput.Inner>
+  </UniversalInput.Field>
+</UniversalInput>
+```
+
+Passing `onClick` alone flips the slot from `div` to a native `button`. Icon-only clickable slots need `label` (a plain-string `tooltip` doubles as fallback).
+
+### Text prefix outside: rectangular auto-width outer
+
+```tsx
+<UniversalInput shape="straight" size="md">
+  <UniversalInput.Outer width="auto">https://</UniversalInput.Outer>
+  <UniversalInput.Field>
+    <UniversalInput.Input placeholder="yoursite.com" aria-label="Website URL" />
+  </UniversalInput.Field>
+</UniversalInput>
+```
+
+Don't position or size outers — single-row fields get edge-to-edge height automatically.
+
+### Text suffix inside: auto-width hugs content
+
+```tsx
+<UniversalInput.Field>
+  <UniversalInput.Input placeholder="Amount" aria-label="Amount" />
+  <UniversalInput.Inner position="trailing" width="auto">
+    <MiniMenu trigger={<span>USD</span>} items={["USD", "EUR"]} />
+  </UniversalInput.Inner>
+</UniversalInput.Field>
+```
+
+Every slot is polymorphic — pass anything as children (icon, text, menu trigger, kbd). On expanded fields, outer columns dock to the input row, never to the boxes.
+
+### Expanding composer: map on top, toolbar below
+
+```tsx
+<UniversalInput.Field>
+  {mapOpen && (
+    <UniversalInput.Top className="h-44 overflow-hidden">
+      …map…
+    </UniversalInput.Top>
+  )}
+  <UniversalInput.Inner position="leading">
+    <Search />
+  </UniversalInput.Inner>
+  <UniversalInput.Input placeholder="Search places…" aria-label="Search places" />
+  <UniversalInput.Bottom className="flex justify-between px-3 py-1.5">
+    …toolbar…
+  </UniversalInput.Bottom>
+</UniversalInput.Field>
+```
+
+Boxes are unpadded by design — style the content per use case.
+
+### Floating labels: annotations for micro-copy, labels for corners
+
+```tsx
+<UniversalInput.Above>
+  <UniversalInput.Label>Fig. 01 — Universal Input</UniversalInput.Label>
+  <UniversalInput.Annotation>straight · md · flush</UniversalInput.Annotation>
+</UniversalInput.Above>
+```
+
+Annotations go in `Above`/`Below` rows — never hand-roll spacer math to align labels over the field. Text follows the side automatically (logical, so RTL flips free).
+
+### Validation: one prop
+
+```tsx
+<UniversalInput shape="straight" size="sm" invalid>
+  <UniversalInput.Above>
+    <UniversalInput.Label>Postal code</UniversalInput.Label>
+  </UniversalInput.Above>
+  <UniversalInput.Field>
+    <UniversalInput.Inner position="leading" width="auto">
+      SA
+    </UniversalInput.Inner>
+    <UniversalInput.Input placeholder="12213" aria-label="Postal code" />
+  </UniversalInput.Field>
+  <UniversalInput.Below>
+    <UniversalInput.Annotation>Must be 5 digits</UniversalInput.Annotation>
+  </UniversalInput.Below>
+</UniversalInput>
+```
+
+`invalid` switches the field shell to the destructive treatment and sets `aria-invalid` on the native input. Never restyle borders by hand for errors — pair it with a `Below` annotation for the message.
+
+## Critical rules
+
+- **Never `overflow-hidden` above/around a field.** Dropdowns, popovers and menus anchored in slots must escape — the field shell intentionally never clips (flush cells carry their own corner rounding so the radius still looks clean). If a floating UI gets clipped, remove the clipping ancestor — don't portal around it.
+- **Never hand-write corner radii on parts.** `Field`, outers, flush cells, `Top`/`Bottom`, padded chips all derive from the Root `radius` token. Toggling boxes never changes the corners.
+- **Inset means bare.** No background on `inset` content — a filled box inside reads as a nested input. Reach for `padded` when the fill is the point (avatar, status, count).
+- **Outers align themselves.** Don't position or size them. If an outer looks off, suspect a clipping parent.
+- **Always include `Input` in a row.** It absorbs free space (`flex-1`) and pushes trailing slots to the edge.
+- **Boxes are unpadded by design.** Add your own `p-2` / `px-3`.
+- **Name everything interactive.** Clickable slots render native buttons: icon-only ones need `label`. The native input needs `aria-label` / `aria-labelledby` — pair `<Label htmlFor>` with the input id (placeholder is not a name). `tooltip` (plain string) doubles as a `label` fallback. Focus rings (shell + slot outlines) and `prefers-reduced-motion` are built in.
+
+## Accessibility
+
+- Clickable `Inner` / `Outer` / `Annotation` slots render native `<button>` elements when given `onClick`; otherwise `div` / `span`. They accept `disabled` and show a tooltip via `tooltip` / `tooltipSide`.
+- Icon-only buttons must have `label` (accessible name). A plain-string `tooltip` counts as a fallback.
+- The native input inherits `aria-invalid` from the Root `invalid` state; you can also set `aria-invalid` directly on `Field` for the same destructive treatment.
+- Above/Below rows are plain layout containers — associate visible `Label` text with the input via `htmlFor` / `id` or `aria-labelledby` / `aria-label`.
 
 ## Props
+
+### Root (`<UniversalInput>`)
+
+Tokens flow down — set `shape`, `size`, `innerFit`, `radius` here only.
 
 <TypeTable type={{
   shape: {
     type: '"straight" | "pill"',
     default: '"straight"',
-    description: 'Field geometry — rectangle or fully rounded'
+    description: 'Field geometry — rectangle (8px) or fully rounded (half row height)'
   },
   size: {
     type: '"sm" | "md" | "lg"',
@@ -85,7 +258,7 @@ Two shapes — `"straight"` and `"pill"` — and three sizes (`sm` / `md` / `lg`
   radius: {
     type: 'number',
     default: 'undefined',
-    description: 'Explicit corner radius in px — overrides the shape default'
+    description: 'Explicit corner radius in px — overrides the shape default for field, boxes and outers'
   },
   invalid: {
     type: 'boolean',
@@ -93,6 +266,50 @@ Two shapes — `"straight"` and `"pill"` — and three sizes (`sm` / `md` / `lg`
     description: 'Error state — Field shell goes destructive, input gets aria-invalid'
   }
 }} />
+
+`innerMode` is a deprecated alias of `innerFit`.
+
+### Inner (`<UniversalInput.Inner>`)
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `position` | `"leading" \| "trailing"` | `"leading"` | Which side of the input row the slot sits on |
+| `fit` | `"flush" \| "inset" \| "padded"` | Root `innerFit` | `flush` = full-bleed 1:1 cell with divider · `inset` = bare content + gap · `padded` = filled chip following the field radius |
+| `width` | `"square" \| "auto"` | Root `innerWidth` | `"square"` = fixed 1:1 box for icons · `"auto"` = rectangular, hugs text |
+| `onClick` | handler | — | Presence alone flips `div` → native `button` |
+| `label` | `string` | — | Accessible name for clickable slots (required when icon-only) |
+| `tooltip` / `tooltipSide` | `ReactNode` / `"top" \| "bottom"` | `top` | Tooltip on hover; a plain-string tooltip doubles as `label` fallback |
+| `mode` | deprecated | — | Alias of `fit` |
+
+### Outer (`<UniversalInput.Outer>`)
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `fit` | `"square" \| "circle"` | follows Root `shape` | Force box or circle geometry regardless of root shape |
+| `width` | `"square" \| "auto"` | `"square"` | `"auto"` = rectangular, hugs text (prefixes like `https://`) |
+| `onClick` | handler | — | Presence alone flips `div` → native `button` |
+| `label` | `string` | — | Accessible name for clickable slots |
+| `tooltip` / `tooltipSide` | `ReactNode` / `"top" \| "bottom"` | `top` | Tooltip on hover |
+
+### Field / Row / Top / Bottom
+
+| Part | Props | Notes |
+| ---- | ----- | ----- |
+| `Field` | `invalid?: boolean`, `aria-invalid`, std div props | Overrides Root `invalid` per-field; setting `aria-invalid` directly gets the same destructive treatment |
+| `Row` | std div props | Fixed-height input row; auto-wrapped by `Field` when omitted |
+| `Top` / `Bottom` | std div props + `className` for padding/layout | Expansion boxes inside the border; own their corners from the radius token |
+
+### Input (`<UniversalInput.Input>`)
+
+Native `<input>` — accepts all standard input props. `aria-invalid` is inherited from the Root `invalid` state unless set directly. Always include exactly one per row (`flex-1`, pushes trailing slots to the edge).
+
+### Above / Below / Label / Annotation
+
+| Part | Props | Notes |
+| ---- | ----- | ----- |
+| `Above` / `Below` | std div props | Annotation rows docked to the field column (`justify-between`: first child → leading corner, second → trailing) |
+| `Label` | std div props | Large field-label text (`text-lg font-semibold`) |
+| `Annotation` | `variant?: "pill" \| "plain"` (default `"plain"`), `onClick`, `label`, `tooltip`, `side` | Micro-copy around the field; bare (no children) renders the dotted sketch marker |
 
 ## Dependencies
 
